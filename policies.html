@@ -96,8 +96,9 @@ html{scroll-behavior:smooth}
 
   <section id="shipping">
     <h2>Shipping</h2><div class="rule"></div>
-    <p>Bikes ship free to addresses in the lower 48 states. We do not currently ship to Alaska, Hawaii, Puerto Rico, or internationally.</p>
-    <p>E-bikes ship by freight or oversized parcel carrier because of their weight and their lithium battery. Most orders leave the warehouse within one to three business days and arrive within five to ten business days of dispatch. Freight carriers call ahead to schedule delivery — please provide a phone number you actually answer, since missed appointments are the single most common cause of delay.</p>
+    <div class="callout"><b>We are not currently selling and shipping bikes directly.</b> Bikes marked "Buy direct" are purchased from the brand, on the brand's own terms. The section below describes how our shipping will work once our dealer accounts are approved, and how freight delivery works generally.</div>
+    <p>Bikes will ship free to addresses in the lower 48 states. We do not currently ship to Alaska, Hawaii, Puerto Rico, or internationally.</p>
+    <p>E-bikes ship by freight or oversized parcel carrier because of their weight and their lithium battery. Most orders leave the warehouse within one to three business days and arrive within five to ten business days of dispatch. Freight carriers call ahead to schedule delivery — give the carrier a number you actually answer at checkout, since missed delivery appointments are the single most common cause of delay.</p>
     <h3>Inspect before you sign</h3>
     <p>Look the carton over before signing the delivery receipt. If you see crushed corners, punctures, or a shifted load, note the damage on the receipt before signing and photograph it. A signed clean receipt makes a freight claim much harder to win. Contact us the same day and we will handle the claim.</p>
     <div class="callout"><b>Bikes built on our bench are local pickup only.</b> Once a bike is assembled it can't be economically reshipped, and the battery would require hazmat handling a second time. Assembly orders are collected in person.</div>
@@ -105,6 +106,7 @@ html{scroll-behavior:smooth}
 
   <section id="returns">
     <h2>Returns</h2><div class="rule"></div>
+    <div class="callout">Applies to bikes purchased from us. For anything bought "Buy direct" from a brand, that brand's return policy governs — check it before you order.</div>
     <p>You may return an unridden bike in its original packaging within 30 days of delivery.</p>
     <ul class="pl">
       <li>Return freight is paid by the customer. On an e-bike this typically runs $150–$400 depending on distance and carrier.</li>
@@ -127,14 +129,15 @@ html{scroll-behavior:smooth}
 
   <section id="assembly">
     <h2>Assembly &amp; service</h2><div class="rule"></div>
-    <p>Professional assembly is offered on any e-bike, whether or not you bought it here. The service covers the full pre-delivery checklist published on our home page: uncrating and damage inspection, torquing every fastener to the manufacturer's specification, truing and tensioning wheels, centering and bedding in brakes, indexing the drivetrain, setting tire pressure to rider weight, a full charge cycle with battery log, display configuration, a five-mile road test, and fit adjustment at pickup.</p>
-    <p>Turnaround is typically three to five business days. We will contact you when the bike is finished and the checklist is signed off. Bikes not collected within 30 days of completion may incur a storage fee.</p>
+    <p>Assembly and service is performed at <b>Bikes Plus in Jensen Beach, Florida</b>, and is offered on any e-bike from any brand, whether or not you bought it here. The service covers the full pre-delivery checklist published on our home page: uncrating and damage inspection, torquing every fastener to the manufacturer's specification, truing and tensioning wheels, centering and bedding in brakes, indexing the drivetrain, setting tire pressure to rider weight, a full charge cycle with battery log, display configuration, a five-mile road test, and fit adjustment at pickup.</p>
+    <p>You can drop the bike off, or have it shipped directly to the shop still in its carton — tell us the tracking number and we will take delivery and inspect it for you. Turnaround is typically three to five business days. We will contact you when the bike is finished and the checklist is signed off. Bikes not collected within 30 days of completion may incur a storage fee.</p>
     <p>Service is a workmanship service, not a warranty. If something we adjusted comes out of adjustment within 30 days, bring it back and we will correct it at no charge. Component failure remains a manufacturer warranty matter.</p>
   </section>
 
   <section id="affiliate">
     <h2>Affiliate disclosure</h2><div class="rule"></div>
-    <p>Some products on this site are marked <b>Buy direct</b>. Those brands sell only through their own websites, so we link you to them rather than pretending we can ship them. Those links are affiliate links: if you buy after clicking one, we may earn a commission from the brand.</p>
+    <div class="callout"><b>Our current affiliate partner is EUNORAU.</b> Links to eunorau-ebike.com on this site are affiliate links and we earn a commission if you buy through them. Links to any other brand are plain links that pay us nothing. Applications with additional brands are pending, and this page is updated whenever that changes.</div>
+    <p>Products marked <b>Buy direct</b> are sold only through the brand's own website, so we link you there rather than pretending we can ship them. Once a program approves us, those links will become affiliate links: if you buy after clicking one, we may earn a commission from the brand.</p>
     <ul class="pl">
       <li>It costs you nothing extra. The price is the same as going to the brand's site directly.</li>
       <li>It does not change what we tell you. We will say plainly when a bike is not a good fit, including bikes we earn a commission on.</li>
@@ -178,9 +181,8 @@ html{scroll-behavior:smooth}
     <p>Questions about an order, a return, a warranty claim, or your personal information:</p>
     <p>
       <b>EbikeBuy</b><br>
-      <span id="cCity">Jensen Beach, FL</span><br>
-      <a id="cEmail" href="#">email</a><br>
-      <a id="cPhone" href="#">phone</a>
+      <span id="cShop">Bikes Plus</span><br><span id="cCity">Jensen Beach, FL</span><br>
+      <a id="cEmail" href="#">email</a>
     </p>
     <p class="updated" id="updated"></p>
   </section>
@@ -198,14 +200,15 @@ html{scroll-behavior:smooth}
 <script>
 /* Keep these matched to index.html */
 const CONFIG = {
+  shopName: "Bikes Plus",
+  address:  "Jensen Beach, FL",   // <-- full street address
   city:  "Jensen Beach, FL",
-  phone: "772-555-0100",
-  email: "hello@ebikebuy.com",
+  email: "bikesplusjb@gmail.com",   // <-- must match index.html
   lastUpdated: "August 11, 2026"
 };
-document.getElementById("cCity").textContent = CONFIG.city;
+document.getElementById("cShop").textContent = CONFIG.shopName;
+document.getElementById("cCity").textContent = CONFIG.address;
 const e = document.getElementById("cEmail"); e.textContent = CONFIG.email; e.href = "mailto:" + CONFIG.email;
-const p = document.getElementById("cPhone"); p.textContent = CONFIG.phone; p.href = "tel:" + CONFIG.phone.replace(/\D/g,"");
 document.getElementById("updated").textContent = "Last updated " + CONFIG.lastUpdated + ".";
 </script>
 </body>
