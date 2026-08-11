@@ -517,6 +517,10 @@ const PHOTOS = {
   // product shots — official EUNORAU CDN, 16:9 hero frames
   "FAT-HD 1.0 Pro":    "https://cdn.shopify.com/s/files/1/2389/5887/files/17_16-9.jpg?v=1754966233",
   "FAT-AWD 3.0":       "https://cdn.shopify.com/s/files/1/2389/5887/files/05_16-9_7c4af65f-7ddb-4669-a47c-fb93b8c0bda3.jpg?v=1765166521",
+  "Hunter 2.0S":       "https://cdn.shopify.com/s/files/1/0800/0402/2554/files/Hunter2.0_S_v3_8816405f-3a97-40cb-8f40-9a779734c437.jpg?v=1784109141&width=1200",
+  "Literider 2.0":     "https://cdn.shopify.com/s/files/1/0800/0402/2554/files/2_5ee208e5-f36b-4a6a-b510-82f9d561f3c5.webp?v=1767076718&width=1200",
+  "Trekker":           "https://cdn.shopify.com/s/files/1/0800/0402/2554/files/Trekker-v1.webp?v=1776846775&width=1200",
+  "Voyager 2.0":       "https://cdn.shopify.com/s/files/1/0800/0402/2554/files/Voyager-2.webp?v=1773109394&width=1200",
   "DEFENDER":          "https://cdn.shopify.com/s/files/1/2389/5887/files/DEFENDER-S-_1_1.jpg?v=1765163679",
   "FLASH LITE ST 1.0": "https://cdn.shopify.com/s/files/1/2389/5887/files/8_c7b59161-3c4f-4bc0-a2eb-d4eec978fdc1.jpg?v=1759210184",
   "META20 1.0":        "https://eunorau-ebike.com/cdn/shop/files/0..jpg?v=1713165033&width=1100",
@@ -565,10 +569,14 @@ const PARTNERS = {
   "eunorau-ebike.com": "ref=qsplkmvp&utm_medium=affiliate&utm_source=goaffpro"
 };
 
+// Impact vanity links are already tracked — no params to append.
+const TRACKED_HOSTS = ["kingbulltechnologycolimited.pxf.io"];
+
 function aff(url){
   try{
     const u = new URL(url);
     const host = u.hostname.replace(/^www\./,"");
+    if(TRACKED_HOSTS.includes(host)) return { href:url, paid:true };
     const q = PARTNERS[host];
     if(!q) return { href:url, paid:false };
     for(const pair of q.split("&")){
@@ -596,9 +604,29 @@ const BIKES = [
     channel:"affiliate", flag:"",
     url:"https://eunorau-ebike.com/products/fat-awd-3-0", img:"" },
 
+  { brand:"Kingbull", name:"Hunter 2.0S", price:899, was:1699,
+    motor:"750W Bafang, 85 Nm", spec2:'26 × 4.0 · UL 2849', variant:"fat",
+    channel:"affiliate", flag:"Best value",
+    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", img:"" },
+
+  { brand:"Kingbull", name:"Literider 2.0", price:979, was:1699,
+    motor:"750W Bafang, 80 Nm", spec2:'20 × 4.0 folding · UL 2849', variant:"folding",
+    channel:"affiliate", flag:"",
+    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", img:"" },
+
+  { brand:"Kingbull", name:"Trekker", price:1099, was:2099,
+    motor:"Torque sensor · 960Wh", spec2:"Step-through · 80 mi", variant:"stepthru",
+    channel:"affiliate", flag:"",
+    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", img:"" },
+
+  { brand:"Kingbull", name:"Voyager 2.0", price:1119, was:1899,
+    motor:"Cargo · UL 2849", spec2:"450 lb payload", variant:"cargo",
+    channel:"affiliate", flag:"",
+    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", img:"" },
+
   { brand:"Eunorau", name:"DEFENDER", price:1599, was:1899,
     motor:"500W rear hub, 60 Nm", spec2:'48V 15Ah · 40 mi', variant:"mountain",
-    channel:"affiliate", flag:"Best value",
+    channel:"affiliate", flag:"",
     url:"https://eunorau-ebike.com/products/defender", img:"" },
 
   { brand:"Eunorau", name:"FLASH LITE ST 1.0", price:1899, was:0,
@@ -815,7 +843,7 @@ document.getElementById("picksIntro").textContent = ANY_PAID
 
 /* badge disclosure — honest about whether links pay us yet */
 document.getElementById("discloseBody").innerHTML = ANY_PAID
-  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — take it to Bikes Plus in ${CONFIG.city} and we'll finish the job properly.`
+  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links to EUNORAU and Kingbull are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — take it to Bikes Plus in ${CONFIG.city} and we'll finish the job properly.`
   : `<b>Buy direct</b> — these brands sell only through their own websites, so we send you straight to them. We're not a dealer for them yet and these links don't pay us anything, so take the recommendation at face value. Whatever you buy and wherever you buy it, Bikes Plus in ${CONFIG.city} will build it for you.`;
 
 /* products */
