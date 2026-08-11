@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EbikeBuy — Ride Further. Go Anywhere.</title>
-<meta name="description" content="Premium e-bikes shipped to your door from EbikeBuy. Local to Jensen Beach and Stuart? Have it built on our bench first — torqued to spec, brakes bedded in, battery verified, test ridden.">
+<meta name="description" content="E-bike assembly, tuning and safety inspection at Bikes Plus in Jensen Beach, FL. Any brand, wherever you bought it — torqued to spec, brakes bedded in, battery verified, road tested.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -59,8 +59,9 @@ a{color:inherit;text-decoration:none}
 .nav{display:none;gap:26px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
 .nav a:hover{color:var(--lime-dk)}
 @media(min-width:1040px){.nav{display:flex}}
-.cart-pill{border:1.5px solid var(--lime);border-radius:5px;padding:8px 14px;
-  font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;background:var(--white)}
+.cart-pill{border:1.5px solid var(--lime);border-radius:5px;padding:9px 15px;text-transform:uppercase;letter-spacing:.06em;
+  font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px;background:var(--white);white-space:nowrap}
+.cart-pill:hover{background:var(--lime);color:var(--black)}
 .cart-pill svg{width:16px;height:16px;stroke:var(--ink);fill:none;stroke-width:1.8}
 
 /* ---------- hero ---------- */
@@ -114,6 +115,8 @@ a{color:inherit;text-decoration:none}
   line-height:1.06;letter-spacing:-.02em;text-transform:uppercase;margin:18px 0 0}
 .bench h2 em{font-style:normal;color:var(--lime)}
 .bench .lede{color:#C9C9C5;font-size:15.5px;margin:16px 0 0;max-width:48ch}
+.bench .lede b{color:#fff;font-weight:600}
+.bench-price span b{color:var(--lime);font-weight:600}
 .bench-price{display:flex;align-items:baseline;gap:12px;margin-top:24px;
   padding-top:22px;border-top:1px solid #2A2A2A}
 .bench-price strong{font-family:var(--f-head);font-weight:900;font-size:40px;
@@ -157,7 +160,8 @@ a{color:inherit;text-decoration:none}
   text-align:center;transition:border-color .15s,transform .15s;display:block}
 .cat:hover{border-color:var(--lime);transform:translateY(-2px)}
 .cat .thumb{aspect-ratio:1/1;background:var(--wash);display:grid;place-items:center;overflow:hidden}
-.cat .thumb img{width:100%;height:100%;object-fit:cover}
+.cat .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cat .thumb{position:relative}
 .cat .thumb .art,.prod .shot .art{width:100%;padding:12%;display:block}
 .cat .thumb .art svg,.prod .shot .art svg{width:100%;height:auto}
 .cat .thumb .ph{font-size:10.5px;letter-spacing:.12em;color:#B4B4AE;text-transform:uppercase}
@@ -168,16 +172,18 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- products ---------- */
 .prods{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
-@media(min-width:900px){.prods{grid-template-columns:repeat(5,1fr)}}
+@media(min-width:760px){.prods{grid-template-columns:repeat(3,1fr)}}
 .prod{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;
   display:flex;flex-direction:column;transition:box-shadow .15s,border-color .15s}
 .prod:hover{border-color:#CFCFCB;box-shadow:0 6px 20px rgba(0,0,0,.07)}
 .prod .shot{aspect-ratio:1/1;background:var(--wash);position:relative;display:grid;place-items:center;overflow:hidden}
-.prod .shot img{width:100%;height:100%;object-fit:contain;padding:12px}
+.prod .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--wash)}
 .prod .shot .ph{font-size:10.5px;letter-spacing:.12em;color:#B4B4AE;text-transform:uppercase}
 .flag{position:absolute;top:10px;left:10px;font-size:9.5px;font-weight:800;letter-spacing:.1em;
   text-transform:uppercase;padding:4px 8px;border-radius:3px}
 .flag--seller{background:var(--lime);color:var(--black)}
+.flag--value{background:#1A1A1A;color:var(--lime)}
+.flag--stable{background:#1A1A1A;color:var(--lime)}
 .flag--new{background:var(--black);color:var(--white)}
 .chan{position:absolute;top:10px;right:10px;font-size:9.5px;font-weight:800;letter-spacing:.08em;
   text-transform:uppercase;padding:4px 8px;border-radius:3px;border:1px solid}
@@ -192,6 +198,7 @@ a{color:inherit;text-decoration:none}
 .prod .stats svg{width:12px;height:12px;stroke:var(--grey);fill:none;stroke-width:1.8}
 .prod .price{font-family:var(--f-head);font-weight:800;font-size:19px;letter-spacing:-.02em;
   margin:auto 0 12px}
+.prod .price s{font-family:var(--f-body);font-weight:500;font-size:13px;color:var(--grey);margin-left:7px}
 .prod .go{display:block;text-align:center;padding:11px;border-radius:5px;font-size:12px;
   font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--line)}
 .prod .go:hover{border-color:var(--ink)}
@@ -225,13 +232,12 @@ a{color:inherit;text-decoration:none}
 <div class="util">
   <div class="wrap">
     <div class="left">
-      <span><svg viewBox="0 0 24 24"><path d="M1 3h13v13H1zM14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg> Free shipping on all bikes</span>
-      <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M9 15l2 2 4-4"/></svg> Expert assembly available</span>
+      <span><svg viewBox="0 0 24 24"><path d="M1 3h13v13H1zM14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg> Any brand, any bike</span>
+      <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M9 15l2 2 4-4"/></svg> Local assembly offered</span>
       <span><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg> Expert support</span>
     </div>
     <div class="right">
-      <span><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> My account</span>
-      <span><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg> Cart (0)</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> Built at Bikes Plus, Jensen Beach</span>
     </div>
   </div>
 </div>
@@ -246,13 +252,12 @@ a{color:inherit;text-decoration:none}
     <nav class="nav">
       <a href="#bikes">E-Bikes</a>
       <a href="#categories">Categories</a>
-      <a href="#bikes">Accessories</a>
-      <a href="#bikes">Batteries</a>
+      <a href="#trikes">Trikes</a>
       <a href="#bench">Assembly</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <span class="cart-pill"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg> 0</span>
+    <a class="cart-pill" href="#bench">Book assembly</a>
   </div>
 </header>
 
@@ -264,10 +269,10 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="wrap">
     <h1>Ride further.<br>Go <em>anywhere</em>.</h1>
-    <p class="sub">Premium e-bikes shipped straight to your door. Or — if you're local to Jensen Beach or Stuart — <b>have it land on our bench first.</b> Torqued to spec, brakes bedded in, battery verified, road tested before you ever ride it.</p>
+    <p class="sub">Find the right e-bike, then get it built properly. <b>Local assembly offered at Bikes Plus in Jensen Beach</b> — torqued to spec, brakes bedded in, battery verified and road tested, on any bike from any brand.</p>
     <div class="hero-cta">
-      <a class="btn btn--lime" href="#bikes">Shop e-bikes</a>
-      <a class="btn btn--outline" href="#bench">See what assembly includes</a>
+      <a class="btn btn--lime" href="#bench">Book local assembly</a>
+      <a class="btn btn--outline" href="#bikes">Browse e-bikes</a>
     </div>
   </div>
 </section>
@@ -277,16 +282,16 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="bench-top">
       <div>
-        <span class="bench-tag">Local to Jensen Beach &amp; Stuart</span>
+        <span class="bench-tag">Local assembly · Jensen Beach, FL</span>
         <h2>Anyone can ship you a box.<br><em>We build what's in it.</em></h2>
-        <p class="lede">An e-bike arrives about 85% assembled, with loose spokes and glazed brake pads. Most people ride it that way. Bring yours here — or have it delivered here — and it goes through the same checklist every time.</p>
+        <p class="lede">An e-bike arrives about 85% assembled, with loose spokes and glazed brake pads. Most people ride it that way. Bring yours to <b>Bikes Plus in Jensen Beach</b> — or have it shipped straight there — and it goes through the same checklist every time, on a real bench with real tools.</p>
         <div class="bench-price">
           <strong id="benchPrice">$129</strong>
-          <span>Professional assembly, safety inspection<br>and fine tuning. Any brand, wherever you bought it.</span>
+          <span>Professional assembly, safety inspection<br>and fine tuning. Any brand, wherever you bought it.<br><b id="shopLine"></b></span>
         </div>
         <div class="bench-foot">
-          <a class="btn btn--lime" href="#contact">Book assembly</a>
-          <span class="fine">Ready in 3–5 days · local pickup</span>
+          <a class="btn btn--lime" id="bookBtn" href="#contact">Email to book assembly</a>
+          <span class="fine">Ready in 3–5 days · drop off or ship it in</span>
         </div>
       </div>
 
@@ -305,19 +310,19 @@ a{color:inherit;text-decoration:none}
 <div class="trust">
   <div>
     <svg viewBox="0 0 24 24"><path d="M1 3h13v13H1zM14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg>
-    <div><h4>Free shipping</h4><p>Every bike, anywhere in the lower 48. Freight and liftgate included.</p></div>
+    <div><h4>Local assembly</h4><p>Any brand, wherever you bought it. Built and safety checked at Bikes Plus in Jensen Beach.</p></div>
   </div>
   <div>
     <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-    <div><h4>Manufacturer warranty</h4><p>1–2 years on frame, motor and battery, backed by each brand. We file and chase the claim for you.</p></div>
+    <div><h4>Manufacturer warranty</h4><p>1–2 years on frame, motor and battery, backed by each brand. We'll help you file the claim.</p></div>
   </div>
   <div>
     <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 019-9 9 9 0 016.7 3M21 12a9 9 0 01-9 9 9 9 0 01-6.7-3"/><path d="M21 3v6h-6M3 21v-6h6"/></svg>
-    <div><h4>30-day returns</h4><p>Unridden bikes in original packaging. Return freight and a 10% restocking fee apply — bikes are heavy, and we'd rather say so up front.</p></div>
+    <div><h4>Straight answers</h4><p>We'll tell you when a bike isn't right for you, including ones we'd earn on. Ask before you spend $2,000.</p></div>
   </div>
   <div>
     <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
-    <div><h4>Expert support</h4><p>A mechanic answers, not a script. Before you buy and long after.</p></div>
+    <div><h4>A mechanic answers</h4><p>Not a script and not a chatbot. Before you buy and long after.</p></div>
   </div>
 </div>
 
@@ -337,13 +342,32 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="sec-head">
       <h2>Top picks</h2><div class="bar"></div>
-      <p>Some of these we ship to you directly. Some we send you to the brand, because they only sell direct — and we'd rather point you at the right bike than only show you ours.</p>
+      <p id="picksIntro"></p>
     </div>
     <div class="prods" id="prods"></div>
 
+    <p style="text-align:center;font-size:12.5px;color:var(--grey);margin:20px 0 0">
+      Prices and availability are set by the manufacturer and change often — check the product page for current stock.
+    </p>
+
     <div class="disclose">
-      <h4>How to read the badges</h4>
-      <p><b>We ship</b> — you buy from EbikeBuy, we handle the order, the freight claim and the warranty paperwork. <b>Buy direct</b> — the brand sells these themselves; our link earns us a commission at no extra cost to you, and it doesn't change a word of what we tell you about the bike. Either way, assembly on our bench is available.</p>
+      <h4 id="discloseHd">How to read the badges</h4>
+      <p id="discloseBody"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== trikes ===== -->
+<section class="sec" id="trikes">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Three wheels</h2><div class="bar"></div>
+      <p>If balance is the reason you stopped riding, a trike is the answer — and it's the one thing you really shouldn't assemble from a box yourself.</p>
+    </div>
+    <div class="prods" id="trikeGrid"></div>
+    <div class="disclose" style="border-left-color:#1A1A1A">
+      <h4>Why we push assembly hardest on these</h4>
+      <p>A trike has a rear differential, a wide axle, and baskets that all have to be squared to the frame. Get it wrong and the trike pulls to one side or the rear wheels fight each other in a turn — which is exactly the instability you bought three wheels to avoid. It's also 80-plus pounds in a carton that one person can't safely flip. Have it shipped to us and skip all of that.</p>
     </div>
   </div>
 </section>
@@ -355,13 +379,13 @@ a{color:inherit;text-decoration:none}
       <div>
         <h5>EbikeBuy</h5>
         <span id="ftrCity">Jensen Beach, FL</span><br>
-        <a href="#" id="ftrPhone">phone</a><br>
         <a href="#" id="ftrEmail">email</a>
       </div>
       <div>
         <h5>Shop</h5>
         <a href="#bikes">All e-bikes</a><br>
-        <a href="#categories">Categories</a><br>
+        <a href="#categories">Categories</a>
+      <a href="#trikes">Trikes</a><br>
         <a href="#bench">Assembly &amp; service</a>
       </div>
       <div>
@@ -387,11 +411,12 @@ a{color:inherit;text-decoration:none}
    CONFIG
    ========================================================== */
 const CONFIG = {
+  shopName: "Bikes Plus",
+  address:  "Jensen Beach, FL",   // <-- put the full street address here
   city:  "Jensen Beach, FL",
-  phone: "772-555-0100",
-  email: "hello@ebikebuy.com",
+  email: "bikesplusjb@gmail.com",   // <-- your address
   assemblyPrice: 129,
-  heroImage: ""      // paste your hero photo URL here
+  heroImage: "https://cdn.shopify.com/s/files/1/2389/5887/files/V1A0406.jpg?v=1725940050"   // EUNORAU lifestyle shot
 };
 
 /* ==========================================================
@@ -404,26 +429,33 @@ const CONFIG = {
    GitHub repo and use a relative path, e.g. "img/aventure2.jpg".
    ========================================================== */
 const PHOTOS = {
-  // category tiles
-  "Step-through": "",
-  "Fat tire":     "",
+  // category tiles — swap for your own shots any time
+  "Step-through": "https://cdn.shopify.com/s/files/1/2389/5887/files/8_c7b59161-3c4f-4bc0-a2eb-d4eec978fdc1.jpg?v=1759210184",
+  "Fat tire":     "https://cdn.shopify.com/s/files/1/2389/5887/files/17_16-9.jpg?v=1754966233",
   "Folding":      "",
-  "Commuter":     "",
-  "Cargo":        "",
-  "Mountain":     "",
-  // product shots — key is the bike name
-  "Aventure.2":       "",
-  "XP 3.0":           "",
-  "RadRunner 3 Plus": "",
-  "Soltera.2":        "",
-  "RipCurrent S":     ""
+  "Commuter":     "https://cdn.shopify.com/s/files/1/2389/5887/files/11_1_6f7aa12a-b4e2-4dad-b848-74a00b18216f.jpg?v=1711441385",
+  "Cargo":        "https://cdn.shopify.com/s/files/1/2389/5887/files/G30-CARGO_643e152f-ba96-42ba-964e-7418dda9cdf0.jpg?v=1721102049",
+  "Mountain":     "https://cdn.shopify.com/s/files/1/2389/5887/files/DEFENDER-S-_1_1.jpg?v=1765163679",
+
+  // product shots — official EUNORAU CDN, 16:9 hero frames
+  "FAT-HD 1.0 Pro":    "https://cdn.shopify.com/s/files/1/2389/5887/files/17_16-9.jpg?v=1754966233",
+  "FAT-AWD 3.0":       "https://cdn.shopify.com/s/files/1/2389/5887/files/05_16-9_7c4af65f-7ddb-4669-a47c-fb93b8c0bda3.jpg?v=1765166521",
+  "DEFENDER":          "https://cdn.shopify.com/s/files/1/2389/5887/files/DEFENDER-S-_1_1.jpg?v=1765163679",
+  "FLASH LITE ST 1.0": "https://cdn.shopify.com/s/files/1/2389/5887/files/8_c7b59161-3c4f-4bc0-a2eb-d4eec978fdc1.jpg?v=1759210184",
+  "META24 1.0":        "https://cdn.shopify.com/s/files/1/2389/5887/files/11_1_6f7aa12a-b4e2-4dad-b848-74a00b18216f.jpg?v=1711441385",
+  "SPECTER-ST 2.0":    "https://cdn.shopify.com/s/files/1/2389/5887/files/02_157bdbf7-1a8b-47f3-8685-a41a07a52741.jpg?v=1725940043",
+
+  // trikes — not in the frontpage feed; pull from the trikes collection JSON
+  "ONE-TRIKE 2.0":     "",
+  "NEW-TRIKE 2.0":     "https://eunorau-ebike.com/cdn/shop/files/new-trike3_1_1.jpg?v=1780641045&width=1200",
+  "T1 Recumbent":      ""
 };
 
 /* ==========================================================
    BUILD CHECKLIST — this is the thing competitors can't copy
    ========================================================== */
 const CHECKLIST = [
-  ["Uncrate and damage inspection", "Photographed on arrival. Freight damage is our claim to file, not yours."],
+  ["Uncrate and damage inspection", "Photographed on arrival, so you have evidence for a freight claim before anything is touched."],
   ["Every fastener torqued to spec", "stem 5 Nm · bars 6 Nm · rotors 6 Nm · calipers 8 Nm · cranks 40 Nm · pedals 35 Nm · axle nuts 35 Nm"],
   ["Wheels trued, spokes tensioned", "Factory wheels ship loose. On a 70 lb bike, that ends as a cracked hub flange."],
   ["Brakes centered and bedded in", "20 controlled stops per rotor. Out of the box, stopping distance is roughly double."],
@@ -448,23 +480,84 @@ const CATS = [
 ];
 
 /* ==========================================================
+   AFFILIATE PARTNERS
+   Any URL on a partner domain gets the tracking params
+   appended automatically by aff() below.
+   ========================================================== */
+const PARTNERS = {
+  "eunorau-ebike.com": "ref=qsplkmvp&utm_medium=affiliate&utm_source=goaffpro"
+};
+
+function aff(url){
+  try{
+    const u = new URL(url);
+    const host = u.hostname.replace(/^www\./,"");
+    const q = PARTNERS[host];
+    if(!q) return { href:url, paid:false };
+    for(const pair of q.split("&")){
+      const [k,v] = pair.split("=");
+      u.searchParams.set(k,v);
+    }
+    return { href:u.toString(), paid:true };
+  }catch(e){ return { href:url, paid:false }; }
+}
+
+/* ==========================================================
    PRODUCTS
-   channel: "ship"  = you sell it, cart + checkout
-            "affiliate" = brand sells it, outbound tracked link
-   Only put a bike on "ship" once the dealer account is approved.
+   channel: "ship" = you sell it | "affiliate" = brand sells it
+   url: use the exact product page URL. Tracking params are
+        added automatically for any partner domain above.
    ========================================================== */
 const BIKES = [
-  { brand:"Aventon",   name:"Aventure.2", variant:"fat",        price:1799, motor:"750W", range:"60 mi",
-    channel:"affiliate", flag:"Best seller", url:"https://example.com/aventure2?ref=YOURCODE", img:"" },
-  { brand:"Lectric",   name:"XP 3.0", variant:"folding",            price:999,  motor:"500W", range:"45 mi",
-    channel:"affiliate", flag:"", url:"https://example.com/xp3?ref=YOURCODE", img:"" },
-  { brand:"Rad Power", name:"RadRunner 3 Plus", variant:"cargo",  price:1699, motor:"750W", range:"55 mi",
-    channel:"affiliate", flag:"New", url:"https://example.com/radrunner?ref=YOURCODE", img:"" },
-  { brand:"Aventon",   name:"Soltera.2", variant:"commuter",         price:1199, motor:"500W", range:"46 mi",
-    channel:"affiliate", flag:"", url:"https://example.com/soltera2?ref=YOURCODE", img:"" },
-  { brand:"Juiced",    name:"RipCurrent S", variant:"mountain",      price:2399, motor:"1000W", range:"70 mi",
-    channel:"affiliate", flag:"", url:"https://example.com/ripcurrent?ref=YOURCODE", img:"" }
+  { brand:"Eunorau", name:"FAT-HD 1.0 Pro", price:1999, was:2399,
+    motor:"1000W Bafang mid-drive", spec2:'48V 25Ah · 60 mi', variant:"fat",
+    channel:"affiliate", flag:"Best seller",
+    url:"https://eunorau-ebike.com/products/fat-hd", img:"" },
+
+  { brand:"Eunorau", name:"FAT-AWD 3.0", price:1699, was:0,
+    motor:"Dual 500W AWD, 110 Nm", spec2:'Torque sensor · 79 lb', variant:"fat",
+    channel:"affiliate", flag:"",
+    url:"https://eunorau-ebike.com/products/fat-awd-3-0", img:"" },
+
+  { brand:"Eunorau", name:"DEFENDER", price:1599, was:1899,
+    motor:"500W rear hub, 60 Nm", spec2:'48V 15Ah · 40 mi', variant:"mountain",
+    channel:"affiliate", flag:"Best value",
+    url:"https://eunorau-ebike.com/products/defender", img:"" },
+
+  { brand:"Eunorau", name:"FLASH LITE ST 1.0", price:1899, was:0,
+    motor:"52V 750W, 92 Nm", spec2:'20 × 4.0 · 440 lb load', variant:"stepthru",
+    channel:"affiliate", flag:"",
+    url:"https://eunorau-ebike.com/products/flash-lite-st", img:"" },
+
+  { brand:"Eunorau", name:"META24 1.0", price:1699, was:0,
+    motor:"500W hub, torque sensor", spec2:'24 × 3.0 · 61.7 lb', variant:"commuter",
+    channel:"affiliate", flag:"",
+    url:"https://eunorau-ebike.com/products/meta-24-1", img:"" },
+
+  { brand:"Eunorau", name:"SPECTER-ST 2.0", price:2999, was:3799,
+    motor:"1000W Bafang, 160 Nm", spec2:"Full suspension · SRAM NX", variant:"stepthru",
+    channel:"affiliate", flag:"",
+    url:"https://eunorau-ebike.com/products/specter-st-1", img:"" }
 ];
+
+const TRIKES = [
+  { brand:"Eunorau", name:"ONE-TRIKE 2.0", price:1799, was:1999,
+    motor:"500W rear drive, 80 Nm", spec2:'20" folding · differential', variant:"trike",
+    channel:"affiliate", flag:"Most stable",
+    url:"https://eunorau-ebike.com/products/one-trike", img:"" },
+
+  { brand:"Eunorau", name:"NEW-TRIKE 2.0", price:2199, was:0,
+    motor:"500W front motor", spec2:"48V 20Ah · folding city", variant:"trike",
+    channel:"affiliate", flag:"",
+    url:"https://eunorau-ebike.com/collections/eunorau-electric-trikes", img:"" },
+
+  { brand:"Eunorau", name:"T1 Recumbent", price:2499, was:0,
+    motor:"52V 750W rear hub", spec2:"Full hydraulic brakes", variant:"trike",
+    channel:"affiliate", flag:"",
+    url:"https://eunorau-ebike.com/collections/eunorau-electric-trikes", img:"" }
+];
+
+const ANY_PAID = BIKES.concat(TRIKES).some(b => aff(b.url).paid);
 
 /* ==========================================================
    MOCK ARTWORK
@@ -479,7 +572,8 @@ function bikeArt(variant, stroke, accent, innerOnly){
     folding:   { r:17, tire:5,  step:true,  rack:false, small:true  },
     commuter:  { r:23, tire:3,  step:false, rack:true,  small:false },
     cargo:     { r:19, tire:5,  step:true,  rack:"long",small:false },
-    mountain:  { r:24, tire:5,  step:false, rack:false, small:false }
+    mountain:  { r:24, tire:5,  step:false, rack:false, small:false },
+    trike:     { r:19, tire:5,  step:true,  rack:"long",small:false, trike:true }
   }[variant] || { r:23, tire:4, step:false, rack:false, small:false };
 
   const rw = V.r, ty = 66, fx = 34, bx = 118;           // wheel radius, ground, front/back x
@@ -505,6 +599,9 @@ function bikeArt(variant, stroke, accent, innerOnly){
       ${V.rack ? `<path d="M${bx-16} ${top+16} h20 M${bx-16} ${top+16} l4 9"/>` : ``}
       ${V.rack==="long" ? `<rect x="${bx-30}" y="${top+2}" width="30" height="15" rx="2"/>` : ``}
       <circle cx="${fx+42}" cy="${ty}" r="6.5"/>
+      ${V.trike ? `<circle cx="${bx-13}" cy="${ty}" r="${rw}" stroke-width="${V.tire}"/>
+        <circle cx="${bx-13}" cy="${ty}" r="${rw-9}" stroke-width="1.1" opacity=".45"/>
+        <path d="M${bx-13} ${ty} h13"/>` : ``}
     </g>
     <g fill="${accent}" opacity=".92">
       <path d="M${fx+33} ${top+6} l${bx-fx-46} ${(ty-top-8)*0.55} l6 11 l-${bx-fx-46} -${(ty-top-8)*0.55} z"/>
@@ -558,11 +655,19 @@ const money = n => "$" + n.toLocaleString("en-US",{minimumFractionDigits:2,maxim
 /* branding */
 document.getElementById("benchPrice").textContent = "$" + CONFIG.assemblyPrice;
 document.getElementById("ftrCity").textContent = CONFIG.city;
-const fp = document.getElementById("ftrPhone"); fp.textContent = CONFIG.phone; fp.href = "tel:" + CONFIG.phone.replace(/\D/g,"");
 const fe = document.getElementById("ftrEmail"); fe.textContent = CONFIG.email; fe.href = "mailto:" + CONFIG.email;
 if(CONFIG.heroImage){
-  document.getElementById("heroImg").innerHTML = '<img src="'+esc(CONFIG.heroImage)+'" alt="">';
+  const hi = document.createElement("img");
+  hi.src = CONFIG.heroImage; hi.alt = "";
+  hi.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:cover";
+  hi.onerror = () => hi.remove();          // falls back to the painted scene
+  document.getElementById("heroImg").appendChild(hi);
 }
+
+document.getElementById("shopLine").textContent = "At " + CONFIG.shopName + " · " + CONFIG.address;
+const bb = document.getElementById("bookBtn");
+bb.href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Assembly booking")
+  + "&body=" + encodeURIComponent("Bike brand and model:\nWhere it is now (shipping to you / already have it):\nYour name:\nBest way to reach you:\n");
 
 /* checklist */
 const TICK = '<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>';
@@ -572,22 +677,33 @@ document.getElementById("chkList").innerHTML = CHECKLIST.map(([t,d]) => `
 /* categories */
 document.getElementById("cats").innerHTML = CATS.map(([n,d,img],i) => { img = img || PHOTOS[n] || ""; return `
   <a class="cat" href="#bikes">
-    <span class="thumb">${img ? `<img src="${esc(img)}" alt="${esc(n)}">` : `<span class="art">${bikeArt(CAT_VARIANT[i]||"commuter","#3A3A38","#8DC63F")}</span>`}</span>
+    <span class="thumb"><span class="art">${bikeArt(CAT_VARIANT[i]||"commuter","#3A3A38","#8DC63F")}</span>${img ? `<img src="${esc(img)}" alt="${esc(n)}" onerror="this.remove()">` : ``}</span>
     <span class="lbl"><h4>${esc(n)}</h4><p>${esc(d)}</p></span>
   </a>`; }).join("");
+
+document.getElementById("picksIntro").textContent = ANY_PAID
+  ? "Bikes we'd actually put a customer on. These ship free, direct from the brand, about 85% assembled — which is where we come in."
+  : "The bikes we'd actually recommend right now, with honest notes on each. Buy them wherever you like — then bring it in and we'll build it right.";
+
+/* badge disclosure — honest about whether links pay us yet */
+document.getElementById("discloseBody").innerHTML = ANY_PAID
+  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — bring it to ${CONFIG.shopName} in ${CONFIG.city} and we'll finish the job properly.`
+  : `<b>Buy direct</b> — these brands sell only through their own websites, so we send you straight to them. We're not a dealer for them yet and these links don't pay us anything, so take the recommendation at face value. Whatever you buy and wherever you buy it, we'll build it for you at ${CONFIG.shopName} in ${CONFIG.city}.`;
 
 /* products */
 const ICON_MOTOR = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
 const ICON_RANGE = '<svg viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><path d="M5 11v2"/></svg>';
 
-document.getElementById("prods").innerHTML = BIKES.map(b => {
+function cardHTML(b){
   const isShip = b.channel === "ship";
   const shot = b.img || PHOTOS[b.name] || "";
-  const flagCls = /best/i.test(b.flag) ? "flag--seller" : "flag--new";
+  const link = aff(b.url);
+  const flagCls = /seller/i.test(b.flag) ? "flag--seller" : /value|stable/i.test(b.flag) ? "flag--value" : "flag--new";
   return `
   <div class="prod">
     <div class="shot">
-      ${shot ? `<img src="${esc(shot)}" alt="${esc(b.brand)} ${esc(b.name)}">` : `<span class="art">${bikeArt(b.variant||"commuter","#2F2F2D","#8DC63F")}</span>`}
+      <span class="art">${bikeArt(b.variant||"commuter","#2F2F2D","#8DC63F")}</span>
+      ${shot ? `<img src="${esc(shot)}" alt="${esc(b.brand)} ${esc(b.name)}" onerror="this.remove()">` : ``}
       ${b.flag ? `<span class="flag ${flagCls}">${esc(b.flag)}</span>` : ``}
       <span class="chan ${isShip ? "chan--ship" : "chan--aff"}">${isShip ? "We ship" : "Buy direct"}</span>
     </div>
@@ -595,16 +711,18 @@ document.getElementById("prods").innerHTML = BIKES.map(b => {
       <p class="brand">${esc(b.brand)}</p>
       <h3>${esc(b.name)}</h3>
       <div class="stats">
-        <span>${ICON_MOTOR} ${esc(b.motor)} motor</span>
-        <span>${ICON_RANGE} Up to ${esc(b.range)}</span>
+        <span>${ICON_MOTOR} ${esc(b.motor)}</span>
+        <span>${ICON_RANGE} ${esc(b.spec2)}</span>
       </div>
-      <p class="price">${money(b.price)}</p>
+      <p class="price">${money(b.price)}${b.was ? `<s>${money(b.was)}</s>` : ""}</p>
       ${isShip
         ? `<a class="go go--lime" href="#">View details</a>`
-        : `<a class="go" href="${esc(b.url)}" target="_blank" rel="sponsored noopener">Buy at ${esc(b.brand)} →</a>`}
+        : `<a class="go" href="${esc(link.href)}" target="_blank" rel="${link.paid ? "sponsored noopener" : "noopener"}">${link.paid ? "Buy at" : "See it at"} ${esc(b.brand)} →</a>`}
     </div>
   </div>`;
-}).join("");
+}
+document.getElementById("prods").innerHTML = BIKES.map(cardHTML).join("");
+document.getElementById("trikeGrid").innerHTML = TRIKES.map(cardHTML).join("");
 </script>
 </body>
 </html>
