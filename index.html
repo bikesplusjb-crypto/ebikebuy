@@ -229,6 +229,21 @@ a{color:inherit;text-decoration:none}
 .prod .go--lime{background:var(--lime);border-color:var(--lime);color:var(--black)}
 .prod .go--lime:hover{background:var(--lime-dk);border-color:var(--lime-dk)}
 
+.gear-grid{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.gear-grid{grid-template-columns:repeat(3,1fr)}}
+.gear{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;transition:border-color .15s,box-shadow .15s}
+.gear:hover{border-color:#CFCFCB;box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.gear .shot{aspect-ratio:1/1;background:var(--wash);position:relative;overflow:hidden}
+.gear .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10%}
+.gear .body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+.gear h3{font-family:var(--f-head);font-size:14.5px;font-weight:700;margin:0 0 6px;line-height:1.25}
+.gear p{margin:0 0 12px;font-size:12.5px;color:var(--grey);line-height:1.5}
+.gear .price{font-family:var(--f-head);font-weight:800;font-size:17px;margin:auto 0 10px}
+.gear .go{display:block;text-align:center;padding:9px;border-radius:5px;font-size:11px;
+  font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--line)}
+.gear .go:hover{border-color:var(--ink)}
+
 /* ---------- disclosure ---------- */
 .disclose{border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:6px;
   background:var(--wash);padding:18px 20px;margin-top:28px}
@@ -277,6 +292,7 @@ a{color:inherit;text-decoration:none}
       <a href="#bikes">E-Bikes</a>
       <a href="#categories">Categories</a>
       <a href="#trikes">Trikes</a>
+      <a href="#gear">Accessories</a>
       <a href="#bench">Assembly</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -412,6 +428,20 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<!-- ===== gear ===== -->
+<section class="sec sec--wash" id="gear">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Parts &amp; accessories</h2><div class="bar"></div>
+      <p>The add-ons worth having. Bring the part to Bikes Plus and they'll fit it, or have it shipped with the bike.</p>
+    </div>
+    <div class="gear-grid" id="gearGrid"></div>
+    <div style="text-align:center;margin-top:28px">
+      <a class="btn btn--ghostdark" id="gearAll" target="_blank" rel="sponsored noopener">See all accessories →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== footer ===== -->
 <footer class="ftr" id="contact">
   <div class="wrap">
@@ -426,7 +456,8 @@ a{color:inherit;text-decoration:none}
         <h5>Shop</h5>
         <a href="#bikes">All e-bikes</a><br>
         <a href="#categories">Categories</a>
-      <a href="#trikes">Trikes</a><br>
+      <a href="#trikes">Trikes</a>
+      <a href="#gear">Accessories</a><br>
         <a href="#bench">Assembly &amp; service</a>
       </div>
       <div>
@@ -604,6 +635,38 @@ const TRIKES = [
     motor:"52V 750W, torque sensor", spec2:"Recumbent · parking brake", variant:"trike",
     channel:"affiliate", flag:"",
     url:"https://eunorau-ebike.com/products/t1", img:"" }
+];
+
+const GEAR = [
+  { name:"Safety Seat for Child", price:279,
+    note:"9 months to 3 years, up to 40 lb. 5-point harness, adjustable footrests. Not compatible with every frame — ask us first.",
+    url:"https://eunorau-ebike.com/products/eunorau-safety-seat-for-child",
+    img:"https://cdn.shopify.com/s/files/1/2389/5887/products/EunorauSafetySeatforBaby_Child-LightGray.jpg?v=1666162202&width=800" },
+
+  { name:"Hunting & Cargo Trailer", price:369,
+    note:"220 lb capacity on 20 × 3.0 tires. Universal hitch fits 24–28\" bikes, folds flat for storage.",
+    url:"https://eunorau-ebike.com/products/fat-tire-hunting-cargo-trailer",
+    img:"https://cdn.shopify.com/s/files/1/2389/5887/files/1800_1.jpg?v=1784526583&width=800" },
+
+  { name:"Trike High-Back Saddle", price:40,
+    note:"Wide padded seat with raised backrest for EUNORAU trikes. The single best comfort upgrade on a three-wheeler.",
+    url:"https://eunorau-ebike.com/products/eunorau-trike-saddle",
+    img:"https://cdn.shopify.com/s/files/1/2389/5887/files/SSPOONE-TRIKE-SADDLE1BKWD02.jpg?v=1784355182&width=800" },
+
+  { name:"52V 16Ah Main Battery", price:599,
+    note:"LG cells for FLASH and FLASH Lite ST. 500–800 charge cycles. Batteries wear out before frames do.",
+    url:"https://eunorau-ebike.com/products/eunorau-52v16ah-main-battery-for-flash-ebike",
+    img:"https://cdn.shopify.com/s/files/1/2389/5887/files/10001.jpg?v=1763603881&width=800" },
+
+  { name:"48V 2A Smart Charger", price:49,
+    note:"Spare or replacement. Keep one at home and one where you ride — and never charge with a non-approved unit.",
+    url:"https://eunorau-ebike.com/products/eunorau-48v2a-x2-0-us-ca-ebike-charger",
+    img:"https://cdn.shopify.com/s/files/1/2389/5887/files/48VCharger.jpg?v=1765175762&width=800" },
+
+  { name:"LED Front Light", price:19,
+    note:"6–60V, runs off the main battery so there's nothing to recharge. Check your connector type before ordering.",
+    url:"https://eunorau-ebike.com/products/electric-bicycle-front-6v-light-for-bafang-bbs-mid-drive-motor-kit",
+    img:"https://cdn.shopify.com/s/files/1/2389/5887/products/LIGHT-6-48V-F_2.jpg?v=1680590747&width=800" }
 ];
 
 const ANY_PAID = BIKES.concat(TRIKES).some(b => aff(b.url).paid);
@@ -786,6 +849,20 @@ function cardHTML(b){
 }
 document.getElementById("prods").innerHTML = BIKES.map(cardHTML).join("");
 document.getElementById("trikeGrid").innerHTML = TRIKES.map(cardHTML).join("");
+
+document.getElementById("gearGrid").innerHTML = GEAR.map(g => {
+  const l = aff(g.url);
+  return `<div class="gear">
+    <div class="shot"><img src="${esc(g.img)}" alt="${esc(g.name)}" onerror="this.remove()"></div>
+    <div class="body">
+      <h3>${esc(g.name)}</h3>
+      <p>${esc(g.note)}</p>
+      <p class="price">${money(g.price)}</p>
+      <a class="go" href="${esc(l.href)}" target="_blank" rel="${l.paid ? "sponsored noopener" : "noopener"}">${l.paid ? "Buy at Eunorau" : "See it"} →</a>
+    </div>
+  </div>`;
+}).join("");
+document.getElementById("gearAll").href = aff("https://eunorau-ebike.com/equipment").href;
 </script>
 </body>
 </html>
