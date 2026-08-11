@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="impact-site-verification" value="9007e76e-d500-48ff-a335-95525199aecd">
+<title>About &amp; Contact — EbikeBuy</title>
+<meta name="description" content="Who we are, how we make money, and how to reach us. E-bike assembly, tuning, repair and parts by Bikes Plus in Jensen Beach, FL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--lime:#8DC63F;--lime-dk:#77AC2F;--black:#0D0D0D;--ink:#1A1A1A;--grey:#6B7280;
+  --line:#E3E3E1;--wash:#F6F6F4;--f-head:'Montserrat',system-ui,sans-serif;
+  --f-body:'Inter',system-ui,sans-serif;--gut:clamp(16px,4vw,40px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:#fff;font-size:16px;
+  line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 var(--gut)}
+
+.hdr{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.hdr .bar{max-width:1240px;margin:0 auto;padding:14px var(--gut);display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.logo-badge{width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
+.logo-badge svg{width:18px;height:18px;fill:var(--black)}
+.logo-txt{font-family:var(--f-head);font-weight:800;font-size:18px;letter-spacing:-.02em;line-height:1}
+.logo-txt small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.22em;color:var(--grey);margin-top:2px}
+.hdr-phone{border:1.5px solid var(--lime);border-radius:5px;padding:9px 15px;font-size:12px;
+  font-weight:700;letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.hdr-phone:hover{background:var(--lime)}
+
+.masthead{background:var(--black);color:#fff;padding:clamp(34px,5vw,62px) 0}
+.masthead h1{font-family:var(--f-head);font-weight:900;font-size:clamp(28px,5vw,46px);
+  text-transform:uppercase;letter-spacing:-.02em;margin:0;line-height:1.05}
+.masthead h1 em{font-style:normal;color:var(--lime)}
+.masthead p{color:#C9C9C5;margin:14px 0 0;font-size:16px;max-width:60ch}
+
+main{padding:clamp(34px,5vw,58px) 0 60px}
+section{scroll-margin-top:78px;padding-bottom:34px;margin-bottom:34px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--f-head);font-weight:800;font-size:clamp(20px,3vw,27px);text-transform:uppercase;
+  letter-spacing:-.01em;margin:0 0 4px}
+.rule{width:52px;height:3px;background:var(--lime);border-radius:2px;margin-bottom:20px}
+h3{font-size:15.5px;font-weight:700;margin:24px 0 6px}
+p{margin:0 0 14px}
+ul.pl{margin:0 0 14px;padding-left:20px}
+ul.pl li{margin-bottom:7px}
+.callout{background:var(--wash);border-left:4px solid var(--lime);border-radius:0 5px 5px 0;
+  padding:16px 18px;margin:0 0 18px;font-size:14.5px}
+
+.cards{display:grid;gap:14px}
+@media(min-width:700px){.cards{grid-template-columns:repeat(2,1fr)}}
+.card{border:1px solid var(--line);border-radius:8px;padding:20px}
+.card h4{font-family:var(--f-head);font-size:13px;font-weight:800;letter-spacing:.09em;
+  text-transform:uppercase;margin:0 0 8px;color:var(--grey)}
+.card .big{font-family:var(--f-head);font-weight:800;font-size:20px;margin:0 0 4px;letter-spacing:-.01em}
+.card .big a{color:var(--lime-dk);text-decoration:none}
+.card .big a:hover{text-decoration:underline}
+.card p{margin:0;font-size:14px;color:var(--grey)}
+.card .hours{font-size:14px;color:var(--ink);margin-top:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:5px;
+  font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;
+  background:var(--lime);color:var(--black);border:2px solid var(--lime)}
+.btn:hover{background:var(--lime-dk);border-color:var(--lime-dk)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghost:hover{border-color:var(--ink)}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+.ftr{background:var(--black);color:#8E8E8A;font-size:12.5px;padding:32px 0 38px;line-height:1.85}
+.ftr a{color:#C9C9C5}
+.ftr a:hover{color:var(--lime)}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="index.html">
+      <span class="logo-badge"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></span>
+      <span class="logo-txt">EBIKEBUY<small>.COM</small></span>
+    </a>
+    <a class="hdr-phone" id="hdrPhone" href="#">772-692-5505</a>
+  </div>
+</header>
+
+<div class="masthead">
+  <div class="wrap">
+    <h1>We're the people who<br><em>actually build them.</em></h1>
+    <p>Most e-bike sites have never had a wrench on one. Here's who we are, how we make money, and how to reach us.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>About EbikeBuy</h2><div class="rule"></div>
+    <p>EbikeBuy is an e-bike buying guide and local service resource on Florida's Treasure Coast. We help people choose the right electric bike, and then we make sure it's actually built properly before anyone rides it.</p>
+    <p>The second half is the part nobody else offers. An e-bike arrives from the factory about 85% assembled — spokes loose, brake pads glazed, fasteners finger-tight. Most buyers put it together on a living room floor with the included multi-tool and ride it that way for a year. We publish the checklist that fixes that, and we'll do the work for you if you're local.</p>
+    <h3>What we tell you</h3>
+    <p>Manufacturers publish the flattering numbers. Range figures assume a light rider on flat ground with no wind. "1000W" often means peak, not sustained. We'd rather give you the specification we can verify and say plainly when we can't verify something.</p>
+    <p>That extends to recommendations. If a bike isn't right for you, we'll say so — including bikes we earn a commission on. A customer who buys the wrong e-bike doesn't come back, and doesn't send their neighbor.</p>
+  </section>
+
+  <section id="parts">
+    <h2>Parts, accessories &amp; repair</h2><div class="rule"></div>
+    <p>Bikes Plus in Jensen Beach handles assembly, tuning and repair on any e-bike — any brand, whether or not you bought it through us. That includes the work most shops turn away because it's electric.</p>
+    <ul class="pl">
+      <li><b>Assembly</b> — the full nine-point pre-delivery checklist, every fastener torqued to spec</li>
+      <li><b>Tune-ups</b> — brakes, gears, wheels, bearings, tire pressure set to your weight</li>
+      <li><b>Repairs</b> — flats, brake service, drivetrain, wheel building, cable and housing</li>
+      <li><b>Electrical diagnosis</b> — displays, controllers, connectors, battery and charging faults</li>
+      <li><b>Parts fitting</b> — racks, fenders, lights, mirrors, child seats, trailers and saddles</li>
+    </ul>
+    <p>Bring the part in and we'll fit it, or order it through the accessory links on our site and have it shipped straight to the shop so it's on the bike when you collect it.</p>
+    <div class="callout">
+      <b>A note on batteries.</b> Lithium packs are the one component where a bad decision gets expensive or dangerous. We won't fit an unbranded replacement pack or a charger that isn't matched to the bike, and we'll always tell you when a pack is genuinely worn versus just needing a balance charge.
+    </div>
+    <div class="btnrow">
+      <a class="btn" href="index.html#bench">See the assembly checklist</a>
+      <a class="btn btn--ghost" href="index.html#gear">Browse parts &amp; accessories</a>
+    </div>
+  </section>
+
+  <section id="money">
+    <h2>How we make money</h2><div class="rule"></div>
+    <p>Two ways, and we'd rather you knew both.</p>
+    <p><b>Affiliate commissions.</b> When you buy a bike through a link on this site, the brand pays us a commission. It costs you nothing extra — the price is the same as going to them directly. Our current affiliate partner is EUNORAU; links to any other brand are plain links that pay us nothing. This is disclosed on every page and set out in full in our <a href="policies.html#affiliate">affiliate disclosure</a>.</p>
+    <p><b>Service work.</b> Assembly, tuning and repairs at the shop. That's a flat fee for labor, quoted before we start.</p>
+    <p>The commission does not change what we recommend. We'd rather point you at the right bike and earn nothing than sell you the wrong one and handle the complaint.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2><div class="rule"></div>
+    <p>Questions about a bike, a build, a repair, or an order — call or email. A mechanic answers, not a script.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h4>Phone</h4>
+        <p class="big"><a id="cPhone" href="#">772-692-5505</a></p>
+        <p>Fastest way to reach us. Call for repair questions, parts, or to book a build.</p>
+        <p class="hours" id="cHours"></p>
+      </div>
+      <div class="card">
+        <h4>Email</h4>
+        <p class="big"><a id="cEmail" href="#">email</a></p>
+        <p>Best for bookings and anything with photos attached — send pictures of the fault and we can usually tell you what it is.</p>
+      </div>
+      <div class="card">
+        <h4>Workshop</h4>
+        <p class="big" id="cShop">Bikes Plus</p>
+        <p id="cAddr"></p>
+        <p class="hours"><a id="cMap" target="_blank" rel="noopener">Get directions →</a></p>
+      </div>
+      <div class="card">
+        <h4>Pick-up &amp; delivery</h4>
+        <p class="big" id="cPickup">$45</p>
+        <p>Can't get the bike to us? We'll collect it from your door and bring it back built. Local to Jensen Beach and Stuart.</p>
+      </div>
+    </div>
+
+    <h3>Booking a build</h3>
+    <p>Tell us the brand and model, whether you already have the bike or it's still shipping, and the best way to reach you. If it's arriving by freight, send the tracking number and we'll take delivery and inspect it for you.</p>
+    <div class="btnrow">
+      <a class="btn" id="bookBtn" href="#">Email to book</a>
+      <a class="btn btn--ghost" href="policies.html">Read our policies</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="index.html">Back to shop</a> · <a href="policies.html#affiliate">Affiliate disclosure</a> · <a href="policies.html#privacy">Privacy</a><br><br>
+    EbikeBuy is an independent buying guide and service resource. Brand and product names are the property of their respective owners.
+    Some links on this site are affiliate links; we may earn a commission at no additional cost to you.
+  </div>
+</footer>
+
+<script>
+/* Keep these matched to index.html */
+const CONFIG = {
+  shopName: "Bikes Plus",
+  address:  "879 NE Jensen Beach Blvd, Jensen Beach, FL 34957",
+  city:     "Jensen Beach, FL",
+  hours:    "Mon–Fri 9–5 · Sat 9–2 · Sun closed",
+  phone:    "772-692-5505",
+  email:    "bikesplusjb@gmail.com",
+  pickupFee: 45
+};
+
+const tel = "tel:" + CONFIG.phone.replace(/\D/g,"");
+document.getElementById("hdrPhone").href = tel;
+const cp = document.getElementById("cPhone"); cp.textContent = CONFIG.phone; cp.href = tel;
+const ce = document.getElementById("cEmail"); ce.textContent = CONFIG.email; ce.href = "mailto:" + CONFIG.email;
+document.getElementById("cHours").textContent = CONFIG.hours;
+document.getElementById("cShop").textContent  = CONFIG.shopName;
+document.getElementById("cAddr").textContent  = CONFIG.address;
+document.getElementById("cPickup").textContent = "$" + CONFIG.pickupFee;
+document.getElementById("cMap").href =
+  "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.shopName + " " + CONFIG.address);
+document.getElementById("bookBtn").href =
+  "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Assembly / service booking")
+  + "&body=" + encodeURIComponent("Bike brand and model:\nWhere it is now (shipping to you / already have it):\nWhat you need (assembly / tune-up / repair):\nYour name:\nBest way to reach you:\n");
+</script>
+</body>
+</html>
