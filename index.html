@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EbikeBuy — Ride Further. Go Anywhere.</title>
-<meta name="description" content="E-bike assembly, tuning and safety inspection at Bikes Plus in Jensen Beach, FL. Any brand, wherever you bought it — torqued to spec, brakes bedded in, battery verified and fitted to you.">
+<meta name="description" content="E-bike assembly, tuning and repair by Bikes Plus in Jensen Beach, FL. Any brand, wherever you bought it — torqued to spec, brakes bedded in, battery verified and fitted to you.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -138,8 +138,32 @@ a{color:inherit;text-decoration:none}
 .chk p b{color:var(--white);font-weight:600}
 .chk .spec{display:block;font-size:11.5px;color:#8E8E8A;margin-top:3px;
   font-variant-numeric:tabular-nums}
-.bench-foot{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.pickup{margin:18px 0 0;padding:12px 15px;background:rgba(141,198,63,.10);
+  border:1px solid rgba(141,198,63,.35);border-radius:6px;font-size:14px;color:#DEDEDA}
+.pickup b{color:var(--lime);font-weight:700}
+.bench-foot{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;align-items:center}
 .bench-foot .fine{font-size:12.5px;color:#8A8A86}
+
+.loc{margin-top:34px;background:#151515;border:1px solid #262626;border-radius:8px;
+  padding:20px 22px;display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.loc-map{width:46px;height:46px;border-radius:8px;background:rgba(141,198,63,.14);
+  border:1px solid rgba(141,198,63,.4);display:grid;place-items:center;flex:none}
+.loc-map svg{width:22px;height:22px;stroke:var(--lime);fill:none;stroke-width:1.8}
+.loc-body{flex:1;min-width:200px}
+.loc-tag{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--lime);margin:0 0 4px}
+.loc-body h3{font-family:var(--f-head);font-weight:800;font-size:18px;margin:0 0 4px;
+  text-transform:uppercase;letter-spacing:-.01em;color:#fff}
+.loc-addr{margin:0;font-size:14.5px;color:#DEDEDA}
+.loc-hours{margin:3px 0 0;font-size:13px;color:#8E8E8A}
+.loc-phone{margin:6px 0 0}
+.loc-phone a{font-family:var(--f-head);font-weight:700;font-size:16px;color:var(--lime);
+  text-decoration:none;letter-spacing:.01em}
+.loc-phone a:hover{text-decoration:underline}
+.loc-btn{background:transparent;border:1.5px solid #3A3A3A;color:#fff;border-radius:5px;
+  padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.loc-btn:hover{border-color:var(--lime);color:var(--lime)}
 
 /* ---------- trust strip ---------- */
 .trust{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line);
@@ -233,11 +257,11 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="left">
       <span><svg viewBox="0 0 24 24"><path d="M1 3h13v13H1zM14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg> Any brand, any bike</span>
-      <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M9 15l2 2 4-4"/></svg> Local assembly offered</span>
-      <span><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg> Expert support</span>
+      <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M9 15l2 2 4-4"/></svg> Local assembly · pickup & delivery</span>
+      <span><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.4-1.3a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> 772-692-5505</span>
     </div>
     <div class="right">
-      <span><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> Built at Bikes Plus, Jensen Beach</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> Assembly &amp; repair by Bikes Plus</span>
     </div>
   </div>
 </div>
@@ -257,7 +281,7 @@ a{color:inherit;text-decoration:none}
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="cart-pill" href="#bench">Book assembly</a>
+    <a class="cart-pill" id="hdrPhone" href="#">772-692-5505</a>
   </div>
 </header>
 
@@ -269,7 +293,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="wrap">
     <h1>Ride further.<br>Go <em>anywhere</em>.</h1>
-    <p class="sub">Find the right e-bike, then get it built properly. <b>Local assembly offered at Bikes Plus in Jensen Beach</b> — torqued to spec, brakes bedded in, battery verified and fitted to you, on any bike from any brand.</p>
+    <p class="sub">Find the right e-bike, then get it built properly. <b>Bikes Plus in Jensen Beach can assemble, tune and repair it</b> — torqued to spec, brakes bedded in, battery verified and fitted to you, on any bike from any brand.</p>
     <div class="hero-cta">
       <a class="btn btn--lime" href="#bench">Book local assembly</a>
       <a class="btn btn--outline" href="#bikes">Browse e-bikes</a>
@@ -282,16 +306,18 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="bench-top">
       <div>
-        <span class="bench-tag">Local assembly · Jensen Beach, FL</span>
-        <h2>Anyone can ship you a box.<br><em>We build what's in it.</em></h2>
-        <p class="lede">An e-bike arrives about 85% assembled, with loose spokes and glazed brake pads. Most people ride it that way. Bring yours to <b>Bikes Plus in Jensen Beach</b> — or have it shipped straight there — and it goes through the same checklist every time, on a real bench with real tools.</p>
+        <span class="bench-tag">Local partner · Bikes Plus, Jensen Beach</span>
+        <h2>Anyone can ship you a box.<br><em>Bikes Plus builds what's in it.</em></h2>
+        <p class="lede">An e-bike arrives about 85% assembled, with loose spokes and glazed brake pads. Most people ride it that way. Take yours to <b>Bikes Plus in Jensen Beach</b> — or have it shipped straight there — and it goes through the same checklist every time, on a real bench with real tools. They handle assembly, tuning and repairs on any e-bike, whatever brand it is and wherever you bought it.</p>
         <div class="bench-price">
           <strong id="benchPrice">$165</strong>
           <span>Professional assembly, safety inspection<br>and fine tuning. Any brand, wherever you bought it.<br><b id="shopLine"></b></span>
         </div>
+        <p class="pickup" id="pickupLine"></p>
+
         <div class="bench-foot">
-          <a class="btn btn--lime" id="bookBtn" href="#contact">Email to book assembly</a>
-          <span class="fine">Ready in 3–5 days · drop off or ship it in</span>
+          <a class="btn btn--lime" id="bookBtn" href="#contact">Email to book</a>
+          <span class="fine">Ready in 3–5 days · drop off, ship in, or collected</span>
         </div>
       </div>
 
@@ -303,6 +329,20 @@ a{color:inherit;text-decoration:none}
         <div id="chkList"></div>
       </div>
     </div>
+
+    <div class="loc">
+      <div class="loc-map">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="loc-body">
+        <p class="loc-tag">Assembly location</p>
+        <h3 id="locName">Bikes Plus</h3>
+        <p class="loc-addr" id="locAddr"></p>
+        <p class="loc-hours" id="locHours"></p>
+        <p class="loc-phone"><a id="locPhone" href="#"></a></p>
+      </div>
+      <a class="loc-btn" id="locBtn" target="_blank" rel="noopener">Get directions →</a>
+    </div>
   </div>
 </section>
 
@@ -310,7 +350,7 @@ a{color:inherit;text-decoration:none}
 <div class="trust">
   <div>
     <svg viewBox="0 0 24 24"><path d="M1 3h13v13H1zM14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg>
-    <div><h4>Local assembly</h4><p>Any brand, wherever you bought it. Built and safety checked at Bikes Plus in Jensen Beach.</p></div>
+    <div><h4>Local shop, not a warehouse</h4><p>Bikes Plus in Jensen Beach assembles, tunes and repairs any brand. Pick-up and delivery $45.</p></div>
   </div>
   <div>
     <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -379,6 +419,7 @@ a{color:inherit;text-decoration:none}
       <div>
         <h5>EbikeBuy</h5>
         <span id="ftrCity">Jensen Beach, FL</span><br>
+        <a href="#" id="ftrPhone">phone</a><br>
         <a href="#" id="ftrEmail">email</a>
       </div>
       <div>
@@ -412,10 +453,13 @@ a{color:inherit;text-decoration:none}
    ========================================================== */
 const CONFIG = {
   shopName: "Bikes Plus",
-  address:  "Jensen Beach, FL",   // <-- put the full street address here
+  address:  "879 NE Jensen Beach Blvd, Jensen Beach, FL 34957",
+  hours:    "Mon–Fri 9–5 · Sat 9–2 · Sun closed",
+  phone:    "772-692-5505",
   city:  "Jensen Beach, FL",
   email: "bikesplusjb@gmail.com",   // <-- your address
   assemblyPrice: 165,
+  pickupFee: 45,      // pick-up & delivery, local
   heroImage: "https://cdn.shopify.com/s/files/1/2389/5887/files/V1A0406.jpg?v=1725940050"   // EUNORAU lifestyle shot
 };
 
@@ -432,7 +476,7 @@ const PHOTOS = {
   // category tiles — swap for your own shots any time
   "Step-through": "https://cdn.shopify.com/s/files/1/2389/5887/files/8_c7b59161-3c4f-4bc0-a2eb-d4eec978fdc1.jpg?v=1759210184",
   "Fat tire":     "https://cdn.shopify.com/s/files/1/2389/5887/files/17_16-9.jpg?v=1754966233",
-  "Folding":      "",
+  "Folding":      "https://eunorau-ebike.com/cdn/shop/files/16-9_02.jpg?v=1737775101&width=1200",
   "Commuter":     "https://cdn.shopify.com/s/files/1/2389/5887/files/11_1_6f7aa12a-b4e2-4dad-b848-74a00b18216f.jpg?v=1711441385",
   "Cargo":        "https://cdn.shopify.com/s/files/1/2389/5887/files/G30-CARGO_643e152f-ba96-42ba-964e-7418dda9cdf0.jpg?v=1721102049",
   "Mountain":     "https://cdn.shopify.com/s/files/1/2389/5887/files/DEFENDER-S-_1_1.jpg?v=1765163679",
@@ -447,7 +491,7 @@ const PHOTOS = {
   "SPECTER-ST 2.0":    "https://cdn.shopify.com/s/files/1/2389/5887/files/02_157bdbf7-1a8b-47f3-8685-a41a07a52741.jpg?v=1725940043",
 
   // trikes — not in the frontpage feed; pull from the trikes collection JSON
-  "ONE-TRIKE 2.0":     "",
+  "ONE-TRIKE 2.0":     "https://eunorau-ebike.com/cdn/shop/files/Red4.jpg?v=1751858995&width=1200",
   "NEW-TRIKE 2.0":     "https://eunorau-ebike.com/cdn/shop/files/new-trike3_1_1.jpg?v=1780641045&width=1200",
   "T1 Recumbent":      "https://cdn.shopify.com/s/files/1/2389/5887/files/02_1_c668c08f-3c0e-47d0-b483-3632210bb901.jpg?v=1783914338&width=1200"
 };
@@ -660,6 +704,8 @@ const money = n => "$" + n.toLocaleString("en-US",{minimumFractionDigits:2,maxim
 /* branding */
 document.getElementById("benchPrice").textContent = "$" + CONFIG.assemblyPrice;
 document.getElementById("ftrCity").textContent = CONFIG.city;
+const fp = document.getElementById("ftrPhone"); fp.textContent = CONFIG.phone; fp.href = "tel:" + CONFIG.phone.replace(/\D/g,"");
+document.getElementById("hdrPhone").href = "tel:" + CONFIG.phone.replace(/\D/g,"");
 const fe = document.getElementById("ftrEmail"); fe.textContent = CONFIG.email; fe.href = "mailto:" + CONFIG.email;
 if(CONFIG.heroImage){
   const hi = document.createElement("img");
@@ -669,7 +715,19 @@ if(CONFIG.heroImage){
   document.getElementById("heroImg").appendChild(hi);
 }
 
-document.getElementById("shopLine").textContent = "At " + CONFIG.shopName + " · " + CONFIG.address;
+document.getElementById("locName").textContent  = CONFIG.shopName;
+document.getElementById("locAddr").textContent  = CONFIG.address;
+document.getElementById("locHours").textContent = CONFIG.hours;
+const lp = document.getElementById("locPhone");
+lp.textContent = CONFIG.phone;
+lp.href = "tel:" + CONFIG.phone.replace(/\D/g,"");
+
+document.getElementById("locBtn").href =
+  "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.shopName + " " + CONFIG.address);
+
+document.getElementById("pickupLine").innerHTML =
+  "<b>Pick-up &amp; delivery available — $" + CONFIG.pickupFee + ".</b> Can't get it there? Bikes Plus will collect the bike from your door and bring it back built.";
+document.getElementById("shopLine").textContent = CONFIG.shopName + " · " + CONFIG.city;
 const bb = document.getElementById("bookBtn");
 bb.href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Assembly booking")
   + "&body=" + encodeURIComponent("Bike brand and model:\nWhere it is now (shipping to you / already have it):\nYour name:\nBest way to reach you:\n");
@@ -692,8 +750,8 @@ document.getElementById("picksIntro").textContent = ANY_PAID
 
 /* badge disclosure — honest about whether links pay us yet */
 document.getElementById("discloseBody").innerHTML = ANY_PAID
-  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — bring it to ${CONFIG.shopName} in ${CONFIG.city} and we'll finish the job properly.`
-  : `<b>Buy direct</b> — these brands sell only through their own websites, so we send you straight to them. We're not a dealer for them yet and these links don't pay us anything, so take the recommendation at face value. Whatever you buy and wherever you buy it, we'll build it for you at ${CONFIG.shopName} in ${CONFIG.city}.`;
+  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — take it to Bikes Plus in ${CONFIG.city} and we'll finish the job properly.`
+  : `<b>Buy direct</b> — these brands sell only through their own websites, so we send you straight to them. We're not a dealer for them yet and these links don't pay us anything, so take the recommendation at face value. Whatever you buy and wherever you buy it, Bikes Plus in ${CONFIG.city} will build it for you.`;
 
 /* products */
 const ICON_MOTOR = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
