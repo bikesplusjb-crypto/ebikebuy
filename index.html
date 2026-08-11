@@ -1,1 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EbikeBuy — Ride Further. Go Anywhere.</title>
+<meta name="description" content="Premium e-bikes shipped to your door from EbikeBuy. Local to Jensen Beach and Stuart? Have it built on our bench first — torqued to spec, brakes bedded in, battery verified, test ridden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   EBIKEBUY.COM — homepage
+   Everything editable lives in the CONFIG + BIKES blocks
+   in the JS at the bottom of this file.
+   =========================================================== */
+:root{
+  --lime:#8DC63F;
+  --lime-dk:#77AC2F;
+  --black:#0D0D0D;
+  --ink:#1A1A1A;
+  --grey:#6B7280;
+  --line:#E3E3E1;
+  --wash:#F6F6F4;
+  --white:#FFFFFF;
+  --f-head:'Montserrat',system-ui,sans-serif;
+  --f-body:'Inter',system-ui,sans-serif;
+  --gut:clamp(16px,4vw,40px);
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--white);
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
 
+/* ---------- utility bar ---------- */
+.util{background:var(--black);color:#E8E8E6;font-size:11.5px;letter-spacing:.04em}
+.util .wrap{display:flex;align-items:center;gap:10px 26px;padding-top:9px;padding-bottom:9px;
+  flex-wrap:wrap;justify-content:center}
+.util .left{display:flex;gap:10px 26px;flex-wrap:wrap;margin-right:auto}
+.util .right{display:flex;gap:22px}
+.util span{display:flex;align-items:center;gap:7px;text-transform:uppercase;font-weight:500}
+.util svg{width:14px;height:14px;stroke:var(--lime);fill:none;stroke-width:1.8}
+@media(max-width:760px){.util .right{display:none}}
+
+/* ---------- header ---------- */
+.hdr{position:sticky;top:0;z-index:70;background:var(--white);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:18px;padding-top:14px;padding-bottom:14px}
+.logo{display:flex;align-items:center;gap:10px;margin-right:auto}
+.logo-badge{width:38px;height:38px;border-radius:50%;background:var(--lime);
+  display:grid;place-items:center;flex:none}
+.logo-badge svg{width:19px;height:19px;fill:var(--black)}
+.logo-txt{font-family:var(--f-head);font-weight:800;font-size:19px;letter-spacing:-.02em;line-height:1}
+.logo-txt small{display:block;font-size:10px;font-weight:600;letter-spacing:.24em;color:var(--grey);margin-top:2px}
+.nav{display:none;gap:26px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.nav a:hover{color:var(--lime-dk)}
+@media(min-width:1040px){.nav{display:flex}}
+.cart-pill{border:1.5px solid var(--lime);border-radius:5px;padding:8px 14px;
+  font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;background:var(--white)}
+.cart-pill svg{width:16px;height:16px;stroke:var(--ink);fill:none;stroke-width:1.8}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--black);color:var(--white);overflow:hidden}
+.hero-img{position:absolute;inset:0;opacity:.55}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img .ph{position:absolute;inset:0;background:
+  linear-gradient(180deg,#221d16 0%,#4a3620 34%,#a86b2c 58%,#e0a34e 66%,#3d3428 100%)}
+.hero-scene{position:absolute;inset:0;width:100%;height:100%}
+.hero-scene svg{width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(13,13,13,.94) 0%,rgba(13,13,13,.72) 46%,rgba(13,13,13,.15) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:clamp(48px,7vw,92px);padding-bottom:clamp(48px,7vw,92px)}
+.hero h1{font-family:var(--f-head);font-weight:900;font-size:clamp(34px,6.4vw,64px);
+  line-height:1.02;letter-spacing:-.025em;margin:0;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero .sub{font-size:clamp(15px,1.9vw,19px);color:#D6D6D2;margin:20px 0 0;max-width:44ch;line-height:1.6}
+.hero .sub b{color:var(--white);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 28px;border-radius:5px;border:2px solid transparent;
+  font-size:13.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  transition:background .15s,color .15s,border-color .15s}
+.btn--lime{background:var(--lime);color:var(--black)}
+.btn--lime:hover{background:var(--lime-dk)}
+.btn--outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.45)}
+.btn--outline:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
+.btn--dark{background:var(--black);color:var(--white)}
+.btn--dark:hover{background:#262626}
+.btn--ghostdark{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghostdark:hover{border-color:var(--ink)}
+
+/* ---------- section shell ---------- */
+.sec{padding:clamp(46px,6vw,78px) 0}
+.sec--wash{background:var(--wash)}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head h2{font-family:var(--f-head);font-weight:800;font-size:clamp(23px,3.4vw,34px);
+  letter-spacing:.01em;text-transform:uppercase;margin:0}
+.sec-head .bar{width:64px;height:3px;background:var(--lime);margin:14px auto 0;border-radius:2px}
+.sec-head p{color:var(--grey);font-size:15px;margin:14px auto 0;max-width:62ch}
+
+/* ---------- BENCH / build sheet ---------- */
+.bench{background:var(--black);color:var(--white)}
+.bench .wrap{padding-top:clamp(40px,5.5vw,64px);padding-bottom:clamp(40px,5.5vw,64px)}
+.bench-top{display:grid;gap:26px;align-items:start}
+@media(min-width:900px){.bench-top{grid-template-columns:1.05fr 1fr;gap:52px}}
+.bench-tag{display:inline-flex;align-items:center;gap:9px;background:rgba(141,198,63,.14);
+  border:1px solid rgba(141,198,63,.42);color:var(--lime);border-radius:100px;
+  padding:6px 14px;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.bench h2{font-family:var(--f-head);font-weight:900;font-size:clamp(26px,4vw,42px);
+  line-height:1.06;letter-spacing:-.02em;text-transform:uppercase;margin:18px 0 0}
+.bench h2 em{font-style:normal;color:var(--lime)}
+.bench .lede{color:#C9C9C5;font-size:15.5px;margin:16px 0 0;max-width:48ch}
+.bench-price{display:flex;align-items:baseline;gap:12px;margin-top:24px;
+  padding-top:22px;border-top:1px solid #2A2A2A}
+.bench-price strong{font-family:var(--f-head);font-weight:900;font-size:40px;
+  letter-spacing:-.03em;color:var(--lime);line-height:1}
+.bench-price span{font-size:13px;color:#9A9A96;line-height:1.4}
+
+.checklist{background:#151515;border:1px solid #262626;border-radius:8px;overflow:hidden}
+.checklist-hd{background:#1E1E1E;padding:13px 18px;display:flex;justify-content:space-between;
+  align-items:center;gap:12px;border-bottom:1px solid #2A2A2A}
+.checklist-hd strong{font-family:var(--f-head);font-size:12.5px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase}
+.checklist-hd span{font-size:10.5px;letter-spacing:.1em;color:#8A8A86;text-transform:uppercase}
+.chk{display:flex;gap:12px;padding:11px 18px;border-bottom:1px solid #212121;align-items:flex-start}
+.chk:last-child{border-bottom:0}
+.chk .tick{width:16px;height:16px;flex:none;margin-top:3px;border-radius:3px;
+  background:var(--lime);display:grid;place-items:center}
+.chk .tick svg{width:10px;height:10px;stroke:var(--black);stroke-width:3;fill:none}
+.chk p{margin:0;font-size:13.8px;line-height:1.45;color:#DEDEDA}
+.chk p b{color:var(--white);font-weight:600}
+.chk .spec{display:block;font-size:11.5px;color:#8E8E8A;margin-top:3px;
+  font-variant-numeric:tabular-nums}
+.bench-foot{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.bench-foot .fine{font-size:12.5px;color:#8A8A86}
+
+/* ---------- trust strip ---------- */
+.trust{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)}
+@media(min-width:700px){.trust{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.trust{grid-template-columns:repeat(4,1fr)}}
+.trust > div{background:var(--white);padding:22px var(--gut);display:flex;gap:13px;align-items:flex-start}
+.trust svg{width:22px;height:22px;stroke:var(--lime);fill:none;stroke-width:1.7;flex:none;margin-top:2px}
+.trust h4{font-family:var(--f-head);font-size:12.5px;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;margin:0 0 3px}
+.trust p{margin:0;font-size:12.8px;color:var(--grey);line-height:1.5}
+
+/* ---------- categories ---------- */
+.cats{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:700px){.cats{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1040px){.cats{grid-template-columns:repeat(6,1fr)}}
+.cat{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  text-align:center;transition:border-color .15s,transform .15s;display:block}
+.cat:hover{border-color:var(--lime);transform:translateY(-2px)}
+.cat .thumb{aspect-ratio:1/1;background:var(--wash);display:grid;place-items:center;overflow:hidden}
+.cat .thumb img{width:100%;height:100%;object-fit:cover}
+.cat .thumb .art,.prod .shot .art{width:100%;padding:12%;display:block}
+.cat .thumb .art svg,.prod .shot .art svg{width:100%;height:auto}
+.cat .thumb .ph{font-size:10.5px;letter-spacing:.12em;color:#B4B4AE;text-transform:uppercase}
+.cat .lbl{padding:13px 10px 16px}
+.cat h4{font-family:var(--f-head);font-size:13px;font-weight:800;letter-spacing:.05em;
+  text-transform:uppercase;margin:0 0 3px}
+.cat p{margin:0;font-size:11.8px;color:var(--grey)}
+
+/* ---------- products ---------- */
+.prods{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+@media(min-width:900px){.prods{grid-template-columns:repeat(5,1fr)}}
+.prod{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;transition:box-shadow .15s,border-color .15s}
+.prod:hover{border-color:#CFCFCB;box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.prod .shot{aspect-ratio:1/1;background:var(--wash);position:relative;display:grid;place-items:center;overflow:hidden}
+.prod .shot img{width:100%;height:100%;object-fit:contain;padding:12px}
+.prod .shot .ph{font-size:10.5px;letter-spacing:.12em;color:#B4B4AE;text-transform:uppercase}
+.flag{position:absolute;top:10px;left:10px;font-size:9.5px;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;padding:4px 8px;border-radius:3px}
+.flag--seller{background:var(--lime);color:var(--black)}
+.flag--new{background:var(--black);color:var(--white)}
+.chan{position:absolute;top:10px;right:10px;font-size:9.5px;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;padding:4px 8px;border-radius:3px;border:1px solid}
+.chan--ship{background:var(--white);color:var(--lime-dk);border-color:var(--lime)}
+.chan--aff{background:var(--white);color:var(--grey);border-color:var(--line)}
+.prod .body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+.prod .brand{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--grey);margin:0 0 4px}
+.prod h3{font-family:var(--f-head);font-size:15px;font-weight:700;letter-spacing:-.01em;margin:0 0 9px}
+.prod .stats{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11.5px;color:var(--grey);margin-bottom:12px}
+.prod .stats span{display:flex;align-items:center;gap:5px}
+.prod .stats svg{width:12px;height:12px;stroke:var(--grey);fill:none;stroke-width:1.8}
+.prod .price{font-family:var(--f-head);font-weight:800;font-size:19px;letter-spacing:-.02em;
+  margin:auto 0 12px}
+.prod .go{display:block;text-align:center;padding:11px;border-radius:5px;font-size:12px;
+  font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--line)}
+.prod .go:hover{border-color:var(--ink)}
+.prod .go--lime{background:var(--lime);border-color:var(--lime);color:var(--black)}
+.prod .go--lime:hover{background:var(--lime-dk);border-color:var(--lime-dk)}
+
+/* ---------- disclosure ---------- */
+.disclose{border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:6px;
+  background:var(--wash);padding:18px 20px;margin-top:28px}
+.disclose h4{font-family:var(--f-head);font-size:12.5px;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;margin:0 0 7px}
+.disclose p{margin:0;font-size:13.5px;color:var(--grey);max-width:88ch}
+.disclose p b{color:var(--ink)}
+
+/* ---------- footer ---------- */
+.ftr{background:var(--black);color:#A5A5A1;font-size:12.5px;line-height:1.85;
+  padding:44px 0 40px;margin-top:0}
+.ftr .cols{display:grid;gap:26px;margin-bottom:28px}
+@media(min-width:760px){.ftr .cols{grid-template-columns:1.4fr 1fr 1fr}}
+.ftr h5{font-family:var(--f-head);font-size:12px;font-weight:800;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--white);margin:0 0 10px}
+.ftr a:hover{color:var(--lime)}
+.ftr .legal{border-top:1px solid #232323;padding-top:20px;font-size:11.5px;color:#7C7C78;max-width:96ch}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- ===== utility bar ===== -->
+<div class="util">
+  <div class="wrap">
+    <div class="left">
+      <span><svg viewBox="0 0 24 24"><path d="M1 3h13v13H1zM14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg> Free shipping on all bikes</span>
+      <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M9 15l2 2 4-4"/></svg> Expert assembly available</span>
+      <span><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg> Expert support</span>
+    </div>
+    <div class="right">
+      <span><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> My account</span>
+      <span><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg> Cart (0)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== header ===== -->
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <span class="logo-badge"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></span>
+      <span class="logo-txt">EBIKEBUY<small>.COM</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#bikes">E-Bikes</a>
+      <a href="#categories">Categories</a>
+      <a href="#bikes">Accessories</a>
+      <a href="#bikes">Batteries</a>
+      <a href="#bench">Assembly</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="cart-pill"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg> 0</span>
+  </div>
+</header>
+
+<!-- ===== hero ===== -->
+<section class="hero" id="top">
+  <div class="hero-img" id="heroImg">
+    <div class="ph"></div>
+    <div class="hero-scene" id="heroScene"></div>
+  </div>
+  <div class="wrap">
+    <h1>Ride further.<br>Go <em>anywhere</em>.</h1>
+    <p class="sub">Premium e-bikes shipped straight to your door. Or — if you're local to Jensen Beach or Stuart — <b>have it land on our bench first.</b> Torqued to spec, brakes bedded in, battery verified, road tested before you ever ride it.</p>
+    <div class="hero-cta">
+      <a class="btn btn--lime" href="#bikes">Shop e-bikes</a>
+      <a class="btn btn--outline" href="#bench">See what assembly includes</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENCH — moved directly under the hero ===== -->
+<section class="bench" id="bench">
+  <div class="wrap">
+    <div class="bench-top">
+      <div>
+        <span class="bench-tag">Local to Jensen Beach &amp; Stuart</span>
+        <h2>Anyone can ship you a box.<br><em>We build what's in it.</em></h2>
+        <p class="lede">An e-bike arrives about 85% assembled, with loose spokes and glazed brake pads. Most people ride it that way. Bring yours here — or have it delivered here — and it goes through the same checklist every time.</p>
+        <div class="bench-price">
+          <strong id="benchPrice">$129</strong>
+          <span>Professional assembly, safety inspection<br>and fine tuning. Any brand, wherever you bought it.</span>
+        </div>
+        <div class="bench-foot">
+          <a class="btn btn--lime" href="#contact">Book assembly</a>
+          <span class="fine">Ready in 3–5 days · local pickup</span>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <div class="checklist-hd">
+          <strong>Pre-Delivery Checklist</strong>
+          <span>10 operations · ~2.5 hrs</span>
+        </div>
+        <div id="chkList"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== trust strip (claims corrected) ===== -->
+<div class="trust">
+  <div>
+    <svg viewBox="0 0 24 24"><path d="M1 3h13v13H1zM14 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg>
+    <div><h4>Free shipping</h4><p>Every bike, anywhere in the lower 48. Freight and liftgate included.</p></div>
+  </div>
+  <div>
+    <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+    <div><h4>Manufacturer warranty</h4><p>1–2 years on frame, motor and battery, backed by each brand. We file and chase the claim for you.</p></div>
+  </div>
+  <div>
+    <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 019-9 9 9 0 016.7 3M21 12a9 9 0 01-9 9 9 9 0 01-6.7-3"/><path d="M21 3v6h-6M3 21v-6h6"/></svg>
+    <div><h4>30-day returns</h4><p>Unridden bikes in original packaging. Return freight and a 10% restocking fee apply — bikes are heavy, and we'd rather say so up front.</p></div>
+  </div>
+  <div>
+    <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+    <div><h4>Expert support</h4><p>A mechanic answers, not a script. Before you buy and long after.</p></div>
+  </div>
+</div>
+
+<!-- ===== categories ===== -->
+<section class="sec" id="categories">
+  <div class="wrap">
+    <div class="sec-head"><h2>Shop by category</h2><div class="bar"></div></div>
+    <div class="cats" id="cats"></div>
+    <div style="text-align:center;margin-top:28px">
+      <a class="btn btn--ghostdark" href="#bikes">View all e-bikes</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== products ===== -->
+<section class="sec sec--wash" id="bikes">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Top picks</h2><div class="bar"></div>
+      <p>Some of these we ship to you directly. Some we send you to the brand, because they only sell direct — and we'd rather point you at the right bike than only show you ours.</p>
+    </div>
+    <div class="prods" id="prods"></div>
+
+    <div class="disclose">
+      <h4>How to read the badges</h4>
+      <p><b>We ship</b> — you buy from EbikeBuy, we handle the order, the freight claim and the warranty paperwork. <b>Buy direct</b> — the brand sells these themselves; our link earns us a commission at no extra cost to you, and it doesn't change a word of what we tell you about the bike. Either way, assembly on our bench is available.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== footer ===== -->
+<footer class="ftr" id="contact">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h5>EbikeBuy</h5>
+        <span id="ftrCity">Jensen Beach, FL</span><br>
+        <a href="#" id="ftrPhone">phone</a><br>
+        <a href="#" id="ftrEmail">email</a>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <a href="#bikes">All e-bikes</a><br>
+        <a href="#categories">Categories</a><br>
+        <a href="#bench">Assembly &amp; service</a>
+      </div>
+      <div>
+        <h5>Info</h5>
+        <a href="#about">About us</a><br>
+        <a href="policies.html#shipping">Shipping &amp; returns</a><br>
+        <a href="policies.html#warranty">Warranty</a><br>
+        <a href="policies.html#privacy">Privacy policy</a><br>
+        <a href="policies.html#affiliate">Affiliate disclosure</a>
+      </div>
+    </div>
+    <div class="legal" id="about">
+      EbikeBuy is an independent retailer and service shop. Brand names and product names are the property of their respective owners and are used to identify the products we sell and service.
+      Battery safety certification varies by model — each product page states the certification for that specific bike rather than making a blanket claim.
+      Some links on this site are affiliate links; if you buy through one we may earn a commission at no additional cost to you.
+      Warranty coverage is provided by the manufacturer of each bike. Prices in USD and subject to change.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================
+   CONFIG
+   ========================================================== */
+const CONFIG = {
+  city:  "Jensen Beach, FL",
+  phone: "772-555-0100",
+  email: "hello@ebikebuy.com",
+  assemblyPrice: 129,
+  heroImage: ""      // paste your hero photo URL here
+};
+
+/* ==========================================================
+   PHOTOS — the only thing between this mock and the real site.
+   Paste a URL next to any key and that drawn illustration is
+   replaced by the photo. Leave "" and the illustration stays,
+   so the page never shows a broken or empty box.
+
+   Where to host: put the files in an /img folder in the same
+   GitHub repo and use a relative path, e.g. "img/aventure2.jpg".
+   ========================================================== */
+const PHOTOS = {
+  // category tiles
+  "Step-through": "",
+  "Fat tire":     "",
+  "Folding":      "",
+  "Commuter":     "",
+  "Cargo":        "",
+  "Mountain":     "",
+  // product shots — key is the bike name
+  "Aventure.2":       "",
+  "XP 3.0":           "",
+  "RadRunner 3 Plus": "",
+  "Soltera.2":        "",
+  "RipCurrent S":     ""
+};
+
+/* ==========================================================
+   BUILD CHECKLIST — this is the thing competitors can't copy
+   ========================================================== */
+const CHECKLIST = [
+  ["Uncrate and damage inspection", "Photographed on arrival. Freight damage is our claim to file, not yours."],
+  ["Every fastener torqued to spec", "stem 5 Nm · bars 6 Nm · rotors 6 Nm · calipers 8 Nm · cranks 40 Nm · pedals 35 Nm · axle nuts 35 Nm"],
+  ["Wheels trued, spokes tensioned", "Factory wheels ship loose. On a 70 lb bike, that ends as a cracked hub flange."],
+  ["Brakes centered and bedded in", "20 controlled stops per rotor. Out of the box, stopping distance is roughly double."],
+  ["Drivetrain indexed", "Limit screws set, chain sized, derailleur hanger checked straight."],
+  ["Tires set to your riding weight", "Not the number molded on the sidewall — the number for you."],
+  ["Full charge cycle and battery log", "Charged to 100%, cell balance verified, resting voltage recorded."],
+  ["Display configured", "Wheel size, units and class limit set properly instead of left on the factory default."],
+  ["Five-mile road test", "Loaded, under power, with hard braking. Anything that rattles loose does it with us on it."],
+  ["Fit at pickup", "Saddle height, bar rotation and lever reach set to your hands before you leave."]
+];
+
+/* ==========================================================
+   CATEGORIES
+   ========================================================== */
+const CATS = [
+  ["Step-through","Easy on. Easy off.",""],
+  ["Fat tire","Conquer any terrain.",""],
+  ["Folding","Compact. Portable.",""],
+  ["Commuter","Built for the daily grind.",""],
+  ["Cargo","Haul more. Do more.",""],
+  ["Mountain","Trail ready performance.",""]
+];
+
+/* ==========================================================
+   PRODUCTS
+   channel: "ship"  = you sell it, cart + checkout
+            "affiliate" = brand sells it, outbound tracked link
+   Only put a bike on "ship" once the dealer account is approved.
+   ========================================================== */
+const BIKES = [
+  { brand:"Aventon",   name:"Aventure.2", variant:"fat",        price:1799, motor:"750W", range:"60 mi",
+    channel:"affiliate", flag:"Best seller", url:"https://example.com/aventure2?ref=YOURCODE", img:"" },
+  { brand:"Lectric",   name:"XP 3.0", variant:"folding",            price:999,  motor:"500W", range:"45 mi",
+    channel:"affiliate", flag:"", url:"https://example.com/xp3?ref=YOURCODE", img:"" },
+  { brand:"Rad Power", name:"RadRunner 3 Plus", variant:"cargo",  price:1699, motor:"750W", range:"55 mi",
+    channel:"affiliate", flag:"New", url:"https://example.com/radrunner?ref=YOURCODE", img:"" },
+  { brand:"Aventon",   name:"Soltera.2", variant:"commuter",         price:1199, motor:"500W", range:"46 mi",
+    channel:"affiliate", flag:"", url:"https://example.com/soltera2?ref=YOURCODE", img:"" },
+  { brand:"Juiced",    name:"RipCurrent S", variant:"mountain",      price:2399, motor:"1000W", range:"70 mi",
+    channel:"affiliate", flag:"", url:"https://example.com/ripcurrent?ref=YOURCODE", img:"" }
+];
+
+/* ==========================================================
+   MOCK ARTWORK
+   Drawn placeholders so the page reads as finished.
+   Delete this block once real photos are in CONFIG / BIKES.
+   ========================================================== */
+function bikeArt(variant, stroke, accent, innerOnly){
+  stroke = stroke || "#2A2A2A"; accent = accent || "#8DC63F";
+  const V = {
+    fat:       { r:24, tire:7,  step:false, rack:false, small:false },
+    stepthru:  { r:22, tire:4,  step:true,  rack:true,  small:false },
+    folding:   { r:17, tire:5,  step:true,  rack:false, small:true  },
+    commuter:  { r:23, tire:3,  step:false, rack:true,  small:false },
+    cargo:     { r:19, tire:5,  step:true,  rack:"long",small:false },
+    mountain:  { r:24, tire:5,  step:false, rack:false, small:false }
+  }[variant] || { r:23, tire:4, step:false, rack:false, small:false };
+
+  const rw = V.r, ty = 66, fx = 34, bx = 118;           // wheel radius, ground, front/back x
+  const top = V.step ? 46 : 34;                          // top tube height
+
+  const g = `    <g fill="none" stroke="${stroke}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="${fx}" cy="${ty}" r="${rw}" stroke-width="${V.tire}"/>
+      <circle cx="${bx}" cy="${ty}" r="${rw}" stroke-width="${V.tire}"/>
+      <circle cx="${fx}" cy="${ty}" r="${rw-9}" stroke-width="1.1" opacity=".45"/>
+      <circle cx="${bx}" cy="${ty}" r="${rw-9}" stroke-width="1.1" opacity=".45"/>
+      ${V.step
+        ? `<path d="M${fx} ${ty} C${fx+14} ${ty-4} ${fx+22} ${top+8} ${fx+30} ${top+2}"/>`
+        : `<path d="M${fx} ${ty} L${fx+30} ${top+2}"/>`}
+      <path d="M${fx} ${ty} L${fx+42} ${ty} L${bx} ${ty}"/>
+      <path d="M${fx+42} ${ty} L${fx+30} ${top+2}"/>
+      <path d="M${fx+42} ${ty} L${bx} ${ty-1}"/>
+      <path d="M${fx+30} ${top+2} L${bx-4} ${top+6}"/>
+      <path d="M${bx-4} ${top+6} L${bx} ${ty}"/>
+      <path d="M${bx-4} ${top+6} L${bx-9} ${top+1}"/>
+      <path d="M${bx-14} ${top} h11"/>
+      <path d="M${fx+30} ${top+2} L${fx+28} ${top-9}"/>
+      <path d="M${fx+21} ${top-11} h15"/>
+      ${V.rack ? `<path d="M${bx-16} ${top+16} h20 M${bx-16} ${top+16} l4 9"/>` : ``}
+      ${V.rack==="long" ? `<rect x="${bx-30}" y="${top+2}" width="30" height="15" rx="2"/>` : ``}
+      <circle cx="${fx+42}" cy="${ty}" r="6.5"/>
+    </g>
+    <g fill="${accent}" opacity=".92">
+      <path d="M${fx+33} ${top+6} l${bx-fx-46} ${(ty-top-8)*0.55} l6 11 l-${bx-fx-46} -${(ty-top-8)*0.55} z"/>
+      <circle cx="${bx}" cy="${ty}" r="7"/>
+    </g>
+    <g fill="none" stroke="${accent}" stroke-width="2.2" stroke-linecap="round">
+      <path d="M${fx+18} ${top-13} l-5 -4"/>
+    </g>`;
+  return innerOnly ? g
+    : `<svg viewBox="0 0 152 92" role="img" aria-label="${variant} e-bike illustration">${g}</svg>`;
+}
+
+const CAT_VARIANT = ["stepthru","fat","folding","commuter","cargo","mountain"];
+
+/* hero scene: sunset, palms, boardwalk, bike */
+document.getElementById("heroScene").innerHTML = `
+<svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d1913"/><stop offset="42%" stop-color="#7a4c1e"/>
+      <stop offset="66%" stop-color="#e0993f"/><stop offset="78%" stop-color="#f2c274"/>
+      <stop offset="100%" stop-color="#3a3227"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c98f45"/><stop offset="100%" stop-color="#2e2a22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="620" fill="url(#sky)"/>
+  <circle cx="880" cy="392" r="58" fill="#ffd79a" opacity=".85"/>
+  <rect y="400" width="1200" height="120" fill="url(#sea)"/>
+  <g stroke="#f4cf95" stroke-width="2" opacity=".35">
+    <path d="M700 430h240M660 452h300M720 474h210M640 496h330"/>
+  </g>
+  <rect y="512" width="1200" height="108" fill="#2b251d"/>
+  <g stroke="#3a332a" stroke-width="2">
+    <path d="M0 540h1200M0 572h1200M0 604h1200"/>
+  </g>
+  <g fill="#191510">
+    <path d="M126 520V300c-4-16 4-30 12-30s12 14 8 30v220z"/>
+    <path d="M138 272c-30-26-72-24-92-2 26-10 56-6 74 10zM138 272c30-26 72-24 92-2-26-10-56-6-74 10z"/>
+    <path d="M138 268c-16-34-52-48-82-42 30 6 58 24 70 50zM138 268c16-34 52-48 82-42-30 6-58 24-70 50z"/>
+    <path d="M1064 520V330c-3-14 4-26 10-26s11 12 8 26v190z"/>
+    <path d="M1074 306c-26-22-62-20-79-2 22-8 48-5 63 9zM1074 306c26-22 62-20 79-2-22-8-48-5-63 9z"/>
+  </g>
+  <g transform="translate(662 246) scale(3.2)" opacity=".97">${bikeArt("fat","#100f0d","#8DC63F",true)}</g>
+</svg>`;
+
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money = n => "$" + n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+
+/* branding */
+document.getElementById("benchPrice").textContent = "$" + CONFIG.assemblyPrice;
+document.getElementById("ftrCity").textContent = CONFIG.city;
+const fp = document.getElementById("ftrPhone"); fp.textContent = CONFIG.phone; fp.href = "tel:" + CONFIG.phone.replace(/\D/g,"");
+const fe = document.getElementById("ftrEmail"); fe.textContent = CONFIG.email; fe.href = "mailto:" + CONFIG.email;
+if(CONFIG.heroImage){
+  document.getElementById("heroImg").innerHTML = '<img src="'+esc(CONFIG.heroImage)+'" alt="">';
+}
+
+/* checklist */
+const TICK = '<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>';
+document.getElementById("chkList").innerHTML = CHECKLIST.map(([t,d]) => `
+  <div class="chk">${TICK}<p><b>${esc(t)}</b><span class="spec">${esc(d)}</span></p></div>`).join("");
+
+/* categories */
+document.getElementById("cats").innerHTML = CATS.map(([n,d,img],i) => { img = img || PHOTOS[n] || ""; return `
+  <a class="cat" href="#bikes">
+    <span class="thumb">${img ? `<img src="${esc(img)}" alt="${esc(n)}">` : `<span class="art">${bikeArt(CAT_VARIANT[i]||"commuter","#3A3A38","#8DC63F")}</span>`}</span>
+    <span class="lbl"><h4>${esc(n)}</h4><p>${esc(d)}</p></span>
+  </a>`; }).join("");
+
+/* products */
+const ICON_MOTOR = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+const ICON_RANGE = '<svg viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><path d="M5 11v2"/></svg>';
+
+document.getElementById("prods").innerHTML = BIKES.map(b => {
+  const isShip = b.channel === "ship";
+  const shot = b.img || PHOTOS[b.name] || "";
+  const flagCls = /best/i.test(b.flag) ? "flag--seller" : "flag--new";
+  return `
+  <div class="prod">
+    <div class="shot">
+      ${shot ? `<img src="${esc(shot)}" alt="${esc(b.brand)} ${esc(b.name)}">` : `<span class="art">${bikeArt(b.variant||"commuter","#2F2F2D","#8DC63F")}</span>`}
+      ${b.flag ? `<span class="flag ${flagCls}">${esc(b.flag)}</span>` : ``}
+      <span class="chan ${isShip ? "chan--ship" : "chan--aff"}">${isShip ? "We ship" : "Buy direct"}</span>
+    </div>
+    <div class="body">
+      <p class="brand">${esc(b.brand)}</p>
+      <h3>${esc(b.name)}</h3>
+      <div class="stats">
+        <span>${ICON_MOTOR} ${esc(b.motor)} motor</span>
+        <span>${ICON_RANGE} Up to ${esc(b.range)}</span>
+      </div>
+      <p class="price">${money(b.price)}</p>
+      ${isShip
+        ? `<a class="go go--lime" href="#">View details</a>`
+        : `<a class="go" href="${esc(b.url)}" target="_blank" rel="sponsored noopener">Buy at ${esc(b.brand)} →</a>`}
+    </div>
+  </div>`;
+}).join("");
+</script>
+</body>
+</html>
