@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="impact-site-verification" value="9007e76e-d500-48ff-a335-95525199aecd">
 <title>Policies — EbikeBuy</title>
 <meta name="description" content="Shipping, returns, warranty, affiliate disclosure, privacy policy and terms for EbikeBuy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,9 +129,9 @@ html{scroll-behavior:smooth}
   </section>
 
   <section id="assembly">
-    <h2>Assembly &amp; service</h2><div class="rule"></div>
-    <p>Assembly and service is performed at <b>Bikes Plus in Jensen Beach, Florida</b>, and is offered on any e-bike from any brand, whether or not you bought it here. The service covers the full pre-delivery checklist published on our home page: uncrating and damage inspection, torquing every fastener to the manufacturer's specification, truing and tensioning wheels, centering and bedding in brakes, indexing the drivetrain, setting tire pressure to rider weight, a full charge cycle with battery log, display configuration, and fit adjustment at pickup.</p>
-    <p>You can drop the bike off, or have it shipped directly to the shop still in its carton — tell us the tracking number and we will take delivery and inspect it for you. Turnaround is typically three to five business days. We will contact you when the bike is finished and the checklist is signed off. Bikes not collected within 30 days of completion may incur a storage fee.</p>
+    <h2>Assembly, tuning &amp; repair</h2><div class="rule"></div>
+    <p>Assembly and service is performed by <b>Bikes Plus in Jensen Beach, Florida</b>, and is offered on any e-bike from any brand, whether or not you bought it here. The service covers the full pre-delivery checklist published on our home page: uncrating and damage inspection, torquing every fastener to the manufacturer's specification, truing and tensioning wheels, centering and bedding in brakes, indexing the drivetrain, setting tire pressure to rider weight, a full charge cycle with battery log, display configuration, and fit adjustment at pickup.</p>
+    <p><b>Pick-up and delivery is available locally for $45</b> — we collect the bike from your address and return it once the build is signed off. You can also drop the bike off yourself, or have it shipped directly to the shop still in its carton — tell us the tracking number and we will take delivery and inspect it for you. Turnaround is typically three to five business days. We will contact you when the bike is finished and the checklist is signed off. Bikes not collected within 30 days of completion may incur a storage fee.</p>
     <p>Service is a workmanship service, not a warranty. If something we adjusted comes out of adjustment within 30 days, bring it back and we will correct it at no charge. Component failure remains a manufacturer warranty matter.</p>
   </section>
 
@@ -182,6 +183,7 @@ html{scroll-behavior:smooth}
     <p>
       <b>EbikeBuy</b><br>
       <span id="cShop">Bikes Plus</span><br><span id="cCity">Jensen Beach, FL</span><br>
+      <a id="cPhone" href="#">phone</a><br>
       <a id="cEmail" href="#">email</a>
     </p>
     <p class="updated" id="updated"></p>
@@ -201,13 +203,15 @@ html{scroll-behavior:smooth}
 /* Keep these matched to index.html */
 const CONFIG = {
   shopName: "Bikes Plus",
-  address:  "Jensen Beach, FL",   // <-- full street address
+  address:  "879 NE Jensen Beach Blvd, Jensen Beach, FL 34957",
   city:  "Jensen Beach, FL",
+  phone: "772-692-5505",
   email: "bikesplusjb@gmail.com",   // <-- must match index.html
   lastUpdated: "August 11, 2026"
 };
 document.getElementById("cShop").textContent = CONFIG.shopName;
 document.getElementById("cCity").textContent = CONFIG.address;
+const ph = document.getElementById("cPhone"); ph.textContent = CONFIG.phone; ph.href = "tel:" + CONFIG.phone.replace(/\D/g,"");
 const e = document.getElementById("cEmail"); e.textContent = CONFIG.email; e.href = "mailto:" + CONFIG.email;
 document.getElementById("updated").textContent = "Last updated " + CONFIG.lastUpdated + ".";
 </script>
