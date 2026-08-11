@@ -442,13 +442,14 @@ const PHOTOS = {
   "FAT-AWD 3.0":       "https://cdn.shopify.com/s/files/1/2389/5887/files/05_16-9_7c4af65f-7ddb-4669-a47c-fb93b8c0bda3.jpg?v=1765166521",
   "DEFENDER":          "https://cdn.shopify.com/s/files/1/2389/5887/files/DEFENDER-S-_1_1.jpg?v=1765163679",
   "FLASH LITE ST 1.0": "https://cdn.shopify.com/s/files/1/2389/5887/files/8_c7b59161-3c4f-4bc0-a2eb-d4eec978fdc1.jpg?v=1759210184",
+  "META20 1.0":        "https://eunorau-ebike.com/cdn/shop/files/0..jpg?v=1713165033&width=1100",
   "META24 1.0":        "https://cdn.shopify.com/s/files/1/2389/5887/files/11_1_6f7aa12a-b4e2-4dad-b848-74a00b18216f.jpg?v=1711441385",
   "SPECTER-ST 2.0":    "https://cdn.shopify.com/s/files/1/2389/5887/files/02_157bdbf7-1a8b-47f3-8685-a41a07a52741.jpg?v=1725940043",
 
   // trikes — not in the frontpage feed; pull from the trikes collection JSON
   "ONE-TRIKE 2.0":     "",
   "NEW-TRIKE 2.0":     "https://eunorau-ebike.com/cdn/shop/files/new-trike3_1_1.jpg?v=1780641045&width=1200",
-  "T1 Recumbent":      ""
+  "T1 Recumbent":      "https://cdn.shopify.com/s/files/1/2389/5887/files/02_1_c668c08f-3c0e-47d0-b483-3632210bb901.jpg?v=1783914338&width=1200"
 };
 
 /* ==========================================================
@@ -534,6 +535,11 @@ const BIKES = [
     channel:"affiliate", flag:"",
     url:"https://eunorau-ebike.com/products/meta-24-1", img:"" },
 
+  { brand:"Eunorau", name:"META20 1.0", price:1699, was:0,
+    motor:"500W hub, torque sensor", spec2:'20 × 3.0 · 63.4 lb', variant:"folding",
+    channel:"affiliate", flag:"",
+    url:"https://eunorau-ebike.com/products/meta-20-1", img:"" },
+
   { brand:"Eunorau", name:"SPECTER-ST 2.0", price:2999, was:3799,
     motor:"1000W Bafang, 160 Nm", spec2:"Full suspension · SRAM NX", variant:"stepthru",
     channel:"affiliate", flag:"",
@@ -551,10 +557,10 @@ const TRIKES = [
     channel:"affiliate", flag:"",
     url:"https://eunorau-ebike.com/collections/eunorau-electric-trikes", img:"" },
 
-  { brand:"Eunorau", name:"T1 Recumbent", price:2499, was:0,
-    motor:"52V 750W rear hub", spec2:"Full hydraulic brakes", variant:"trike",
+  { brand:"Eunorau", name:"T1 Recumbent", price:2999, was:0,
+    motor:"52V 750W, torque sensor", spec2:"Recumbent · parking brake", variant:"trike",
     channel:"affiliate", flag:"",
-    url:"https://eunorau-ebike.com/collections/eunorau-electric-trikes", img:"" }
+    url:"https://eunorau-ebike.com/products/t1", img:"" }
 ];
 
 const ANY_PAID = BIKES.concat(TRIKES).some(b => aff(b.url).paid);
