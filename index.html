@@ -295,6 +295,7 @@ a{color:inherit;text-decoration:none}
       <a href="#trikes">Trikes</a>
       <a href="#gear">Accessories</a>
       <a href="#bench">Assembly</a>
+      <a href="florida-ebike-laws.html">FL Laws</a>
       <a href="about.html">About</a>
       <a href="about.html#contact">Contact</a>
     </nav>
@@ -422,6 +423,11 @@ a{color:inherit;text-decoration:none}
       <p>If balance is the reason you stopped riding, a trike is the answer — and it's the one thing you really shouldn't assemble from a box yourself.</p>
     </div>
     <div class="prods" id="trikeGrid"></div>
+    <div class="disclose">
+      <h4>On battery certification</h4>
+      <p>EUNORAU trikes use UL 2271 certified cells. <b>Puckipuppy's certification is per-model, not across the range</b> — their own site excludes several lines, and independent testers have flagged others. We list the models we'd put a customer on, but if UL certification matters for your insurance or your HOA, confirm it for the exact model and colour before you order. We'll help you check.</p>
+    </div>
+
     <div class="disclose" style="border-left-color:#1A1A1A">
       <h4>Why we push assembly hardest on these</h4>
       <p>A trike has a rear differential, a wide axle, and baskets that all have to be squared to the frame. Get it wrong and the trike pulls to one side or the rear wheels fight each other in a turn — which is exactly the instability you bought three wheels to avoid. It's also 80-plus pounds in a carton that one person can't safely flip. Have it shipped to us and skip all of that.</p>
@@ -464,6 +470,7 @@ a{color:inherit;text-decoration:none}
       <div>
         <h5>Info</h5>
         <a href="about.html">About us</a><br>
+        <a href="florida-ebike-laws.html">Florida e-bike laws</a><br>
         <a href="policies.html#shipping">Shipping &amp; returns</a><br>
         <a href="about.html#contact">Contact</a><br>
         <a href="policies.html#warranty">Warranty</a><br>
@@ -530,6 +537,9 @@ const PHOTOS = {
   // trikes — not in the frontpage feed; pull from the trikes collection JSON
   "ONE-TRIKE 2.0":     "https://eunorau-ebike.com/cdn/shop/files/Red4.jpg?v=1751858995&width=1200",
   "NEW-TRIKE 2.0":     "https://eunorau-ebike.com/cdn/shop/files/new-trike3_1_1.jpg?v=1780641045&width=1200",
+  "Husky Plus E-Trike": "https://cdn.shopify.com/s/files/1/0718/9453/2416/files/Husky_Plus-Light_Red-1.jpg?v=1779430008&width=1200",
+  "Husky E-Trike":     "https://cdn.shopify.com/s/files/1/0718/9453/2416/files/Husky-Metallic_Gray-1.jpg?v=1779421283&width=1200",
+  "Alaskan E-Trike":   "https://cdn.shopify.com/s/files/1/0718/9453/2416/files/Alaskan-White-1_e38bde6d-65bd-47a3-a150-395960909289.jpg?v=1779427976&width=1200",
   "T1 Recumbent":      "https://cdn.shopify.com/s/files/1/2389/5887/files/02_1_c668c08f-3c0e-47d0-b483-3632210bb901.jpg?v=1783914338&width=1200"
 };
 
@@ -570,7 +580,7 @@ const PARTNERS = {
 };
 
 // Impact vanity links are already tracked — no params to append.
-const TRACKED_HOSTS = ["kingbulltechnologycolimited.pxf.io"];
+const TRACKED_HOSTS = ["kingbulltechnologycolimited.pxf.io", "wwwpuckipuppycom.pxf.io"];
 
 function aff(url){
   try{
@@ -660,6 +670,21 @@ const TRIKES = [
     motor:"500W front motor", spec2:"48V 20Ah · folding city", variant:"trike",
     channel:"affiliate", flag:"",
     url:"https://eunorau-ebike.com/collections/eunorau-electric-trikes", img:"" },
+
+  { brand:"Puckipuppy", name:"Husky Plus E-Trike", price:1999, was:0,
+    motor:"Dual battery · 90–110 mi", spec2:"500 lb payload · folds", variant:"trike",
+    channel:"affiliate", flag:"Most capacity",
+    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", img:"" },
+
+  { brand:"Puckipuppy", name:"Husky E-Trike", price:1699, was:0,
+    motor:"Folding frame", spec2:"Up to 60 mi range", variant:"trike",
+    channel:"affiliate", flag:"",
+    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", img:"" },
+
+  { brand:"Puckipuppy", name:"Alaskan E-Trike", price:1499, was:0,
+    motor:"Folding frame", spec2:"35–55 mi · from $1,499", variant:"trike",
+    channel:"affiliate", flag:"",
+    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", img:"" },
 
   { brand:"Eunorau", name:"T1 Recumbent", price:2999, was:0,
     motor:"52V 750W, torque sensor", spec2:"Recumbent · parking brake", variant:"trike",
@@ -843,7 +868,7 @@ document.getElementById("picksIntro").textContent = ANY_PAID
 
 /* badge disclosure — honest about whether links pay us yet */
 document.getElementById("discloseBody").innerHTML = ANY_PAID
-  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links to EUNORAU and Kingbull are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — take it to Bikes Plus in ${CONFIG.city} and we'll finish the job properly.`
+  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links to EUNORAU, Kingbull and Puckipuppy are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — take it to Bikes Plus in ${CONFIG.city} and we'll finish the job properly.`
   : `<b>Buy direct</b> — these brands sell only through their own websites, so we send you straight to them. We're not a dealer for them yet and these links don't pay us anything, so take the recommendation at face value. Whatever you buy and wherever you buy it, Bikes Plus in ${CONFIG.city} will build it for you.`;
 
 /* products */
