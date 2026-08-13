@@ -510,6 +510,12 @@ a{color:inherit;text-decoration:none}
       Prices and availability are set by the manufacturer and change often — check the product page for current stock.
     </p>
 
+    <div class="disclose" style="border-left-color:#B3300F">
+      <h4>Read this before you buy a 37 mph bike</h4>
+      <p>Wallke lists the H7 and H9 series at <b>37 mph</b> with motors up to 4000W peak. <b>Florida caps an electric bicycle at 28 mph assisted and under 750 watts.</b> These are well past both. That means they likely aren't electric bicycles under Florida law at all — so the rights that come with that status (sidewalks, bike lanes, paths, no registration, no licence) may not apply to you on one. Their batteries carry UL2580 and UN38.3 rather than UL 2849; different standards, not the one most HOAs and insurers ask about.</p>
+      <p>We're still listing it, because it's a genuinely capable bike and plenty of people ride private property, trails that allow it, or simply want the power. But buy it knowing what it is. If you want it road-legal here, ask us to set the display to a 28 mph limit at assembly — we'll do that at no extra charge, and we'll tell you honestly whether the wattage still puts it outside the definition. <a href="florida-ebike-laws.html">Full Florida law breakdown →</a></p>
+    </div>
+
     <div class="disclose">
       <h4 id="discloseHd">How to read the badges</h4>
       <p id="discloseBody"></p>
@@ -634,6 +640,9 @@ const PHOTOS = {
   "FLASH LITE ST 1.0": "https://cdn.shopify.com/s/files/1/2389/5887/files/8_c7b59161-3c4f-4bc0-a2eb-d4eec978fdc1.jpg?v=1759210184",
   "META20 1.0":        "https://eunorau-ebike.com/cdn/shop/files/0..jpg?v=1713165033&width=1100",
   "META24 1.0":        "https://cdn.shopify.com/s/files/1/2389/5887/files/11_1_6f7aa12a-b4e2-4dad-b848-74a00b18216f.jpg?v=1711441385",
+  "H7 Ultra Step-Thru": "https://cdn.shopify.com/s/files/1/0264/4125/2957/files/BTS-H7Ultra-Gray-TurnLight.webp?v=1786536973&width=1200",
+  "H9 AWD Folding":    "https://cdn.shopify.com/s/files/1/0264/4125/2957/files/H9AWD-Black-T.webp?v=1786613143&width=1200",
+  "Ravager R60":       "https://cdn.shopify.com/s/files/1/0264/4125/2957/files/R60C-Black-R.webp?v=1786614320&width=1200",
   "SPECTER-ST 2.0":    "https://cdn.shopify.com/s/files/1/2389/5887/files/02_157bdbf7-1a8b-47f3-8685-a41a07a52741.jpg?v=1725940043",
 
   // trikes — not in the frontpage feed; pull from the trikes collection JSON
@@ -682,7 +691,7 @@ const PARTNERS = {
 };
 
 // Impact vanity links are already tracked — no params to append.
-const TRACKED_HOSTS = ["kingbulltechnologycolimited.pxf.io", "wwwpuckipuppycom.pxf.io"];
+const TRACKED_HOSTS = ["kingbulltechnologycolimited.pxf.io", "wwwpuckipuppycom.pxf.io", "wallkeebike.pxf.io"];
 
 function aff(url){
   try{
@@ -755,6 +764,21 @@ const BIKES = [
     motor:"500W hub, torque sensor", spec2:'20 × 3.0 · 63.4 lb', variant:"folding",
     channel:"affiliate", flag:"",
     url:"https://eunorau-ebike.com/products/meta-20-1", img:"" },
+
+  { brand:"Wallke", name:"H7 Ultra Step-Thru", price:1299, was:1499,
+    motor:"2000W rear hub · 40Ah", spec2:"Step-through · 37 mph — see note", variant:"stepthru",
+    channel:"affiliate", flag:"Most power",
+    url:"https://wallkeebike.pxf.io/6kz7dG", img:"" },
+
+  { brand:"Wallke", name:"H9 AWD Folding", price:1499, was:1599,
+    motor:"Dual motor AWD · 40Ah", spec2:"Folding · 37 mph — see note", variant:"folding",
+    channel:"affiliate", flag:"",
+    url:"https://wallkeebike.pxf.io/6kz7dG", img:"" },
+
+  { brand:"Wallke", name:"Ravager R60", price:2049, was:2499,
+    motor:"60V 70Ah · 150 Nm", spec2:"180+ mi claimed range", variant:"fat",
+    channel:"affiliate", flag:"",
+    url:"https://wallkeebike.pxf.io/6kz7dG", img:"" },
 
   { brand:"Eunorau", name:"SPECTER-ST 2.0", price:2999, was:3799,
     motor:"1000W Bafang, 160 Nm", spec2:"Full suspension · SRAM NX", variant:"stepthru",
@@ -970,7 +994,7 @@ document.getElementById("picksIntro").textContent = ANY_PAID
 
 /* badge disclosure — honest about whether links pay us yet */
 document.getElementById("discloseBody").innerHTML = ANY_PAID
-  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links to EUNORAU, Kingbull and Puckipuppy are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — take it to Bikes Plus in ${CONFIG.city} and we'll finish the job properly.`
+  ? `<b>Buy direct</b> — the brand sells these on their own site and ships them to you free. Our links to EUNORAU, Kingbull, Puckipuppy and Wallke are affiliate links: we earn a commission if you buy, at no extra cost to you. It doesn't change a word of what we tell you, and we'll say plainly when a bike isn't right for you. Every one of these arrives about 85% assembled — take it to Bikes Plus in ${CONFIG.city} and we'll finish the job properly.`
   : `<b>Buy direct</b> — these brands sell only through their own websites, so we send you straight to them. We're not a dealer for them yet and these links don't pay us anything, so take the recommendation at face value. Whatever you buy and wherever you buy it, Bikes Plus in ${CONFIG.city} will build it for you.`;
 
 /* products */
