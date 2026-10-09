@@ -694,14 +694,32 @@ const PARTNERS = {
   "macfoxbike.com":    "attid=th2f24mf&sca_ref=12055138.M7GdGVjEn3&utm_source=uppromote&utm_medium=standard-affiliate-commission&utm_campaign=affiliate-sebastian-lahara"
 };
 
-// Impact vanity links are already tracked — no params to append.
+/* Impact vanity links are already tracked — no commission params to append.
+   But a bare vanity link dumps the shopper on the brand's HOMEPAGE, not on
+   the bike they just read about. Impact supports deep linking: append
+   ?u=<encoded product page URL> and the click still tracks but lands on
+   the product.
+
+   So each Impact product below now has its own "deep" field. Paste the
+   brand's normal product page URL into it (the plain one off their site,
+   no tracking) and aff() wires it up. Leave it as "" and the link simply
+   behaves as it does today — homepage, still paid, nothing breaks.
+
+   VERIFY ONE BEFORE FILLING IN ALL TEN: set one deep URL, click it live,
+   and confirm two things — it lands on the product page, and the click
+   shows up in your Impact dashboard. If it lands right but does NOT track,
+   generate a proper per-product link in Impact instead and paste that into
+   "url", leaving "deep" empty. */
 const TRACKED_HOSTS = ["kingbulltechnologycolimited.pxf.io", "wwwpuckipuppycom.pxf.io", "wallkeebike.pxf.io"];
 
-function aff(url){
+function aff(url, deep){
   try{
     const u = new URL(url);
     const host = u.hostname.replace(/^www\./,"");
-    if(TRACKED_HOSTS.includes(host)) return { href:url, paid:true };
+    if(TRACKED_HOSTS.includes(host)){
+      if(deep) u.searchParams.set("u", deep);
+      return { href:u.toString(), paid:true };
+    }
     const q = PARTNERS[host];
     if(!q) return { href:url, paid:false };
     for(const pair of q.split("&")){
@@ -732,22 +750,22 @@ const BIKES = [
   { brand:"Kingbull", name:"Hunter 2.0S", price:899, was:1699,
     motor:"750W Bafang, 85 Nm", spec2:'26 × 4.0 · UL 2849', variant:"fat",
     channel:"affiliate", flag:"Best value",
-    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", img:"" },
+    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", deep:"", img:"" },
 
   { brand:"Kingbull", name:"Literider 2.0", price:979, was:1699,
     motor:"750W Bafang, 80 Nm", spec2:'20 × 4.0 folding · UL 2849', variant:"folding",
     channel:"affiliate", flag:"",
-    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", img:"" },
+    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", deep:"", img:"" },
 
   { brand:"Kingbull", name:"Trekker", price:1099, was:2099,
     motor:"Torque sensor · 960Wh", spec2:"Step-through · 80 mi", variant:"stepthru",
     channel:"affiliate", flag:"",
-    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", img:"" },
+    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", deep:"", img:"" },
 
   { brand:"Kingbull", name:"Voyager 2.0", price:1119, was:1899,
     motor:"Cargo · UL 2849", spec2:"450 lb payload", variant:"cargo",
     channel:"affiliate", flag:"",
-    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", img:"" },
+    url:"https://kingbulltechnologycolimited.pxf.io/R0ERbN", deep:"", img:"" },
 
   { brand:"Macfox", name:"X1S Commuter", price:1399, was:0,
     motor:"500W hub, 750W peak", spec2:"Class 2 · 28–56 mi", variant:"fat",
@@ -787,17 +805,17 @@ const BIKES = [
   { brand:"Wallke", name:"H7 Ultra Step-Thru", price:1299, was:1499,
     motor:"2000W rear hub · 40Ah", spec2:"Step-through · 37 mph — see note", variant:"stepthru",
     channel:"affiliate", flag:"Most power",
-    url:"https://wallkeebike.pxf.io/6kz7dG", img:"" },
+    url:"https://wallkeebike.pxf.io/6kz7dG", deep:"", img:"" },
 
   { brand:"Wallke", name:"H9 AWD Folding", price:1499, was:1599,
     motor:"Dual motor AWD · 40Ah", spec2:"Folding · 37 mph — see note", variant:"folding",
     channel:"affiliate", flag:"",
-    url:"https://wallkeebike.pxf.io/6kz7dG", img:"" },
+    url:"https://wallkeebike.pxf.io/6kz7dG", deep:"", img:"" },
 
   { brand:"Wallke", name:"Ravager R60", price:2049, was:2499,
     motor:"60V 70Ah · 150 Nm", spec2:"180+ mi claimed range", variant:"fat",
     channel:"affiliate", flag:"",
-    url:"https://wallkeebike.pxf.io/6kz7dG", img:"" },
+    url:"https://wallkeebike.pxf.io/6kz7dG", deep:"", img:"" },
 
   { brand:"Eunorau", name:"SPECTER-ST 2.0", price:2999, was:3799,
     motor:"1000W Bafang, 160 Nm", spec2:"Full suspension · SRAM NX", variant:"stepthru",
@@ -819,17 +837,17 @@ const TRIKES = [
   { brand:"Puckipuppy", name:"Husky Plus E-Trike", price:1999, was:0,
     motor:"Dual battery · 90–110 mi", spec2:"500 lb payload · folds", variant:"trike",
     channel:"affiliate", flag:"Most capacity",
-    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", img:"" },
+    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", deep:"", img:"" },
 
   { brand:"Puckipuppy", name:"Husky E-Trike", price:1699, was:0,
     motor:"Folding frame", spec2:"Up to 60 mi range", variant:"trike",
     channel:"affiliate", flag:"",
-    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", img:"" },
+    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", deep:"", img:"" },
 
   { brand:"Puckipuppy", name:"Alaskan E-Trike", price:1499, was:0,
     motor:"Folding frame", spec2:"35–55 mi · from $1,499", variant:"trike",
     channel:"affiliate", flag:"",
-    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", img:"" },
+    url:"https://wwwpuckipuppycom.pxf.io/2R7dzO", deep:"", img:"" },
 
   { brand:"Eunorau", name:"T1 Recumbent", price:2999, was:0,
     motor:"52V 750W, torque sensor", spec2:"Recumbent · parking brake", variant:"trike",
@@ -869,7 +887,7 @@ const GEAR = [
     img:"https://cdn.shopify.com/s/files/1/2389/5887/products/LIGHT-6-48V-F_2.jpg?v=1680590747&width=800" }
 ];
 
-const ANY_PAID = BIKES.concat(TRIKES).some(b => aff(b.url).paid);
+const ANY_PAID = BIKES.concat(TRIKES).some(b => aff(b.url, b.deep).paid);
 
 /* ==========================================================
    MOCK ARTWORK
@@ -1023,7 +1041,7 @@ const ICON_RANGE = '<svg viewBox="0 0 24 24"><rect x="2" y="7" width="16" height
 function cardHTML(b){
   const isShip = b.channel === "ship";
   const shot = b.img || PHOTOS[b.name] || "";
-  const link = aff(b.url);
+  const link = aff(b.url, b.deep);
   const flagCls = /seller/i.test(b.flag) ? "flag--seller" : /value|stable/i.test(b.flag) ? "flag--value" : "flag--new";
   return `
   <div class="prod">
@@ -1051,7 +1069,7 @@ document.getElementById("prods").innerHTML = BIKES.map(cardHTML).join("");
 document.getElementById("trikeGrid").innerHTML = TRIKES.map(cardHTML).join("");
 
 document.getElementById("gearGrid").innerHTML = GEAR.map(g => {
-  const l = aff(g.url);
+  const l = aff(g.url, g.deep);
   return `<div class="gear">
     <div class="shot"><img src="${esc(g.img)}" alt="${esc(g.name)}" onerror="this.remove()"></div>
     <div class="body">
