@@ -106,27 +106,28 @@ const bySystem = {};
 for (const c of DATA.codes) {
   const sys = DATA.systems[c.system];
   (bySystem[c.system] = bySystem[c.system] || []).push(c);
-  const file = `${c.system}-${c.code}.html`.replace("bosch-classic", "bosch");
+  const file = `${sys.slug}-${c.code}.html`.toLowerCase();
   c._file = file;
   const next = c.severity === "dealer"
-    ? "If the code comes back after one restart, stop using the assist and have the bike checked with Bosch's diagnostic tool. Bikes Plus has diagnostic tools for Bosch and most other major motor systems."
-    : "If the code comes back after a restart, have it checked. A diagnostic tool can read the full fault history; Bikes Plus has them for Bosch and most other major motor systems.";
+    ? `If the code comes back after one restart, stop using the assist and have the bike checked by a mechanic who works on ${sys.name} systems. Bikes Plus has diagnostic tools for Bosch and most other major motor systems.`
+    : `If the code comes back after a restart, have it checked by a mechanic who works on ${sys.name} systems, like Bikes Plus.`;
   files[file] = page({
     file,
     title: `${sys.name} error ${c.code}: ${c.title}`,
-    description: `What ${sys.name} e-bike error code ${c.code} (${c.title}) means and what to do, from Bosch's own help center, in plain English.`,
+    description: `What ${sys.name} e-bike error code ${c.code} (${c.title}) means and what to do, from ${sys.name}'s own documentation, in plain English.`,
     tag: sys.label,
     h1: `${esc(sys.name)} error ${esc(c.code)}<br>${esc(c.title)}`,
     lede: c.plain,
-    updated: `Checked against ${sys.name}'s help center: ${fmtDate(c.verified_on)}.`,
+    updated: `Checked against ${sys.name}'s own ${c.source_type === "manual" ? "manual" : sys.source_noun}: ${fmtDate(c.verified_on)}.`,
     body: `
+  ${sys.display_warning ? `<div class="callout"><b>Check your display first.</b> ${esc(sys.display_warning)}</div>` : ""}
   ${c.battery ? `<div class="callout callout--warn"><b>Battery hot, swollen, leaking or smells strange?</b> Stop and read <a href="../battery-safety.html">battery safety</a> first. If there's smoke, get away and call 911.</div>` : ""}
-  <section id="bosch">
+  <section id="maker">
     <h2>What ${esc(sys.name)} says</h2><div class="rule"></div>
-    <p class="quote">${esc(c.bosch_says)}</p>
+    <p class="quote">${esc(c.maker_says)}</p>
     <h3>${esc(sys.name)}'s recommended steps</h3>
-    <ol class="pl">${c.bosch_fix.map(s => `<li>${esc(s)}</li>`).join("")}</ol>
-    <p class="srcs">Summarized from <a href="${esc(c.source_url)}">${c.source_type === "manual" ? esc(DATA.manual_label) + " (error " + esc(c.code) + ")" : esc(sys.name) + "'s help page for error " + esc(c.code)}</a>, checked ${esc(fmtDate(c.verified_on))}. Follow the link for ${esc(sys.name)}'s exact wording.</p>
+    <ol class="pl">${c.maker_fix.map(s => `<li>${esc(s)}</li>`).join("")}</ol>
+    <p class="srcs">Summarized from <a href="${esc(c.source_url)}">${c.source_type === "manual" ? esc(sys.manual_label) + " (error " + esc(c.code) + ")" : esc(sys.name) + "'s " + esc(sys.source_noun) + " page for error " + esc(c.code)}</a>, checked ${esc(fmtDate(c.verified_on))}. Follow the link for ${esc(sys.name)}'s exact wording.</p>
   </section>
 
   <section id="next">
@@ -143,7 +144,7 @@ for (const c of DATA.codes) {
     <h2>Make sure it's a ${esc(sys.name)} code</h2><div class="rule"></div>
     <p>Error numbers mean different things on different systems. This page covers ${esc(sys.applies)}</p>
     <div class="btnrow">
-      <a class="btn btn--ghost" href="${c.system.replace("bosch-classic", "bosch")}.html">All ${esc(sys.name)} codes</a>
+      <a class="btn btn--ghost" href="${sys.slug}.html">All ${esc(sys.name)} codes</a>
       <a class="btn btn--ghost" href="../diagnose.html">Step-by-step checks</a>
     </div>
   </section>
@@ -154,17 +155,18 @@ for (const c of DATA.codes) {
 /* ---------- list page per system ---------- */
 for (const [sid, codes] of Object.entries(bySystem)) {
   const sys = DATA.systems[sid];
-  const file = sid.replace("bosch-classic", "bosch") + ".html";
+  const file = sys.slug + ".html";
   const key = c => c.code.replace(/x/g, "9"); // "7xx" sorts after 6xx
   codes.sort((a, b) => key(a).localeCompare(key(b), "en", { numeric: true }));
   files[file] = page({
     file,
     title: `${sys.label}: what they mean`,
-    description: `${sys.label} explained in plain English, each checked against ${sys.name}'s own help center with the date we checked it.`,
+    description: `${sys.label} explained in plain English, each checked against ${sys.name}'s own documentation with the date we checked it.`,
     tag: "Error code library",
     h1: `${esc(sys.label)}`,
     lede: sys.applies,
     body: `
+  ${sys.display_warning ? `<div class="callout"><b>Check your display first.</b> ${esc(sys.display_warning)}</div>` : ""}
   <section>
     <label for="find" class="srcs">Type the code from your display</label>
     <input id="find" class="find" inputmode="numeric" autocomplete="off" placeholder="e.g. 503">
@@ -199,7 +201,7 @@ files["index.html"] = page({
   body: `
   <section>
     <div class="sys">
-${Object.entries(DATA.systems).map(([sid, s]) => `      <a href="${sid.replace("bosch-classic", "bosch")}.html"><strong>${esc(s.label)}</strong><span>${(bySystem[sid] || []).length} codes so far · ${esc(s.applies.split(".")[0])}.</span></a>`).join("\n")}
+${Object.entries(DATA.systems).map(([sid, s]) => `      <a href="${s.slug}.html"><strong>${esc(s.label)}</strong><span>${(bySystem[sid] || []).length} codes so far · ${esc(s.applies.split(".")[0])}.</span></a>`).join("\n")}
       <div><strong>Shimano STEPS / EP</strong><span>Coming next. For now, see <a href="https://si.shimano.com/">Shimano's manuals</a>. W codes are warnings; E codes are errors.</span></div>
       <div><strong>Bafang, and everything else</strong><span>Not yet. Check your display's manual, or <a href="../about.html#contact">send us a photo</a>.</span></div>
     </div>
