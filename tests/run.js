@@ -133,7 +133,23 @@ const sm = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 const missingSm = fs.readdirSync(path.join(ROOT, "error-codes")).filter(f => f.endsWith(".html") && !sm.includes("error-codes/" + f));
 if (missingSm.length) fail(`sitemap is missing ${missingSm.length} error-code page(s); run node tools/build-codes.js`); else ok("every error-code page is in the sitemap");
 
-/* ---------- 5. reminders (don't fail) ---------- */
+/* ---------- 5. recalls ---------- */
+console.log("Recalls");
+const RC = JSON.parse(fs.readFileSync(path.join(ROOT, "data/recalls.json"), "utf8"));
+let rcBad = 0;
+RC.items.concat(RC.notices).forEach((r, i) => {
+  const bad = m => { rcBad++; fail(`recall ${r.brand || r.title} (${r.date}): ${m}`); };
+  let host = ""; try { host = new URL(r.url).hostname; } catch (e) {}
+  if (!/^https:/.test(r.url || "") || !(host === "cpsc.gov" || host.endsWith(".cpsc.gov"))) bad("needs a cpsc.gov URL");
+  if (!/^\d{4}(-\d{2}(-\d{2})?)?$/.test(r.date || "")) bad("date must be YYYY, YYYY-MM or YYYY-MM-DD");
+  if (r.type && !["recall", "warning"].includes(r.type)) bad("type must be recall or warning");
+});
+if (!/^\d{4}-\d{2}-\d{2}$/.test(RC.checked_on || "")) fail("recalls: checked_on date missing");
+if (!rcBad) ok(`${RC.items.length} recalls and warnings, each linked to cpsc.gov`);
+try { execFileSync("node", [path.join(ROOT, "tools/build-recalls.js"), "--check"], { stdio: "pipe" }); ok("recalls page matches the data"); }
+catch (e) { fail("recalls.html is out of date: run node tools/build-recalls.js"); }
+
+/* ---------- 6. reminders (don't fail) ---------- */
 if (!D.reviewed || /pending/i.test(D.reviewed)) warn("diagnose flows not yet signed off by a mechanic (DIAGNOSE.reviewed)");
 
 console.log(failed ? `\n${failed} check(s) failed` : "\nAll checks passed");
