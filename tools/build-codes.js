@@ -109,8 +109,8 @@ for (const c of DATA.codes) {
   const file = `${c.system}-${c.code}.html`.replace("bosch-classic", "bosch");
   c._file = file;
   const next = c.severity === "dealer"
-    ? "If the code comes back after one restart, stop using the assist and have the bike checked by a Bosch dealer, or a shop with Bosch's diagnostic tool."
-    : "If the code comes back after a restart, have it checked. Bosch dealers have Bosch's diagnostic tool and can read the full fault history.";
+    ? "If the code comes back after one restart, stop using the assist and have the bike checked with Bosch's diagnostic tool. Bikes Plus has diagnostic tools for Bosch and most other major motor systems."
+    : "If the code comes back after a restart, have it checked. A diagnostic tool can read the full fault history; Bikes Plus has them for Bosch and most other major motor systems.";
   files[file] = page({
     file,
     title: `${sys.name} error ${c.code}: ${c.title}`,
