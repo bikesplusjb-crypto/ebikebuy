@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://ebikebuy.com/error-codes/bosch-596.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bosch error 596: Communication error">
+<meta property="og:description" content="What Bosch e-bike error code 596 (Communication error) means and what to do, from Bosch's own help center, in plain English.">
+<title>Bosch error 596: Communication error — EbikeBuy</title>
+<meta name="description" content="What Bosch e-bike error code 596 (Communication error) means and what to do, from Bosch's own help center, in plain English.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--lime:#8DC63F;--lime-dk:#77AC2F;--black:#0D0D0D;--ink:#1A1A1A;--grey:#6B7280;
+  --line:#E3E3E1;--wash:#F6F6F4;--alert:#B3300F;
+  --f-head:'Montserrat',system-ui,sans-serif;--f-body:'Inter',system-ui,sans-serif;
+  --gut:clamp(16px,4vw,40px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:#fff;font-size:16px;
+  line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 var(--gut)}
+
+.hdr{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.hdr .bar{max-width:1240px;margin:0 auto;padding:14px var(--gut);display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.logo-badge{width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
+.logo-badge svg{width:18px;height:18px;fill:var(--black)}
+.logo-txt{font-family:var(--f-head);font-weight:800;font-size:18px;letter-spacing:-.02em;line-height:1}
+.logo-txt small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.22em;color:var(--grey);margin-top:2px}
+.nav{display:none;gap:22px;font-size:13px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;margin-right:18px}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--lime-dk)}
+@media(min-width:1040px){.nav{display:flex}}
+.hdr-phone{border:1.5px solid var(--lime);border-radius:5px;padding:9px 15px;font-size:12px;
+  font-weight:700;letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.hdr-phone:hover{background:var(--lime)}
+
+.masthead{background:var(--black);color:#fff;padding:clamp(34px,5vw,62px) 0}
+.masthead .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--lime);margin:0 0 12px}
+.masthead h1{font-family:var(--f-head);font-weight:900;font-size:clamp(27px,4.6vw,44px);
+  text-transform:uppercase;letter-spacing:-.02em;margin:0;line-height:1.05}
+.masthead p{color:#C9C9C5;margin:14px 0 0;font-size:16px;max-width:62ch}
+.masthead .upd{font-size:12.5px;color:#8E8E8A;margin-top:14px}
+
+main{padding:clamp(30px,5vw,52px) 0 60px}
+section{scroll-margin-top:78px;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--f-head);font-weight:800;font-size:clamp(20px,3vw,27px);text-transform:uppercase;
+  letter-spacing:-.01em;margin:0 0 4px}
+.rule{width:52px;height:3px;background:var(--lime);border-radius:2px;margin-bottom:20px}
+h3{font-size:15.5px;font-weight:700;margin:24px 0 6px}
+p{margin:0 0 14px}
+ul.pl{margin:0 0 14px;padding-left:20px}
+ul.pl li{margin-bottom:8px}
+.callout{background:var(--wash);border-left:4px solid var(--lime);border-radius:0 5px 5px 0;
+  padding:16px 18px;margin:0 0 18px;font-size:14.5px}
+.callout--warn{border-left-color:var(--alert);background:#FDF4F2}
+.callout b{font-weight:700}
+
+.classes{display:grid;gap:14px;margin-bottom:20px}
+@media(min-width:720px){.classes{grid-template-columns:repeat(3,1fr)}}
+.cls{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.cls-hd{background:var(--black);color:#fff;padding:12px 16px}
+.cls-hd strong{font-family:var(--f-head);font-size:15px;font-weight:800;letter-spacing:.02em;
+  text-transform:uppercase;display:block}
+.cls-hd span{font-size:11.5px;color:var(--lime);letter-spacing:.08em;text-transform:uppercase}
+.cls-body{padding:14px 16px}
+.cls-body p{margin:0 0 8px;font-size:13.5px;line-height:1.5}
+.cls-body p:last-child{margin:0}
+.cls-body b{font-weight:600}
+
+.srcs{font-size:13px;color:var(--grey)}
+.srcs a{color:var(--lime-dk)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:5px;
+  font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;
+  background:var(--lime);color:var(--black);border:2px solid var(--lime)}
+.btn:hover{background:var(--lime-dk);border-color:var(--lime-dk)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghost:hover{border-color:var(--ink)}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+.ftr{background:var(--black);color:#8E8E8A;font-size:12.5px;padding:32px 0 38px;line-height:1.85}
+.ftr a{color:#C9C9C5}
+.ftr a:hover{color:var(--lime)}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.codes{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
+.codes a{display:flex;gap:14px;align-items:baseline;border:1px solid var(--line);border-left:4px solid var(--lime);
+  border-radius:6px;padding:12px 16px;text-decoration:none;font-size:16px}
+.codes a:hover{border-color:var(--lime-dk)}
+.codes b{font-family:var(--f-head);font-size:18px;min-width:3.2em}
+.find{width:100%;font:inherit;font-size:18px;padding:14px 16px;border:2px solid var(--line);border-radius:8px;margin:0 0 16px}
+.find:focus{border-color:var(--lime);outline:none}
+.quote{border-left:4px solid var(--black);background:var(--wash);padding:14px 18px;border-radius:0 6px 6px 0;margin:0 0 14px;font-size:17px}
+ol.pl{margin:0 0 14px;padding-left:22px}
+ol.pl li{margin-bottom:8px;font-size:16.5px}
+.sys{display:grid;gap:10px;margin-bottom:20px}
+.sys a,.sys div{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none}
+.sys a{border-left:4px solid var(--lime)}
+.sys strong{display:block;font-family:var(--f-head);font-size:18px}
+.sys span{color:var(--grey);font-size:14.5px}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="../index.html">
+      <span class="logo-badge"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></span>
+      <span class="logo-txt">EBIKEBUY<small>.COM</small></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#bikes">E-Bikes</a>
+      <a href="../diagnose.html">Diagnose</a>
+      <a href="index.html">Error codes</a>
+      <a href="../index.html#bench">Assembly</a>
+      <a href="../about.html">About</a>
+      <a href="../about.html#contact">Contact</a>
+    </nav>
+    <a class="hdr-phone" href="tel:7726925505">772-692-5505</a>
+  </div>
+</header>
+
+<div class="masthead">
+  <div class="wrap">
+    <p class="tag">Bosch 3-digit error codes</p>
+    <h1>Bosch error 596<br>Communication error</h1>
+    <p>Parts of the system aren't communicating properly with the motor unit.</p>
+    <p class="upd">Checked against Bosch's help center: October 23, 2026.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  
+  <section id="bosch">
+    <h2>What Bosch says</h2><div class="rule"></div>
+    <p class="quote">Communication error.</p>
+    <h3>Bosch's recommended steps</h3>
+    <ol class="pl"><li>Check the wiring to the drive unit.</li><li>Restart the system.</li><li>If the problem persists, contact your Bosch eBike dealer.</li></ol>
+    <p class="srcs">Summarized from <a href="https://help.bosch-ebike.com/en/help-center/error/596">Bosch's help page for error 596</a>, checked October 23, 2026. Follow the link for Bosch's exact wording.</p>
+  </section>
+
+  <section id="next">
+    <h2>If it keeps coming back</h2><div class="rule"></div>
+    <p>If the code comes back after one restart, stop using the assist and have the bike checked by a Bosch dealer, or a shop with Bosch's diagnostic tool.</p>
+    <p>Write down the code and what you were doing when it appeared. That saves time at the shop.</p>
+    <div class="btnrow">
+      <a class="btn" href="tel:7726925505">Call Bikes Plus</a>
+      <a class="btn btn--ghost" href="../about.html#contact">Email a photo</a>
+    </div>
+  </section>
+
+  <section id="check">
+    <h2>Make sure it's a Bosch code</h2><div class="rule"></div>
+    <p>Error numbers mean different things on different systems. This page covers Bosch drive systems that show 3-digit codes on Intuvia, Kiox, Purion, Nyon or SmartphoneHub displays. Purion displays may show only the last two digits (for example 03 for 503). The newer Bosch smart system shows 6-digit codes instead; look those up on Bosch's site for now.</p>
+    <div class="btnrow">
+      <a class="btn btn--ghost" href="bosch.html">All Bosch codes</a>
+      <a class="btn btn--ghost" href="../diagnose.html">Step-by-step checks</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="../index.html">Back to shop</a> · <a href="../diagnose.html">Diagnose my e-bike</a> · <a href="../battery-safety.html">Battery safety</a> · <a href="index.html">Error codes</a> · <a href="../policies.html#privacy">Privacy</a><br><br>
+    EbikeBuy is an independent buying guide and service resource, not affiliated with or endorsed by any motor-system maker. Brand and product names are the property of their respective owners.
+  </div>
+</footer>
+</body>
+</html>

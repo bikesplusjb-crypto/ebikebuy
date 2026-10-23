@@ -349,13 +349,16 @@ const DIAGNOSE = {
         "ec-bosch": {
           result: true, level: "check", confidence: "Possible",
           title: "Look up the code on Bosch's site",
-          why: "The same number can mean different things on different systems, so only Bosch's own list is reliable for a Bosch bike. Our own Bosch code pages are coming next.",
+          why: "The same number can mean different things on different systems, so only Bosch's own list is reliable for a Bosch bike. We've written up the common Bosch codes in plain English, each checked against Bosch's own pages.",
           checks: [
             "Write down the exact code.",
             "Newer Bosch displays may show a QR code with the error. Scanning it opens Bosch's page for that code.",
             "Switch the system off and on once. If the code comes back, stop and get it checked."
           ],
-          links: [{ label: "Bosch eBike help center (official)", href: "https://help.bosch-ebike.com/" }]
+          links: [
+            { label: "Look up a Bosch code", href: "error-codes/bosch.html" },
+            { label: "Bosch eBike help center (official)", href: "https://help.bosch-ebike.com/" }
+          ]
         },
         "ec-shimano": {
           result: true, level: "check", confidence: "Possible",
