@@ -380,7 +380,10 @@ const DIAGNOSE = {
             "Write down the exact code.",
             "Switch the system off and on once. If the code comes back, stop and get it checked."
           ],
-          links: [{ label: "Shimano manuals (official)", href: "https://si.shimano.com/" }]
+          links: [
+            { label: "Look up a Shimano code", href: "error-codes/shimano.html" },
+            { label: "Shimano's official code lookup", href: "https://si.shimano.com/error" }
+          ]
         },
         "ec-other": {
           result: true, level: "check", confidence: "Possible",

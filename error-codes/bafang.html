@@ -202,9 +202,9 @@ ol.pl li{margin-bottom:8px;font-size:16.5px}
 (function(){
   var f=document.getElementById("find"),items=[].slice.call(document.querySelectorAll("#codes li")),none=document.getElementById("none");
   f.addEventListener("input",function(){
-    var n=function(x){return x.toLowerCase().replace(/^0+(?=.)/,"");};
+    var n=function(x){return x.toLowerCase().replace(/^[a-z]+/,"").replace(/^0+(?=.)/,"");};
     var q=f.value.trim().toLowerCase(),shown=0;
-    items.forEach(function(li){var c=li.getAttribute("data-code").toLowerCase();var on=!q||c.indexOf(q)===0||n(c).indexOf(n(q))===0;li.hidden=!on;if(on)shown++;});
+    items.forEach(function(li){var c=li.getAttribute("data-code").toLowerCase();var L=function(x){return (x.match(/^[a-z]*/)||[""])[0];};var on=!q||c.indexOf(q)===0||(L(c)===L(q)&&n(c).indexOf(n(q))===0)||(!L(q)&&n(c).indexOf(n(q))===0);li.hidden=!on;if(on)shown++;});
     none.hidden=shown>0;
   });
 })();
