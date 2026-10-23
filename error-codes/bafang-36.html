@@ -91,6 +91,12 @@ ul.pl li{margin-bottom:8px}
 :focus-visible{outline:2px solid var(--lime);outline-offset:2px}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.helpbar{background:#0D0D0D;border-bottom:1px solid #262626}
+.helpbar .in{max-width:1240px;margin:0 auto;padding:0 clamp(8px,4vw,40px);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.helpbar .in::-webkit-scrollbar{display:none}
+.helpbar a{flex:none;color:#E8E8E4;text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:12px 8px;border-bottom:3px solid transparent;white-space:nowrap}
+.helpbar a:hover,.helpbar a[aria-current]{color:#8DC63F;border-bottom-color:#8DC63F}
+.helpbar a.hb-alert{color:#F2A08A}
 
 .codes{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
 .codes a{display:flex;gap:14px;align-items:baseline;border:1px solid var(--line);border-left:4px solid var(--lime);
@@ -103,6 +109,12 @@ html{scroll-behavior:smooth}
 ol.pl{margin:0 0 14px;padding-left:22px}
 ol.pl li{margin-bottom:8px;font-size:16.5px}
 .sys{display:grid;gap:10px;margin-bottom:20px}
+.helpbar{background:#0D0D0D;border-bottom:1px solid #262626}
+.helpbar .in{max-width:1240px;margin:0 auto;padding:0 clamp(8px,4vw,40px);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.helpbar .in::-webkit-scrollbar{display:none}
+.helpbar a{flex:none;color:#E8E8E4;text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:12px 8px;border-bottom:3px solid transparent;white-space:nowrap}
+.helpbar a:hover,.helpbar a[aria-current]{color:#8DC63F;border-bottom-color:#8DC63F}
+.helpbar a.hb-alert{color:#F2A08A}
 .sys>a,.sys>div{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none}
 .sys>a{border-left:4px solid var(--lime)}
 .sys span a{color:var(--lime-dk)}
@@ -129,6 +141,7 @@ ol.pl li{margin-bottom:8px;font-size:16.5px}
     <a class="hdr-phone" href="tel:7726925505">772-692-5505</a>
   </div>
 </header>
+<nav class="helpbar" aria-label="Rider help"><div class="in"><a href="../diagnose.html">Diagnose</a><a href="../error-codes/index.html" aria-current="page">Error codes</a><a href="../battery-safety.html" class="hb-alert">Battery</a><a href="../florida-ebike-laws.html">FL laws</a></div></nav>
 
 <div class="masthead">
   <div class="wrap">

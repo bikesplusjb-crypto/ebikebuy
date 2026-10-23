@@ -131,6 +131,12 @@ html{scroll-behavior:smooth}
 .dx-checks li{margin-bottom:8px}
 .dx-helpline{font-weight:600}
 .dx-note{font-size:14px;color:var(--grey)}
+.helpbar{background:#0D0D0D;border-bottom:1px solid #262626}
+.helpbar .in{max-width:1240px;margin:0 auto;padding:0 clamp(8px,4vw,40px);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.helpbar .in::-webkit-scrollbar{display:none}
+.helpbar a{flex:none;color:#E8E8E4;text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:12px 8px;border-bottom:3px solid transparent;white-space:nowrap}
+.helpbar a:hover,.helpbar a[aria-current]{color:#8DC63F;border-bottom-color:#8DC63F}
+.helpbar a.hb-alert{color:#F2A08A}
 </style>
 </head>
 <body>
@@ -152,6 +158,7 @@ html{scroll-behavior:smooth}
     <a class="hdr-phone" id="hdrPhone" href="#">772-692-5505</a>
   </div>
 </header>
+<nav class="helpbar" aria-label="Rider help"><div class="in"><a href="diagnose.html" aria-current="page">Diagnose</a><a href="error-codes/index.html">Error codes</a><a href="battery-safety.html" class="hb-alert">Battery</a><a href="florida-ebike-laws.html">FL laws</a></div></nav>
 
 <div class="masthead">
   <div class="wrap">
