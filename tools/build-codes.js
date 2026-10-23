@@ -82,7 +82,7 @@ function page({ file, title, description, tag, h1, lede, updated, body }) {
     <a class="hdr-phone" href="tel:${PHONE.replace(/\D/g, "")}">${PHONE}</a>
   </div>
 </header>
-<nav class="helpbar" aria-label="Rider help"><div class="in"><a href="../diagnose.html">Diagnose</a><a href="../error-codes/index.html" aria-current="page">Error codes</a><a href="../battery-safety.html" class="hb-alert">Battery</a><a href="../florida-ebike-laws.html">FL laws</a></div></nav>
+<nav class="helpbar" aria-label="Rider help"><div class="in"><a href="../diagnose.html">Diagnose</a><a href="../broke-down.html" class="hb-alert">Broke down</a><a href="../error-codes/index.html" aria-current="page">Codes</a><a href="../battery-safety.html">Battery</a></div></nav>
 
 <div class="masthead">
   <div class="wrap">
