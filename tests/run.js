@@ -167,7 +167,42 @@ if (!lnBad) ok(`${LN.articles.length} articles, related links and diagnose links
 try { execFileSync("node", [path.join(ROOT, "tools/build-learn.js"), "--check"], { stdio: "pipe" }); ok("learn pages and sitemap match the data"); }
 catch (e) { fail("learn pages are out of date: run node tools/build-learn.js (" + String(e.stdout).trim() + ")"); }
 
-/* ---------- 7. reminders (don't fail) ---------- */
+/* ---------- 7. My garage data ---------- */
+console.log("My garage");
+{
+  const G = require("../js/garage-store.js");
+  const mem = {}; const storage = { getItem: k => (k in mem ? mem[k] : null), setItem: (k, v) => { mem[k] = String(v); }, removeItem: k => { delete mem[k]; } };
+  let gBad = 0; const check = (c, m) => { if (!c) { gBad++; fail("garage: " + m); } };
+  let d = G.load(storage);
+  check(d.bikes.length === 0, "a new phone starts empty");
+  const id = G.addBike(d, { brand: "Rad", model: "RadWagon 4", system: "nonsense", serial: "ABC123" });
+  check(d.bikes.length === 1 && d.bikes[0].name === "Rad RadWagon 4", "bike gets a name from brand and model");
+  check(d.bikes[0].system === "unknown", "unknown motor systems are stored as unknown");
+  check(G.addLog(d, { bikeId: id, date: "2026-10-01", work: "New rear tire" }), "service entry saves");
+  check(G.addLog(d, { bikeId: "nope", date: "2026-10-01", work: "x" }) === null, "entry for a missing bike is refused");
+  check(G.addLog(d, { bikeId: id, date: "10/01/2026", work: "x" }) === null, "entry with a bad date is refused");
+  check(G.addReminder(d, id, "Lube chain", "2026-10-10") && G.addReminder(d, id, "Shop check", "2027-04-01"), "reminders save");
+  check(G.due(d, "2026-10-23").map(r => r.what).join() === "Lube chain", "only reminders on or before today are due");
+  check(G.addDiagnosis(d, { bikeId: id, date: "2026-10-23", title: "A brake lever may be cutting the motor", path: "no-assist/battery-check" }), "saved check stores");
+  check(G.save(storage, d), "saves to storage");
+  const back = G.load(storage);
+  check(back.bikes.length === 1 && back.log.length === 1 && back.reminders.length === 2 && back.diagnoses.length === 1, "everything survives a reload");
+  check(G.linksFor(back.bikes[0]).recalls === "recalls.html?q=Rad", "bike links to its brand's recalls");
+  check(G.linksFor({ system: "bosch" }).codes === "error-codes/bosch.html", "bike links to its error codes");
+  const restored = G.importText(G.exportText(back));
+  check(JSON.stringify(restored) === JSON.stringify(back), "a backup file restores exactly");
+  check(G.importText('{"bikes":[{"id":"x","name":"<img src=x onerror=alert(1)>","system":"bosch","evil":"y"}],"log":[{"bikeId":"zz","date":"2026-01-01","work":"orphan"}]}').log.length === 0, "imported entries for missing bikes are dropped");
+  check(!("evil" in G.importText('{"bikes":[{"id":"x","evil":"y"}]}').bikes[0]), "unknown fields are dropped on import");
+  let threw = false; try { G.importText("not json"); } catch (e) { threw = true; }
+  check(threw, "a file that isn't a backup is rejected");
+  G.removeBike(back, id);
+  check(back.bikes.length === 0 && back.log.length === 0 && back.reminders.length === 0 && back.diagnoses[0].bikeId === "", "removing a bike removes its log and reminders but keeps saved checks");
+  storage.setItem(G.KEY, "{broken");
+  check(G.load(storage).bikes.length === 0, "corrupt saved data loads as an empty garage instead of crashing");
+  if (!gBad) ok("bikes, service log, reminders, saved checks, backup and import all behave");
+}
+
+/* ---------- 8. reminders (don't fail) ---------- */
 if (!D.reviewed || /pending/i.test(D.reviewed)) warn("diagnose flows not yet signed off by a mechanic (DIAGNOSE.reviewed)");
 
 console.log(failed ? `\n${failed} check(s) failed` : "\nAll checks passed");

@@ -120,11 +120,39 @@
     mail.href = "about.html#contact";
     btns.appendChild(mail);
     card.appendChild(btns);
+    if (window.Garage) card.appendChild(saveBox(parts, r));
 
     root.appendChild(card);
     root.appendChild(el("p", "dx-note",
       "This is a checklist to help you narrow things down, not a diagnosis. If anything about the brakes, steering or battery feels wrong, don't ride it."));
     root.appendChild(navRow(true));
+  }
+
+  // "Save to my garage": keeps this answer with the rider's bike, on their phone only.
+  function saveBox(parts, r) {
+    const G = window.Garage, box = el("div", "dx-save");
+    let data;
+    try { data = G.load(window.localStorage); } catch (e) { return box; }
+    let pick = null;
+    if (data.bikes.length > 1) {
+      const lab = el("label", "srcs", "Which bike?");
+      pick = el("select"); pick.id = "dxBike";
+      data.bikes.forEach(b => { const o = el("option", "", b.name); o.value = b.id; pick.appendChild(o); });
+      lab.htmlFor = "dxBike"; box.appendChild(lab); box.appendChild(pick);
+    }
+    const b = el("button", "dx-link", "Save to my garage"); b.type = "button";
+    b.onclick = () => {
+      const bikeId = pick ? pick.value : (data.bikes[0] ? data.bikes[0].id : "");
+      G.addDiagnosis(data, { bikeId: bikeId, date: new Date().toISOString().slice(0, 10), title: r.title, confidence: r.confidence, level: r.level, path: parts.join("/") });
+      const ok = G.save(window.localStorage, data);
+      box.textContent = "";
+      if (!ok) { box.appendChild(el("p", "dx-note", "This browser is blocking saved data, so it couldn't be saved.")); return; }
+      const p = el("p", "dx-note", "Saved. ");
+      const a = el("a", "", "Open My garage"); a.href = "garage.html"; p.appendChild(a);
+      box.appendChild(p);
+    };
+    box.appendChild(b);
+    return box;
   }
 
   function render() {

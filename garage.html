@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="impact-site-verification" value="9007e76e-d500-48ff-a335-95525199aecd">
+<link rel="canonical" href="https://ebikebuy.com/garage.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My Garage: Your E-Bike, Service Log and Reminders">
+<meta property="og:description" content="Save your e-bike once, then keep its service history, reminders and saved diagnoses in one place, on your own phone.">
+<meta name="geo.region" content="US-FL">
+<title>My Garage — EbikeBuy</title>
+<meta name="description" content="Save your e-bike once, then keep its service history, reminders and saved diagnoses together, stored on your own phone with no account.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--lime:#8DC63F;--lime-dk:#77AC2F;--black:#0D0D0D;--ink:#1A1A1A;--grey:#6B7280;
+  --line:#E3E3E1;--wash:#F6F6F4;--alert:#B3300F;
+  --f-head:'Montserrat',system-ui,sans-serif;--f-body:'Inter',system-ui,sans-serif;
+  --gut:clamp(16px,4vw,40px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:#fff;font-size:16px;
+  line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 var(--gut)}
+
+.hdr{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.hdr .bar{max-width:1240px;margin:0 auto;padding:14px var(--gut);display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.logo-badge{width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
+.logo-badge svg{width:18px;height:18px;fill:var(--black)}
+.logo-txt{font-family:var(--f-head);font-weight:800;font-size:18px;letter-spacing:-.02em;line-height:1}
+.logo-txt small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.22em;color:var(--grey);margin-top:2px}
+.nav{display:none;gap:22px;font-size:13px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;margin-right:18px}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--lime-dk)}
+@media(min-width:1040px){.nav{display:flex}}
+.hdr-phone{border:1.5px solid var(--lime);border-radius:5px;padding:9px 15px;font-size:12px;
+  font-weight:700;letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.hdr-phone:hover{background:var(--lime)}
+
+.masthead{background:var(--black);color:#fff;padding:clamp(34px,5vw,62px) 0}
+.masthead .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--lime);margin:0 0 12px}
+.masthead h1{font-family:var(--f-head);font-weight:900;font-size:clamp(27px,4.6vw,44px);
+  text-transform:uppercase;letter-spacing:-.02em;margin:0;line-height:1.05}
+.masthead p{color:#C9C9C5;margin:14px 0 0;font-size:16px;max-width:62ch}
+.masthead .upd{font-size:12.5px;color:#8E8E8A;margin-top:14px}
+
+main{padding:clamp(30px,5vw,52px) 0 60px}
+main.wrap{padding-top:clamp(30px,5vw,52px);padding-bottom:60px}
+section{scroll-margin-top:78px;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--f-head);font-weight:800;font-size:clamp(20px,3vw,27px);text-transform:uppercase;
+  letter-spacing:-.01em;margin:0 0 4px}
+.rule{width:52px;height:3px;background:var(--lime);border-radius:2px;margin-bottom:20px}
+h3{font-size:15.5px;font-weight:700;margin:24px 0 6px}
+p{margin:0 0 14px}
+ul.pl{margin:0 0 14px;padding-left:20px}
+ul.pl li{margin-bottom:8px}
+.callout{background:var(--wash);border-left:4px solid var(--lime);border-radius:0 5px 5px 0;
+  padding:16px 18px;margin:0 0 18px;font-size:14.5px}
+.callout--warn{border-left-color:var(--alert);background:#FDF4F2}
+.callout b{font-weight:700}
+
+.classes{display:grid;gap:14px;margin-bottom:20px}
+@media(min-width:720px){.classes{grid-template-columns:repeat(3,1fr)}}
+.cls{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.cls-hd{background:var(--black);color:#fff;padding:12px 16px}
+.cls-hd strong{font-family:var(--f-head);font-size:15px;font-weight:800;letter-spacing:.02em;
+  text-transform:uppercase;display:block}
+.cls-hd span{font-size:11.5px;color:var(--lime);letter-spacing:.08em;text-transform:uppercase}
+.cls-body{padding:14px 16px}
+.cls-body p{margin:0 0 8px;font-size:13.5px;line-height:1.5}
+.cls-body p:last-child{margin:0}
+.cls-body b{font-weight:600}
+
+.srcs{font-size:13px;color:var(--grey)}
+.srcs a{color:var(--lime-dk)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:5px;
+  font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;
+  background:var(--lime);color:var(--black);border:2px solid var(--lime)}
+.btn:hover{background:var(--lime-dk);border-color:var(--lime-dk)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghost:hover{border-color:var(--ink)}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+.ftr{background:var(--black);color:#8E8E8A;font-size:12.5px;padding:32px 0 38px;line-height:1.85}
+.ftr a{color:#C9C9C5}
+.ftr a:hover{color:var(--lime)}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.sos{background:#FDF4F2;border:2px solid var(--alert);border-radius:8px;padding:20px 20px 8px;margin:0 0 22px}
+.sos h2{color:var(--alert)}
+.sos ol{margin:0 0 14px;padding-left:22px;font-size:17px;line-height:1.55}
+.sos ol li{margin-bottom:10px}
+.btn--alert{background:var(--alert);border-color:var(--alert);color:#fff;font-size:15px;padding:16px 26px}
+.btn--alert:hover{background:#8F260C;border-color:#8F260C}
+.signs{display:grid;gap:10px;margin:0 0 18px;padding:0;list-style:none}
+@media(min-width:620px){.signs{grid-template-columns:repeat(2,1fr)}}
+.signs li{border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:15.5px}
+.signs b{display:block;font-weight:700}
+.helpbar{background:#0D0D0D;border-bottom:1px solid #262626}
+.helpbar .in{max-width:1240px;margin:0 auto;padding:0 clamp(8px,4vw,40px);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.helpbar .in::-webkit-scrollbar{display:none}
+.helpbar a{flex:none;color:#E8E8E4;text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:12px 8px;border-bottom:3px solid transparent;white-space:nowrap}
+.helpbar a:hover,.helpbar a[aria-current]{color:#8DC63F;border-bottom-color:#8DC63F}
+.helpbar a.hb-alert{color:#F2A08A}
+.sos{background:#FDF4F2;border:2px solid var(--alert);border-radius:8px;padding:18px 18px 4px;margin:0 0 22px}
+.sos p{font-size:17px}
+.btn--alert{background:var(--alert);border-color:var(--alert);color:#fff;font-size:15px;padding:16px 26px}
+.btn--alert:hover{background:#8F260C;border-color:#8F260C}
+.loc{border:2px solid var(--line);border-radius:10px;padding:18px;margin:0 0 18px}
+.loc-out{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:17px;background:var(--wash);border-radius:6px;padding:12px 14px;margin:12px 0;word-break:break-word}
+.fld{display:grid;gap:6px;margin:0 0 14px}
+.fld label{font-weight:600;font-size:15px}
+.fld select,.fld input,.fld textarea{font:inherit;font-size:17px;padding:12px 14px;border:2px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+.fld textarea{min-height:160px;resize:vertical}
+.fld select:focus,.fld input:focus,.fld textarea:focus{border-color:var(--lime);outline:none}
+.status{font-size:15px;color:var(--grey);margin:8px 0 0;min-height:1.4em}
+details.fix{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;background:#fff}
+details.fix summary{cursor:pointer;font-weight:700;font-size:17px;padding:16px 18px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.fix summary::after{content:"+";font-size:22px;line-height:1;color:var(--lime-dk)}
+details.fix[open] summary::after{content:"–"}
+details.fix .body{padding:0 18px 8px}
+details.fix ol,details.fix ul{padding-left:22px;margin:0 0 14px;font-size:16.5px}
+details.fix li{margin-bottom:8px}
+.copied{color:var(--lime-dk);font-weight:700}
+.due{border:2px solid #D99A2B;background:#FFF9EE;border-radius:8px;padding:14px 16px;margin:0 0 18px}
+.due h3{margin:0 0 6px}
+.bikes{display:grid;gap:12px;margin:0 0 16px}
+.bike{border:2px solid var(--line);border-radius:10px;padding:16px}
+.bike.sel{border-color:var(--lime)}
+.bike h3{margin:0 0 2px;font-size:19px}
+.bike .sub{color:var(--grey);font-size:15px;margin:0 0 10px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;padding:0;list-style:none}
+.links a{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:14.5px;text-decoration:none}
+.links a:hover{border-color:var(--lime-dk)}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+.sm{font:inherit;font-size:14.5px;font-weight:600;padding:10px 14px;border-radius:6px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;min-height:44px}
+.sm:hover{border-color:var(--ink)}
+.sm.pri{background:var(--lime);border-color:var(--lime);color:var(--black)}
+.sm.dan{color:var(--alert);border-color:#F0C9BE}
+.grid2{display:grid;gap:0 14px}
+@media(min-width:620px){.grid2{grid-template-columns:1fr 1fr}}
+.panel{border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px;background:#fff}
+.entries{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
+.entries li{border-left:4px solid var(--lime);background:var(--wash);border-radius:0 6px 6px 0;padding:10px 14px}
+.entries li.done{opacity:.6}
+.entries .when{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.entries b,.entries a{display:block}
+.entries .row{margin-top:8px}
+.muted{color:var(--grey)}
+.confirm{border:2px solid var(--alert);border-radius:8px;padding:12px 14px;margin:10px 0;background:#FDF4F2}
+@media print{.hdr,.helpbar,.masthead,.ftr,.noprint,.easy-btn{display:none!important}.panel{border:0}}
+</style>
+<script src="js/easy.js" defer></script>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="index.html">
+      <span class="logo-badge"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></span>
+      <span class="logo-txt">EBIKEBUY<small>.COM</small></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html#bikes">E-Bikes</a>
+      <a href="index.html#trikes">Trikes</a>
+      <a href="index.html#gear">Accessories</a>
+      <a href="index.html#bench">Assembly</a>
+      <a href="about.html">About</a>
+      <a href="about.html#contact">Contact</a>
+    </nav>
+    <a class="hdr-phone" id="hdrPhone" href="#">772-692-5505</a>
+  </div>
+</header>
+<nav class="helpbar" aria-label="Rider help"><div class="in"><a href="diagnose.html">Diagnose</a><a href="broke-down.html" aria-current="page" class="hb-alert">Broke down</a><a href="error-codes/index.html">Codes</a><a href="battery-safety.html">Battery</a></div></nav>
+
+<div class="masthead">
+  <div class="wrap">
+    <p class="tag">My garage</p>
+    <h1>Your e-bike,<br>in one place</h1>
+    <p>Save your bike once. Then keep its service history, reminders and saved checks together, and jump straight to its error codes and recalls.</p>
+    <p class="upd">Saved on this phone only. No account, nothing sent anywhere.</p>
+  </div>
+</div>
+
+<main class="wrap">
+  <div id="app" aria-live="polite"><noscript><p>My garage needs JavaScript.</p></noscript></div>
+
+  <section id="backup" class="noprint">
+    <h2>Back up and privacy</h2><div class="rule"></div>
+    <p>Your garage lives in this phone's browser. Clearing your browser data, or switching phones, removes it, so save a backup file now and then.</p>
+    <div class="row">
+      <button class="sm" type="button" id="exportBtn">Save a backup file</button>
+      <label class="sm" for="importFile" style="display:inline-flex;align-items:center">Load a backup file</label>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+      <button class="sm" type="button" id="printBtn">Print service history</button>
+      <button class="sm dan" type="button" id="wipeBtn">Delete everything</button>
+    </div>
+    <p class="status" id="backupStatus" aria-live="polite"></p>
+    <div id="wipeConfirm" class="confirm" hidden>
+      <p><b>Delete every bike, service entry, reminder and saved check on this phone?</b> This can't be undone.</p>
+      <div class="row"><button class="sm dan" type="button" id="wipeYes">Yes, delete everything</button><button class="sm" type="button" id="wipeNo">Keep my garage</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="index.html">Back to shop</a> · <a href="diagnose.html">Diagnose my e-bike</a> · <a href="ride-ready.html">Pre-ride check</a> · <a href="learn/index.html">Learn</a> · <a href="policies.html#privacy">Privacy</a><br><br>
+    EbikeBuy is an independent buying guide and service resource. My garage is stored only in this browser on this device.
+  </div>
+</footer>
+
+<script src="js/garage-store.js"></script>
+<script>
+(function () {
+  document.getElementById("hdrPhone").href = "tel:7726925505";
+  var G = window.Garage, store = window.localStorage, app = document.getElementById("app");
+  var storageOK = (function () { try { store.setItem("ebikebuy.test", "1"); store.removeItem("ebikebuy.test"); return true; } catch (e) { return false; } })();
+  var data = storageOK ? G.load(store) : G.empty();
+  var sel = data.bikes.length ? data.bikes[0].id : "", editing = null, adding = !data.bikes.length;
+  var today = new Date(); var TODAY = today.toISOString().slice(0, 10);
+  function plusDays(n) { var d = new Date(); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); }
+  function persist() { if (storageOK) G.save(store, data); render(); }
+  function el(t, c, x) { var n = document.createElement(t); if (c) n.className = c; if (x != null) n.textContent = x; return n; }
+  function btn(label, cls, fn) { var b = el("button", "sm" + (cls ? " " + cls : ""), label); b.type = "button"; b.onclick = fn; return b; }
+  function fmt(d) { var p = d.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); }
+  function bikeById(id) { return data.bikes.filter(function (b) { return b.id === id; })[0]; }
+  function field(form, name, label, type, opts, val, hint) {
+    var w = el("div", "fld"), id = "f-" + name, l = el("label", "", label); l.htmlFor = id; w.appendChild(l);
+    var i;
+    if (type === "select") { i = el("select"); opts.forEach(function (o) { var op = el("option", "", o[1]); op.value = o[0]; i.appendChild(op); }); }
+    else if (type === "textarea") { i = el("textarea"); }
+    else { i = el("input"); i.type = type || "text"; }
+    i.id = id; i.name = name; if (val) i.value = val;
+    w.appendChild(i);
+    if (hint) w.appendChild(el("span", "muted", hint));
+    form.appendChild(w); return i;
+  }
+
+  function bikeForm(bike) {
+    var f = el("form", "panel"); f.noValidate = true;
+    f.appendChild(el("h3", "", bike ? "Edit " + bike.name : "Add your e-bike"));
+    f.appendChild(el("p", "muted", "Fill in what you know. \"I don't know\" is fine; you can add the rest later."));
+    var g = el("div", "grid2"); f.appendChild(g);
+    var b = bike || {};
+    field(g, "brand", "Bike brand", "text", null, b.brand);
+    field(g, "model", "Model", "text", null, b.model);
+    field(g, "year", "Year", "text", null, b.year);
+    field(g, "name", "Nickname (optional)", "text", null, b.name);
+    field(g, "system", "Motor system", "select", Object.keys(G.SYSTEMS).map(function (k) { return [k, G.SYSTEMS[k].label]; }), b.system || "unknown", "Printed on the motor, display or battery. Often not the bike's brand.");
+    field(g, "display", "Display model", "text", null, b.display);
+    field(g, "battery", "Battery (volts or Wh)", "text", null, b.battery, "For example 48V 14Ah, or 625Wh");
+    field(g, "tires", "Tires", "select", [["", "Not sure"], ["tube", "Inner tubes"], ["tubeless", "Tubeless"]], b.tires);
+    field(g, "tireSize", "Tire size", "text", null, b.tireSize, "Printed on the tire, like 26 x 4.0");
+    field(g, "bought", "Bought on", "date", null, b.bought);
+    field(g, "boughtFrom", "Bought from", "text", null, b.boughtFrom);
+    field(g, "warrantyUntil", "Warranty until", "date", null, b.warrantyUntil);
+    field(g, "serial", "Serial number (stays on this phone)", "text", null, b.serial, "Useful for warranty claims, recalls and if it's stolen.");
+    field(f, "notes", "Notes", "textarea", null, b.notes);
+    var r = el("div", "row");
+    r.appendChild(btn(bike ? "Save changes" : "Save my bike", "pri", function () {
+      var v = {}; [].forEach.call(f.elements, function (x) { if (x.name) v[x.name] = x.value; });
+      if (bike) G.updateBike(data, bike.id, v); else sel = G.addBike(data, v);
+      editing = null; adding = false; persist();
+    }));
+    if (data.bikes.length) r.appendChild(btn("Cancel", "", function () { editing = null; adding = false; render(); }));
+    f.appendChild(r);
+    f.onsubmit = function (e) { e.preventDefault(); };
+    return f;
+  }
+
+  function render() {
+    app.textContent = "";
+    if (!storageOK) app.appendChild(el("div", "callout callout--warn", "This browser is blocking saved data (for example, a private window), so your garage can't be kept after you leave this page."));
+
+    var due = G.due(data, TODAY);
+    if (due.length) {
+      var dbox = el("div", "due"); dbox.appendChild(el("h3", "", due.length === 1 ? "1 reminder is due" : due.length + " reminders are due"));
+      var ul = el("ul", "entries");
+      due.forEach(function (r) { var b = bikeById(r.bikeId); var li = el("li"); li.appendChild(el("span", "when", fmt(r.due) + " · " + (b ? b.name : ""))); li.appendChild(el("b", "", r.what));
+        var row = el("div", "row"); row.appendChild(btn("Done", "", function () { G.setReminderDone(data, r.id, true); persist(); })); li.appendChild(row); ul.appendChild(li); });
+      dbox.appendChild(ul); app.appendChild(dbox);
+    }
+
+    var sec = el("section"); sec.appendChild(el("h2", "", "Your bikes")); sec.appendChild(el("div", "rule"));
+    if (!data.bikes.length && !adding) adding = true;
+    var list = el("div", "bikes");
+    data.bikes.forEach(function (b) {
+      var card = el("div", "bike" + (b.id === sel ? " sel" : ""));
+      card.appendChild(el("h3", "", b.name));
+      card.appendChild(el("p", "sub", [b.brand, b.model, b.year].filter(Boolean).join(" · ") + (b.system !== "unknown" ? " · " + G.SYSTEMS[b.system].label + " motor" : "")));
+      var L = G.linksFor(b), links = el("ul", "links");
+      function link(label, href) { var li = el("li"), a = el("a", "", label); a.href = href; li.appendChild(a); links.appendChild(li); }
+      if (L.codes) link(L.systemLabel + " error codes", L.codes);
+      link(b.brand ? "Recalls for " + b.brand : "Recalls", L.recalls);
+      link("Diagnose a problem", "diagnose.html");
+      if (b.warrantyUntil) { var w = el("li"); w.appendChild(el("span", "muted", (b.warrantyUntil >= TODAY ? "Warranty until " : "Warranty ended ") + fmt(b.warrantyUntil))); links.appendChild(w); }
+      card.appendChild(links);
+      var row = el("div", "row");
+      if (b.id !== sel) row.appendChild(btn("Open service log", "pri", function () { sel = b.id; render(); }));
+      row.appendChild(btn("Edit details", "", function () { editing = b.id; render(); }));
+      row.appendChild(btn("Remove", "dan", function () { card.appendChild(confirmBox("Remove " + b.name + " and its service log and reminders?", function () { G.removeBike(data, b.id); sel = data.bikes.length ? data.bikes[0].id : ""; persist(); })); }));
+      card.appendChild(row);
+      if (editing === b.id) card.appendChild(bikeForm(b));
+      list.appendChild(card);
+    });
+    sec.appendChild(list);
+    if (adding) sec.appendChild(bikeForm(null));
+    else sec.appendChild(btn("+ Add another bike", "", function () { adding = true; render(); }));
+    app.appendChild(sec);
+
+    var bike = bikeById(sel);
+    if (bike) app.appendChild(bikeDetail(bike));
+  }
+
+  function confirmBox(q, yes) {
+    var c = el("div", "confirm"); c.appendChild(el("p", "", q));
+    var r = el("div", "row"); r.appendChild(btn("Yes, remove", "dan", yes)); r.appendChild(btn("Cancel", "", function () { c.remove(); }));
+    c.appendChild(r); return c;
+  }
+
+  function bikeDetail(bike) {
+    var wrap = el("section"); wrap.id = "detail";
+    wrap.appendChild(el("h2", "", bike.name + ": service log")); wrap.appendChild(el("div", "rule"));
+
+    // add a service entry
+    var f = el("form", "panel noprint"); f.noValidate = true; f.appendChild(el("h3", "", "Add a service entry"));
+    var g = el("div", "grid2"); f.appendChild(g);
+    var dI = field(g, "date", "Date", "date", null, TODAY);
+    var mI = field(g, "miles", "Miles on the bike (optional)", "text");
+    var wI = field(f, "work", "Work done", "text", null, "", "For example: new rear tire and tube, brakes adjusted");
+    var g2 = el("div", "grid2"); f.appendChild(g2);
+    var pI = field(g2, "parts", "Parts replaced (optional)", "text");
+    var sI = field(g2, "shop", "Done by (optional)", "text", null, "", "You, or a shop like Bikes Plus");
+    var msg = el("p", "status");
+    var r = el("div", "row"); r.appendChild(btn("Add to log", "pri", function () {
+      if (!wI.value.trim()) { msg.textContent = "Add what was done first."; wI.focus(); return; }
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(dI.value)) { msg.textContent = "Pick a date."; dI.focus(); return; }
+      G.addLog(data, { bikeId: bike.id, date: dI.value, miles: mI.value, work: wI.value, parts: pI.value, shop: sI.value }); persist();
+    })); f.appendChild(r); f.appendChild(msg); f.onsubmit = function (e) { e.preventDefault(); };
+    wrap.appendChild(f);
+
+    var log = G.logFor(data, bike.id);
+    if (!log.length) wrap.appendChild(el("p", "muted", "No service entries yet. Add your last tune-up, tire change or repair."));
+    else {
+      var ul = el("ul", "entries");
+      log.forEach(function (e) {
+        var li = el("li"); li.appendChild(el("span", "when", fmt(e.date) + (e.miles ? " · " + e.miles + " mi" : "") + (e.shop ? " · " + e.shop : "")));
+        li.appendChild(el("b", "", e.work)); if (e.parts) li.appendChild(el("span", "muted", "Parts: " + e.parts));
+        var row = el("div", "row noprint"); row.appendChild(btn("Delete", "dan", function () { G.removeLog(data, e.id); persist(); })); li.appendChild(row);
+        ul.appendChild(li);
+      });
+      wrap.appendChild(ul);
+    }
+
+    // reminders
+    var rs = el("div", "panel noprint"); rs.appendChild(el("h3", "", "Reminders"));
+    rs.appendChild(el("p", "muted", "Shown here when they're due. Your phone won't send notifications, so check back, or add them to your calendar too."));
+    var quick = el("div", "row");
+    [["Clean and lube the chain", 14], ["Check brake pads", 30], ["Check tire pressure", 7], ["Shop check-over at Bikes Plus", 180]].forEach(function (q) {
+      quick.appendChild(btn("+ " + q[0] + " (" + (q[1] < 30 ? q[1] + " days" : q[1] / 30 + (q[1] === 30 ? " month" : " months")) + ")", "", function () { G.addReminder(data, bike.id, q[0], plusDays(q[1])); persist(); }));
+    });
+    rs.appendChild(quick);
+    var g3 = el("div", "grid2"); rs.appendChild(g3);
+    var rw = field(g3, "rwhat", "Or your own reminder", "text");
+    var rd = field(g3, "rdue", "Due on", "date", null, plusDays(30));
+    var rmsg = el("p", "status");
+    rs.appendChild(btn("Add reminder", "pri", function () { if (!rw.value.trim()) { rmsg.textContent = "Type what to be reminded about."; rw.focus(); return; } G.addReminder(data, bike.id, rw.value, rd.value); persist(); }));
+    rs.appendChild(rmsg);
+    var mine = data.reminders.filter(function (x) { return x.bikeId === bike.id; }).sort(function (a, b) { return a.due < b.due ? -1 : 1; });
+    if (mine.length) {
+      var ul2 = el("ul", "entries"); ul2.style.marginTop = "12px";
+      mine.forEach(function (x) {
+        var li = el("li", x.done ? "done" : ""); li.appendChild(el("span", "when", (x.done ? "Done · " : x.due <= TODAY ? "Due · " : "") + fmt(x.due))); li.appendChild(el("b", "", x.what));
+        var row = el("div", "row"); row.appendChild(btn(x.done ? "Not done" : "Done", "", function () { G.setReminderDone(data, x.id, !x.done); persist(); }));
+        row.appendChild(btn("Delete", "dan", function () { G.removeReminder(data, x.id); persist(); })); li.appendChild(row); ul2.appendChild(li);
+      });
+      rs.appendChild(ul2);
+    }
+    wrap.appendChild(rs);
+
+    // saved diagnoses
+    var dg = data.diagnoses.filter(function (x) { return x.bikeId === bike.id || !x.bikeId; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    var ds = el("div", "panel"); ds.appendChild(el("h3", "", "Saved checks"));
+    if (!dg.length) { var p = el("p", "muted", "When you use "); var a = el("a", "", "Diagnose"); a.href = "diagnose.html"; p.appendChild(a); p.appendChild(document.createTextNode(", tap \"Save to my garage\" on the answer to keep it here.")); ds.appendChild(p); }
+    else {
+      var ul3 = el("ul", "entries");
+      dg.forEach(function (x) { var li = el("li"); li.appendChild(el("span", "when", fmt(x.date) + (x.confidence ? " · " + x.confidence : "") + (x.bikeId ? "" : " · not linked to a bike")));
+        var a = el("a", "", x.title); a.href = "diagnose.html#" + x.path; li.appendChild(a); ul3.appendChild(li); });
+      ds.appendChild(ul3);
+    }
+    wrap.appendChild(ds);
+    return wrap;
+  }
+
+  /* ---- backup ---- */
+  var bst = document.getElementById("backupStatus");
+  document.getElementById("exportBtn").onclick = function () {
+    var blob = new Blob([G.exportText(data)], { type: "application/json" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "ebikebuy-garage-" + TODAY + ".json";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    bst.textContent = "Backup file saved. Keep it somewhere safe, like your email or cloud storage.";
+  };
+  document.getElementById("importFile").onchange = function (e) {
+    var file = e.target.files[0]; if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      try { var d = G.importText(reader.result); data = d; sel = data.bikes.length ? data.bikes[0].id : ""; adding = !data.bikes.length; persist(); bst.textContent = "Backup loaded: " + data.bikes.length + " bike(s)."; }
+      catch (err) { bst.textContent = "That file isn't a My Garage backup. Nothing was changed."; }
+      e.target.value = "";
+    };
+    reader.readAsText(file);
+  };
+  document.getElementById("printBtn").onclick = function () { window.print(); };
+  document.getElementById("wipeBtn").onclick = function () { document.getElementById("wipeConfirm").hidden = false; };
+  document.getElementById("wipeNo").onclick = function () { document.getElementById("wipeConfirm").hidden = true; };
+  document.getElementById("wipeYes").onclick = function () {
+    data = G.empty(); try { store.removeItem(G.KEY); } catch (e) {}
+    sel = ""; adding = true; document.getElementById("wipeConfirm").hidden = true; render(); bst.textContent = "Everything was deleted from this phone.";
+  };
+
+  render();
+})();
+</script>
+</body>
+</html>
