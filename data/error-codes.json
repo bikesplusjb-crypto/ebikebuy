@@ -1,0 +1,631 @@
+{
+  "_readme": "Every code is keyed by system + code. A code's number means nothing on its own: 503 on a Bosch is not 503 on anything else. Each entry needs a Bosch (or other maker's) source URL and the date it was checked, or tests/run.js fails. 'bosch_says' and 'bosch_fix' summarize the maker's page closely (follow source_url for exact wording); 'plain' is our explanation. source_type is 'help-center' or 'manual'. Run `node tools/build-codes.js` after editing to regenerate the pages in error-codes/.",
+  "systems": {
+    "bosch-classic": {
+      "name": "Bosch",
+      "label": "Bosch 3-digit error codes",
+      "applies": "Bosch drive systems that show 3-digit codes on Intuvia, Kiox, Purion, Nyon or SmartphoneHub displays. Purion displays may show only the last two digits (for example 03 for 503). The newer Bosch smart system shows 6-digit codes instead; look those up on Bosch's site for now.",
+      "official": "https://help.bosch-ebike.com/en/help-center/errorcodes",
+      "official_label": "Bosch eBike help center: system and error messages"
+    }
+  },
+  "codes": [
+    {
+      "system": "bosch-classic",
+      "code": "410",
+      "title": "Display buttons disabled",
+      "bosch_says": "One or more buttons of the on-board computer are disabled.",
+      "bosch_fix": [
+        "Check whether any buttons are stuck, for example from dirt getting in.",
+        "Clean the buttons if need be."
+      ],
+      "plain": "A button on the display is stuck or being read as pressed, so the display has switched it off.",
+      "severity": "check",
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/410",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "414",
+      "title": "Operating unit connection problem",
+      "bosch_says": "Connection problem of the operating unit.",
+      "bosch_fix": [
+        "Have the connections checked."
+      ],
+      "plain": "The handlebar control unit isn't connecting properly to the rest of the system.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/414",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "418",
+      "title": "Operating unit buttons disabled",
+      "bosch_says": "One or more buttons of the operating unit are disabled.",
+      "bosch_fix": [
+        "Check whether any buttons are stuck, for example from dirt getting in.",
+        "Clean the buttons if need be."
+      ],
+      "plain": "A button on the handlebar control unit is stuck or being read as pressed.",
+      "severity": "check",
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/418",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "419",
+      "title": "Configuration error",
+      "bosch_says": "Configuration error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The system's components aren't set up to work together correctly.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/fr/help-center/error/419",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "422",
+      "title": "Drive unit connection problem",
+      "bosch_says": "Connection problem of the drive unit.",
+      "bosch_fix": [
+        "Have the connections checked."
+      ],
+      "plain": "The motor unit isn't connecting properly to the rest of the system.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/422",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "423",
+      "title": "Battery connection problem",
+      "bosch_says": "Connection problem of the eBike battery.",
+      "bosch_fix": [
+        "Have the connections checked."
+      ],
+      "plain": "The battery isn't connecting properly to the rest of the system.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/423",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "424",
+      "title": "Communication error between components",
+      "bosch_says": "Communication error between components.",
+      "bosch_fix": [
+        "Have the connections checked."
+      ],
+      "plain": "Parts of the system aren't communicating with each other properly.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/424",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "426",
+      "title": "Internal time-out error",
+      "bosch_says": "Internal time-out error.",
+      "bosch_fix": [
+        "Restart the system."
+      ],
+      "plain": "Something inside the system didn't respond in time. While it's active, the wheel size can't be shown or changed in the settings.",
+      "severity": "check",
+      "source_url": "https://www.bosch-ebike.com/en/help-center/error/426",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "430",
+      "title": "Display's internal battery is flat",
+      "bosch_says": "The internal battery of the on-board computer is flat (does not apply to BUI350).",
+      "bosch_fix": [
+        "Charge the on-board computer in its holder or through its USB port."
+      ],
+      "plain": "The display's own small built-in battery is empty. This is the display, not the main e-bike battery.",
+      "severity": "check",
+      "source_url": "https://www.bosch-ebike.com/au/help-center/error/430",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "431",
+      "title": "Software version error",
+      "bosch_says": "Software version error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The software versions on the system's parts don't match.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/431",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "440",
+      "title": "Drive unit internal fault",
+      "bosch_says": "Internal fault of the drive unit.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The motor unit has detected a fault inside itself.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/440",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "450",
+      "title": "Internal software error",
+      "bosch_says": "Internal software error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The system's software has hit an error.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/450",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "460",
+      "title": "USB port error",
+      "bosch_says": "Error at the USB port.",
+      "bosch_fix": [
+        "Remove the cable from the on-board computer's USB port.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "There's a problem with whatever is plugged into the display's USB port.",
+      "severity": "check",
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/460",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "490",
+      "title": "Display internal fault",
+      "bosch_says": "Internal fault of the on-board computer.",
+      "bosch_fix": [
+        "Have the on-board computer checked."
+      ],
+      "plain": "The display has detected a fault inside itself.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/490",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "500",
+      "title": "Drive unit internal error",
+      "bosch_says": "Internal drive unit error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The motor unit has detected a fault inside itself. It may stop giving assistance.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/en/connect/help-center/error/500",
+      "verified_on": "2026-10-23",
+      "source_type": "help-center"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "502",
+      "title": "Bike light fault",
+      "bosch_says": "Fault in the bicycle light.",
+      "bosch_fix": [
+        "Check the light and its wiring.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "There's a problem with the bike's lights or the wiring to them.",
+      "severity": "check",
+      "source_url": "https://help.bosch-ebike.com/us/connect/help-center/error/502",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "503",
+      "title": "Speed sensor error",
+      "bosch_says": "Speed sensor error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The system isn't getting a proper signal from the wheel speed sensor. Without it, the motor can't tell how fast you're going and may limit or stop assistance.",
+      "severity": "check",
+      "source_url": "https://help.bosch-ebike.com/us/connect/help-center/error/503",
+      "verified_on": "2026-10-23",
+      "source_type": "help-center"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "504",
+      "title": "Speed signal distortion",
+      "bosch_says": "Speed signal distortion detected. Drive assistance is reduced.",
+      "bosch_fix": [
+        "Check the position of the spoke magnet and adjust it if necessary.",
+        "Check for manipulation (tuning)."
+      ],
+      "plain": "The speed signal doesn't look right to the system. Often the magnet on a rear-wheel spoke has moved, or the bike has been tuned to go faster than it should. Assistance is reduced until it's fixed.",
+      "severity": "check",
+      "source_url": "https://www.bosch-ebike.com/fileadmin/EBC/Service/Downloads/Bedienungsanleitungen/MY2024/BES2/Intuvia_BUI255/Bosch-eBike-Manual-BUI255_Intuvia_MY24_US_oReg_v1.pdf",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "510",
+      "title": "Internal sensor error",
+      "bosch_says": "Internal sensor error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "One of the system's internal sensors has a fault.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/nz/connect/help-center/error/510",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "511",
+      "title": "Drive unit internal error",
+      "bosch_says": "Internal error of the drive unit.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The motor unit has detected a fault inside itself.",
+      "severity": "dealer",
+      "source_url": "https://www.bosch-ebike.com/us/help-center/error/511",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "530",
+      "title": "Battery error",
+      "bosch_says": "Battery error.",
+      "bosch_fix": [
+        "Switch off the eBike.",
+        "Remove the eBike battery and reinsert it.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The system has detected a problem with the battery.",
+      "severity": "check",
+      "battery": true,
+      "source_url": "https://www.bosch-ebike.com/fileadmin/EBC/Service/Downloads/Bedienungsanleitungen/MY2024/BES2/Intuvia_BUI255/Bosch-eBike-Manual-BUI255_Intuvia_MY24_US_oReg_v1.pdf",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "531",
+      "title": "Configuration error",
+      "bosch_says": "Configuration error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The system's parts aren't set up to work together. Bosch notes that on Nyon this can mean the motor's software is too old for the display and the dealer needs to update it.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/us/connect/help-center/error/531",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "540",
+      "title": "Temperature error",
+      "bosch_says": "The eBike is outside the permissible temperature range.",
+      "bosch_fix": [
+        "Switch off the eBike system.",
+        "Let the drive unit cool down or warm up to the permissible temperature range.",
+        "Restart the system."
+      ],
+      "plain": "The motor unit is too hot or too cold to run safely. In Florida, that's usually heat.",
+      "severity": "check",
+      "source_url": "https://www.bosch-ebike.com/fileadmin/EBC/Service/Downloads/Bedienungsanleitungen/MY2024/BES2/Intuvia_BUI255/Bosch-eBike-Manual-BUI255_Intuvia_MY24_US_oReg_v1.pdf",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "550",
+      "title": "Impermissible load detected",
+      "bosch_says": "An impermissible load has been detected.",
+      "bosch_fix": [
+        "Remove the load.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "Something plugged into the bike's electrical system is drawing power that the system doesn't allow, such as an add-on light or a USB device.",
+      "severity": "check",
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/550",
+      "verified_on": "2026-10-23",
+      "source_type": "help-center"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "580",
+      "title": "Software version error",
+      "bosch_says": "Software version error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The software versions on the system's parts don't match.",
+      "severity": "dealer",
+      "source_url": "https://www.bosch-ebike.com/fileadmin/EBC/Service/Downloads/Bedienungsanleitungen/MY2024/BES2/Intuvia_BUI255/Bosch-eBike-Manual-BUI255_Intuvia_MY24_US_oReg_v1.pdf",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "591",
+      "title": "Authentication error",
+      "bosch_says": "Authentication error.",
+      "bosch_fix": [
+        "Switch off the eBike system.",
+        "Remove the battery and reinsert it.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The system's parts couldn't confirm each other as genuine, matching Bosch components.",
+      "severity": "check",
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/591",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "592",
+      "title": "Incompatible component",
+      "bosch_says": "Incompatible component.",
+      "bosch_fix": [
+        "Use a compatible display."
+      ],
+      "plain": "The display (or another part) fitted to the bike isn't compatible with the rest of the system.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/592",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "593",
+      "title": "Configuration error",
+      "bosch_says": "Configuration error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The system's components aren't set up to work together correctly.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/us/connect/help-center/error/593",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "595",
+      "title": "Communication error",
+      "bosch_says": "Communication error.",
+      "bosch_fix": [
+        "Check the wiring to the drive unit.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "Parts of the system aren't communicating properly with the motor unit.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/595",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "596",
+      "title": "Communication error",
+      "bosch_says": "Communication error.",
+      "bosch_fix": [
+        "Check the wiring to the drive unit.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "Parts of the system aren't communicating properly with the motor unit.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/596",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "602",
+      "title": "Internal battery error",
+      "bosch_says": "Internal battery error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer.",
+        "If it appears while charging: disconnect the charger from the battery, restart the eBike system, then plug the charger back in."
+      ],
+      "plain": "The battery has detected a fault inside itself.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://help.bosch-ebike.com/ca/help-center/error/602",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "603",
+      "title": "Internal battery error",
+      "bosch_says": "Internal battery error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The battery has detected a fault inside itself.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/603",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "605",
+      "title": "Battery temperature error",
+      "bosch_says": "Battery temperature error.",
+      "bosch_fix": [
+        "Switch off the eBike system.",
+        "Let the battery cool down or warm up to the permissible temperature range.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer.",
+        "If it appears while charging: disconnect the charger and let the battery cool down."
+      ],
+      "plain": "The battery is too hot or too cold to use or charge safely.",
+      "severity": "check",
+      "battery": true,
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/605",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "606",
+      "title": "External battery error",
+      "bosch_says": "External battery error.",
+      "bosch_fix": [
+        "Check the wiring.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "There's a problem outside the battery itself, such as its wiring or connection.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bosch-ebike.com/fileadmin/EBC/Service/Downloads/Bedienungsanleitungen/MY2024/BES2/Intuvia_BUI255/Bosch-eBike-Manual-BUI255_Intuvia_MY24_US_oReg_v1.pdf",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "610",
+      "title": "Battery voltage error",
+      "bosch_says": "Battery voltage error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The system has detected a problem with the battery's voltage.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://help.bosch-ebike.com/us/connect/help-center/error/610",
+      "verified_on": "2026-10-23",
+      "source_type": "help-center"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "620",
+      "title": "Charger error",
+      "bosch_says": "Charger error.",
+      "bosch_fix": [
+        "Replace the charger.",
+        "Contact your Bosch eBike dealer."
+      ],
+      "plain": "The charger has a fault. Only replace it with a Bosch charger made for your battery.",
+      "severity": "check",
+      "battery": true,
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/620",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "640",
+      "title": "Internal battery error",
+      "bosch_says": "Internal battery error.",
+      "bosch_fix": [
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The battery has detected a fault inside itself.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://help.bosch-ebike.com/za/help-center/error/640",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "655",
+      "title": "Multiple battery errors",
+      "bosch_says": "Multiple battery errors.",
+      "bosch_fix": [
+        "Switch off the eBike system.",
+        "Remove the battery and reinsert it.",
+        "Restart the system.",
+        "If the problem persists, contact your Bosch eBike dealer."
+      ],
+      "plain": "The battery is reporting more than one fault at once.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://help.bosch-ebike.com/us/help-center/error/655",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "656",
+      "title": "Software version error",
+      "bosch_says": "Software version error.",
+      "bosch_fix": [
+        "Contact your Bosch eBike dealer so they can update the software."
+      ],
+      "plain": "The battery's software needs updating by a dealer.",
+      "severity": "dealer",
+      "source_url": "https://help.bosch-ebike.com/en/help-center/error/656",
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bosch-classic",
+      "code": "7xx",
+      "title": "Fault in a non-Bosch part",
+      "bosch_says": "Error in a third-party (non-Bosch) component.",
+      "bosch_fix": [
+        "Follow the operating instructions from that component's manufacturer."
+      ],
+      "plain": "Any code in the 700s points to a part made by another company, such as a gear hub or shifting system, not to the Bosch system itself.",
+      "severity": "check",
+      "source_url": "https://www.bosch-ebike.com/fileadmin/EBC/Service/Downloads/Bedienungsanleitungen/MY2024/BES2/Intuvia_BUI255/Bosch-eBike-Manual-BUI255_Intuvia_MY24_US_oReg_v1.pdf",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    }
+  ],
+  "manual_label": "Bosch Intuvia owner's manual (MY2024, US)"
+}
