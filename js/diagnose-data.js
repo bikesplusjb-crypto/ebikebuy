@@ -341,7 +341,7 @@ const DIAGNOSE = {
           options: [
             { label: "Bosch", next: "ec-bosch" },
             { label: "Shimano (STEPS / EP)", next: "ec-shimano" },
-            { label: "Bafang", next: "ec-other" },
+            { label: "Bafang", next: "ec-bafang" },
             { label: "Something else", next: "ec-other" },
             { label: "I don't know", next: "ec-unknown" }
           ]
@@ -359,6 +359,18 @@ const DIAGNOSE = {
             { label: "Look up a Bosch code", href: "error-codes/bosch.html" },
             { label: "Bosch eBike help center (official)", href: "https://help.bosch-ebike.com/" }
           ]
+        },
+        "ec-bafang": {
+          result: true, level: "check", confidence: "Possible",
+          title: "Look up the code, but check the display first",
+          why: "Bafang's own displays use Bafang's code list. Many bikes with Bafang or Bafang-style motors have a display made by another company, and its numbers can mean something different.",
+          checks: [
+            "Look for the Bafang name or logo on the display or on its back.",
+            "Write down the exact code. Some displays keep the last few codes in an INFO or ERROR menu.",
+            "Switch the system off and on once. If the code comes back, stop and get it checked."
+          ],
+          links: [{ label: "Look up a Bafang code", href: "error-codes/bafang.html" }],
+          help: "Not a Bafang display? Send us a photo of it and we'll tell you what the code means."
         },
         "ec-shimano": {
           result: true, level: "check", confidence: "Possible",

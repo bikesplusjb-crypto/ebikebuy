@@ -14,6 +14,7 @@ const OUT = path.join(ROOT, "error-codes");
 const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, "data/error-codes.json"), "utf8"));
 const PHONE = "772-692-5505";
 
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const fmtDate = iso => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -31,8 +32,9 @@ const STYLE = laws.slice(laws.indexOf("<style>"), laws.indexOf("</style>")).repl
 ol.pl{margin:0 0 14px;padding-left:22px}
 ol.pl li{margin-bottom:8px;font-size:16.5px}
 .sys{display:grid;gap:10px;margin-bottom:20px}
-.sys a,.sys div{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none}
-.sys a{border-left:4px solid var(--lime)}
+.sys>a,.sys>div{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none}
+.sys>a{border-left:4px solid var(--lime)}
+.sys span a{color:var(--lime-dk)}
 .sys strong{display:block;font-family:var(--f-head);font-size:18px}
 .sys span{color:var(--grey);font-size:14.5px}
 `;
@@ -109,8 +111,8 @@ for (const c of DATA.codes) {
   const file = `${sys.slug}-${c.code}.html`.toLowerCase();
   c._file = file;
   const next = c.severity === "dealer"
-    ? `If the code comes back after one restart, stop using the assist and have the bike checked by a mechanic who works on ${sys.name} systems. Bikes Plus has diagnostic tools for Bosch and most other major motor systems.`
-    : `If the code comes back after a restart, have it checked by a mechanic who works on ${sys.name} systems, like Bikes Plus.`;
+    ? `If the code comes back after one restart, stop using the assist and have the bike checked by a mechanic who works on ${sys.name} systems. ${sys.shop_note}`
+    : `If the code comes back after a restart, have it checked by a mechanic who works on ${sys.name} systems. ${sys.shop_note}`;
   files[file] = page({
     file,
     title: `${sys.name} error ${c.code}: ${c.title}`,
@@ -127,7 +129,7 @@ for (const c of DATA.codes) {
     <p class="quote">${esc(c.maker_says)}</p>
     <h3>${esc(sys.name)}'s recommended steps</h3>
     <ol class="pl">${c.maker_fix.map(s => `<li>${esc(s)}</li>`).join("")}</ol>
-    <p class="srcs">Summarized from <a href="${esc(c.source_url)}">${c.source_type === "manual" ? esc(sys.manual_label) + " (error " + esc(c.code) + ")" : esc(sys.name) + "'s " + esc(sys.source_noun) + " page for error " + esc(c.code)}</a>, checked ${esc(fmtDate(c.verified_on))}. Follow the link for ${esc(sys.name)}'s exact wording.</p>
+    <p class="srcs">Summarized from <a href="${esc(c.source_url)}">${c.source_type === "manual" ? esc(c.source_label || sys.manual_label) + " (error " + esc(c.code) + ")" : esc(sys.name) + "'s " + esc(sys.source_noun) + " page for error " + esc(c.code)}</a>, checked ${esc(fmtDate(c.verified_on))}. Follow the link for ${esc(sys.name)}'s exact wording.</p>
   </section>
 
   <section id="next">
@@ -164,12 +166,12 @@ for (const [sid, codes] of Object.entries(bySystem)) {
     description: `${sys.label} explained in plain English, each checked against ${sys.name}'s own documentation with the date we checked it.`,
     tag: "Error code library",
     h1: `${esc(sys.label)}`,
-    lede: sys.applies,
+    lede: cap(sys.applies),
     body: `
   ${sys.display_warning ? `<div class="callout"><b>Check your display first.</b> ${esc(sys.display_warning)}</div>` : ""}
   <section>
     <label for="find" class="srcs">Type the code from your display</label>
-    <input id="find" class="find" inputmode="numeric" autocomplete="off" placeholder="e.g. 503">
+    <input id="find" class="find" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="e.g. ${esc(codes[0].code)}">
     <ul class="codes" id="codes">
 ${codes.map(c => `      <li data-code="${esc(c.code)}"><a href="${esc(c._file)}"><b>${esc(c.code)}</b>${esc(c.title)}</a></li>`).join("\n")}
     </ul>
@@ -180,8 +182,9 @@ ${codes.map(c => `      <li data-code="${esc(c.code)}"><a href="${esc(c._file)}"
 (function(){
   var f=document.getElementById("find"),items=[].slice.call(document.querySelectorAll("#codes li")),none=document.getElementById("none");
   f.addEventListener("input",function(){
+    var n=function(x){return x.toLowerCase().replace(/^0+(?=.)/,"");};
     var q=f.value.trim().toLowerCase(),shown=0;
-    items.forEach(function(li){var on=!q||li.getAttribute("data-code").toLowerCase().indexOf(q)===0;li.hidden=!on;if(on)shown++;});
+    items.forEach(function(li){var c=li.getAttribute("data-code").toLowerCase();var on=!q||c.indexOf(q)===0||n(c).indexOf(n(q))===0;li.hidden=!on;if(on)shown++;});
     none.hidden=shown>0;
   });
 })();
@@ -201,9 +204,9 @@ files["index.html"] = page({
   body: `
   <section>
     <div class="sys">
-${Object.entries(DATA.systems).map(([sid, s]) => `      <a href="${s.slug}.html"><strong>${esc(s.label)}</strong><span>${(bySystem[sid] || []).length} codes so far · ${esc(s.applies.split(".")[0])}.</span></a>`).join("\n")}
+${Object.entries(DATA.systems).map(([sid, s]) => `      <a href="${s.slug}.html"><strong>${esc(s.label)}</strong><span>${(bySystem[sid] || []).length} codes so far · ${esc(cap(s.applies.split(". ")[0]).replace(/\.$/, ""))}.</span></a>`).join("\n")}
       <div><strong>Shimano STEPS / EP</strong><span>Coming next. For now, see <a href="https://si.shimano.com/">Shimano's manuals</a>. W codes are warnings; E codes are errors.</span></div>
-      <div><strong>Bafang, and everything else</strong><span>Not yet. Check your display's manual, or <a href="../about.html#contact">send us a photo</a>.</span></div>
+      <div><strong>Everything else</strong><span>Not yet, and we won't guess. Check your display's manual, or <a href="../about.html#contact">send us a photo</a>.</span></div>
     </div>
     <p>Not sure what's wrong? <a href="../diagnose.html">Try the step-by-step checks</a>.</p>
   </section>
