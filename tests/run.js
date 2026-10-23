@@ -116,11 +116,14 @@ EC.codes.forEach(c => {
   if (!EC.systems[c.system]) bad("unknown system");
   if (seenCodes.has(id)) bad("listed twice");
   seenCodes.add(id);
-  if (!/^https:\/\/(help\.|www\.)?bosch-ebike\.com\//.test(c.source_url || "")) bad("needs a source URL on the maker's own site");
+  const sys = EC.systems[c.system] || {};
+  let host = ""; try { host = new URL(c.source_url).hostname; } catch (e) {}
+  if (!/^https:/.test(c.source_url || "") || !(sys.source_domains || []).some(d => host === d || host.endsWith("." + d)))
+    bad(`needs a source URL on the maker's own site (${(sys.source_domains || []).join(", ")})`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(c.verified_on || "")) bad("needs a verified_on date (YYYY-MM-DD)");
   if (!["help-center", "manual"].includes(c.source_type)) bad("source_type must be help-center or manual");
   if (!["check", "dealer"].includes(c.severity)) bad("severity must be check or dealer");
-  if (!c.title || !c.bosch_says || !c.plain || !(c.bosch_fix || []).length) bad("needs title, bosch_says, bosch_fix and plain");
+  if (!c.title || !c.maker_says || !c.plain || !(c.maker_fix || []).length) bad("needs title, maker_says, maker_fix and plain");
 });
 if (!ecBad) ok(`${EC.codes.length} codes, each with a maker source and date, no duplicates`);
 const { execFileSync } = require("child_process");

@@ -1,12 +1,34 @@
 {
-  "_readme": "Every code is keyed by system + code. A code's number means nothing on its own: 503 on a Bosch is not 503 on anything else. Each entry needs a Bosch (or other maker's) source URL and the date it was checked, or tests/run.js fails. 'bosch_says' and 'bosch_fix' summarize the maker's page closely (follow source_url for exact wording); 'plain' is our explanation. source_type is 'help-center' or 'manual'. Run `node tools/build-codes.js` after editing to regenerate the pages in error-codes/.",
+  "_readme": "Every code is keyed by system + code. A code's number means nothing on its own: 503 on a Bosch is not 503 on anything else. Each entry needs a source URL on the maker's own site (see the system's source_domains) and the date it was checked, or tests/run.js fails. 'maker_says' and 'maker_fix' summarize the maker's page closely (follow source_url for exact wording); 'plain' is our explanation. source_type is 'help-center' or 'manual'. Run `node tools/build-codes.js` after editing to regenerate the pages in error-codes/. Optional per-code source_label names the document when it isn't the system's default.",
   "systems": {
     "bosch-classic": {
       "name": "Bosch",
       "label": "Bosch 3-digit error codes",
       "applies": "Bosch drive systems that show 3-digit codes on Intuvia, Kiox, Purion, Nyon or SmartphoneHub displays. Purion displays may show only the last two digits (for example 03 for 503). The newer Bosch smart system shows 6-digit codes instead; look those up on Bosch's site for now.",
       "official": "https://help.bosch-ebike.com/en/help-center/errorcodes",
-      "official_label": "Bosch eBike help center: system and error messages"
+      "official_label": "Bosch eBike help center: system and error messages",
+      "slug": "bosch",
+      "manual_label": "Bosch Intuvia owner's manual (MY2024, US)",
+      "source_domains": [
+        "bosch-ebike.com"
+      ],
+      "source_noun": "help center",
+      "shop_note": "Bikes Plus has diagnostic tools for Bosch and most other major motor systems."
+    },
+    "bafang": {
+      "slug": "bafang",
+      "name": "Bafang",
+      "label": "Bafang display error codes",
+      "applies": "bikes with a Bafang display (the Bafang name or logo is usually on the display or its back), on Bafang mid-drive and hub-motor systems. Displays with a screen keep the last 10 codes in the INFO or ERROR menu. LED-only displays flash the code: the first light flashes the tens digit and the second the units, so two flashes then five is 25.",
+      "official": "https://www.bafang-e.com/en/oem-area/service/faqs/",
+      "official_label": "Bafang's service FAQ and display manuals",
+      "manual_label": "Bafang manual",
+      "source_domains": [
+        "bafang-e.com"
+      ],
+      "source_noun": "documentation",
+      "display_warning": "These are the codes Bafang's own displays use. Many bikes with Bafang or Bafang-style motors have a display made by another company, and its numbers can mean something different. If your display isn't a Bafang one, use that display's manual, or send us a photo.",
+      "shop_note": "Bikes Plus works on Bafang and Bafang-style systems all the time."
     }
   },
   "codes": [
@@ -14,8 +36,8 @@
       "system": "bosch-classic",
       "code": "410",
       "title": "Display buttons disabled",
-      "bosch_says": "One or more buttons of the on-board computer are disabled.",
-      "bosch_fix": [
+      "maker_says": "One or more buttons of the on-board computer are disabled.",
+      "maker_fix": [
         "Check whether any buttons are stuck, for example from dirt getting in.",
         "Clean the buttons if need be."
       ],
@@ -29,8 +51,8 @@
       "system": "bosch-classic",
       "code": "414",
       "title": "Operating unit connection problem",
-      "bosch_says": "Connection problem of the operating unit.",
-      "bosch_fix": [
+      "maker_says": "Connection problem of the operating unit.",
+      "maker_fix": [
         "Have the connections checked."
       ],
       "plain": "The handlebar control unit isn't connecting properly to the rest of the system.",
@@ -43,8 +65,8 @@
       "system": "bosch-classic",
       "code": "418",
       "title": "Operating unit buttons disabled",
-      "bosch_says": "One or more buttons of the operating unit are disabled.",
-      "bosch_fix": [
+      "maker_says": "One or more buttons of the operating unit are disabled.",
+      "maker_fix": [
         "Check whether any buttons are stuck, for example from dirt getting in.",
         "Clean the buttons if need be."
       ],
@@ -58,8 +80,8 @@
       "system": "bosch-classic",
       "code": "419",
       "title": "Configuration error",
-      "bosch_says": "Configuration error.",
-      "bosch_fix": [
+      "maker_says": "Configuration error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -73,8 +95,8 @@
       "system": "bosch-classic",
       "code": "422",
       "title": "Drive unit connection problem",
-      "bosch_says": "Connection problem of the drive unit.",
-      "bosch_fix": [
+      "maker_says": "Connection problem of the drive unit.",
+      "maker_fix": [
         "Have the connections checked."
       ],
       "plain": "The motor unit isn't connecting properly to the rest of the system.",
@@ -87,8 +109,8 @@
       "system": "bosch-classic",
       "code": "423",
       "title": "Battery connection problem",
-      "bosch_says": "Connection problem of the eBike battery.",
-      "bosch_fix": [
+      "maker_says": "Connection problem of the eBike battery.",
+      "maker_fix": [
         "Have the connections checked."
       ],
       "plain": "The battery isn't connecting properly to the rest of the system.",
@@ -102,8 +124,8 @@
       "system": "bosch-classic",
       "code": "424",
       "title": "Communication error between components",
-      "bosch_says": "Communication error between components.",
-      "bosch_fix": [
+      "maker_says": "Communication error between components.",
+      "maker_fix": [
         "Have the connections checked."
       ],
       "plain": "Parts of the system aren't communicating with each other properly.",
@@ -116,8 +138,8 @@
       "system": "bosch-classic",
       "code": "426",
       "title": "Internal time-out error",
-      "bosch_says": "Internal time-out error.",
-      "bosch_fix": [
+      "maker_says": "Internal time-out error.",
+      "maker_fix": [
         "Restart the system."
       ],
       "plain": "Something inside the system didn't respond in time. While it's active, the wheel size can't be shown or changed in the settings.",
@@ -130,8 +152,8 @@
       "system": "bosch-classic",
       "code": "430",
       "title": "Display's internal battery is flat",
-      "bosch_says": "The internal battery of the on-board computer is flat (does not apply to BUI350).",
-      "bosch_fix": [
+      "maker_says": "The internal battery of the on-board computer is flat (does not apply to BUI350).",
+      "maker_fix": [
         "Charge the on-board computer in its holder or through its USB port."
       ],
       "plain": "The display's own small built-in battery is empty. This is the display, not the main e-bike battery.",
@@ -144,8 +166,8 @@
       "system": "bosch-classic",
       "code": "431",
       "title": "Software version error",
-      "bosch_says": "Software version error.",
-      "bosch_fix": [
+      "maker_says": "Software version error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -159,8 +181,8 @@
       "system": "bosch-classic",
       "code": "440",
       "title": "Drive unit internal fault",
-      "bosch_says": "Internal fault of the drive unit.",
-      "bosch_fix": [
+      "maker_says": "Internal fault of the drive unit.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -174,8 +196,8 @@
       "system": "bosch-classic",
       "code": "450",
       "title": "Internal software error",
-      "bosch_says": "Internal software error.",
-      "bosch_fix": [
+      "maker_says": "Internal software error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -189,8 +211,8 @@
       "system": "bosch-classic",
       "code": "460",
       "title": "USB port error",
-      "bosch_says": "Error at the USB port.",
-      "bosch_fix": [
+      "maker_says": "Error at the USB port.",
+      "maker_fix": [
         "Remove the cable from the on-board computer's USB port.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -204,8 +226,8 @@
       "system": "bosch-classic",
       "code": "490",
       "title": "Display internal fault",
-      "bosch_says": "Internal fault of the on-board computer.",
-      "bosch_fix": [
+      "maker_says": "Internal fault of the on-board computer.",
+      "maker_fix": [
         "Have the on-board computer checked."
       ],
       "plain": "The display has detected a fault inside itself.",
@@ -218,23 +240,23 @@
       "system": "bosch-classic",
       "code": "500",
       "title": "Drive unit internal error",
-      "bosch_says": "Internal drive unit error.",
-      "bosch_fix": [
+      "maker_says": "Internal drive unit error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
       "plain": "The motor unit has detected a fault inside itself. It may stop giving assistance.",
       "severity": "dealer",
       "source_url": "https://help.bosch-ebike.com/en/connect/help-center/error/500",
-      "verified_on": "2026-10-23",
-      "source_type": "help-center"
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
     },
     {
       "system": "bosch-classic",
       "code": "502",
       "title": "Bike light fault",
-      "bosch_says": "Fault in the bicycle light.",
-      "bosch_fix": [
+      "maker_says": "Fault in the bicycle light.",
+      "maker_fix": [
         "Check the light and its wiring.",
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
@@ -249,23 +271,23 @@
       "system": "bosch-classic",
       "code": "503",
       "title": "Speed sensor error",
-      "bosch_says": "Speed sensor error.",
-      "bosch_fix": [
+      "maker_says": "Speed sensor error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
       "plain": "The system isn't getting a proper signal from the wheel speed sensor. Without it, the motor can't tell how fast you're going and may limit or stop assistance.",
       "severity": "check",
       "source_url": "https://help.bosch-ebike.com/us/connect/help-center/error/503",
-      "verified_on": "2026-10-23",
-      "source_type": "help-center"
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
     },
     {
       "system": "bosch-classic",
       "code": "504",
       "title": "Speed signal distortion",
-      "bosch_says": "Speed signal distortion detected. Drive assistance is reduced.",
-      "bosch_fix": [
+      "maker_says": "Speed signal distortion detected. Drive assistance is reduced.",
+      "maker_fix": [
         "Check the position of the spoke magnet and adjust it if necessary.",
         "Check for manipulation (tuning)."
       ],
@@ -279,8 +301,8 @@
       "system": "bosch-classic",
       "code": "510",
       "title": "Internal sensor error",
-      "bosch_says": "Internal sensor error.",
-      "bosch_fix": [
+      "maker_says": "Internal sensor error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -294,8 +316,8 @@
       "system": "bosch-classic",
       "code": "511",
       "title": "Drive unit internal error",
-      "bosch_says": "Internal error of the drive unit.",
-      "bosch_fix": [
+      "maker_says": "Internal error of the drive unit.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -309,8 +331,8 @@
       "system": "bosch-classic",
       "code": "530",
       "title": "Battery error",
-      "bosch_says": "Battery error.",
-      "bosch_fix": [
+      "maker_says": "Battery error.",
+      "maker_fix": [
         "Switch off the eBike.",
         "Remove the eBike battery and reinsert it.",
         "Restart the system.",
@@ -327,8 +349,8 @@
       "system": "bosch-classic",
       "code": "531",
       "title": "Configuration error",
-      "bosch_says": "Configuration error.",
-      "bosch_fix": [
+      "maker_says": "Configuration error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -342,8 +364,8 @@
       "system": "bosch-classic",
       "code": "540",
       "title": "Temperature error",
-      "bosch_says": "The eBike is outside the permissible temperature range.",
-      "bosch_fix": [
+      "maker_says": "The eBike is outside the permissible temperature range.",
+      "maker_fix": [
         "Switch off the eBike system.",
         "Let the drive unit cool down or warm up to the permissible temperature range.",
         "Restart the system."
@@ -358,8 +380,8 @@
       "system": "bosch-classic",
       "code": "550",
       "title": "Impermissible load detected",
-      "bosch_says": "An impermissible load has been detected.",
-      "bosch_fix": [
+      "maker_says": "An impermissible load has been detected.",
+      "maker_fix": [
         "Remove the load.",
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
@@ -367,15 +389,15 @@
       "plain": "Something plugged into the bike's electrical system is drawing power that the system doesn't allow, such as an add-on light or a USB device.",
       "severity": "check",
       "source_url": "https://help.bosch-ebike.com/us/help-center/error/550",
-      "verified_on": "2026-10-23",
-      "source_type": "help-center"
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
     },
     {
       "system": "bosch-classic",
       "code": "580",
       "title": "Software version error",
-      "bosch_says": "Software version error.",
-      "bosch_fix": [
+      "maker_says": "Software version error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -389,8 +411,8 @@
       "system": "bosch-classic",
       "code": "591",
       "title": "Authentication error",
-      "bosch_says": "Authentication error.",
-      "bosch_fix": [
+      "maker_says": "Authentication error.",
+      "maker_fix": [
         "Switch off the eBike system.",
         "Remove the battery and reinsert it.",
         "Restart the system.",
@@ -406,8 +428,8 @@
       "system": "bosch-classic",
       "code": "592",
       "title": "Incompatible component",
-      "bosch_says": "Incompatible component.",
-      "bosch_fix": [
+      "maker_says": "Incompatible component.",
+      "maker_fix": [
         "Use a compatible display."
       ],
       "plain": "The display (or another part) fitted to the bike isn't compatible with the rest of the system.",
@@ -420,8 +442,8 @@
       "system": "bosch-classic",
       "code": "593",
       "title": "Configuration error",
-      "bosch_says": "Configuration error.",
-      "bosch_fix": [
+      "maker_says": "Configuration error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -435,8 +457,8 @@
       "system": "bosch-classic",
       "code": "595",
       "title": "Communication error",
-      "bosch_says": "Communication error.",
-      "bosch_fix": [
+      "maker_says": "Communication error.",
+      "maker_fix": [
         "Check the wiring to the drive unit.",
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
@@ -451,8 +473,8 @@
       "system": "bosch-classic",
       "code": "596",
       "title": "Communication error",
-      "bosch_says": "Communication error.",
-      "bosch_fix": [
+      "maker_says": "Communication error.",
+      "maker_fix": [
         "Check the wiring to the drive unit.",
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
@@ -467,8 +489,8 @@
       "system": "bosch-classic",
       "code": "602",
       "title": "Internal battery error",
-      "bosch_says": "Internal battery error.",
-      "bosch_fix": [
+      "maker_says": "Internal battery error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer.",
         "If it appears while charging: disconnect the charger from the battery, restart the eBike system, then plug the charger back in."
@@ -484,8 +506,8 @@
       "system": "bosch-classic",
       "code": "603",
       "title": "Internal battery error",
-      "bosch_says": "Internal battery error.",
-      "bosch_fix": [
+      "maker_says": "Internal battery error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -500,8 +522,8 @@
       "system": "bosch-classic",
       "code": "605",
       "title": "Battery temperature error",
-      "bosch_says": "Battery temperature error.",
-      "bosch_fix": [
+      "maker_says": "Battery temperature error.",
+      "maker_fix": [
         "Switch off the eBike system.",
         "Let the battery cool down or warm up to the permissible temperature range.",
         "Restart the system.",
@@ -519,8 +541,8 @@
       "system": "bosch-classic",
       "code": "606",
       "title": "External battery error",
-      "bosch_says": "External battery error.",
-      "bosch_fix": [
+      "maker_says": "External battery error.",
+      "maker_fix": [
         "Check the wiring.",
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
@@ -536,8 +558,8 @@
       "system": "bosch-classic",
       "code": "610",
       "title": "Battery voltage error",
-      "bosch_says": "Battery voltage error.",
-      "bosch_fix": [
+      "maker_says": "Battery voltage error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -545,15 +567,15 @@
       "severity": "dealer",
       "battery": true,
       "source_url": "https://help.bosch-ebike.com/us/connect/help-center/error/610",
-      "verified_on": "2026-10-23",
-      "source_type": "help-center"
+      "source_type": "help-center",
+      "verified_on": "2026-10-23"
     },
     {
       "system": "bosch-classic",
       "code": "620",
       "title": "Charger error",
-      "bosch_says": "Charger error.",
-      "bosch_fix": [
+      "maker_says": "Charger error.",
+      "maker_fix": [
         "Replace the charger.",
         "Contact your Bosch eBike dealer."
       ],
@@ -568,8 +590,8 @@
       "system": "bosch-classic",
       "code": "640",
       "title": "Internal battery error",
-      "bosch_says": "Internal battery error.",
-      "bosch_fix": [
+      "maker_says": "Internal battery error.",
+      "maker_fix": [
         "Restart the system.",
         "If the problem persists, contact your Bosch eBike dealer."
       ],
@@ -584,8 +606,8 @@
       "system": "bosch-classic",
       "code": "655",
       "title": "Multiple battery errors",
-      "bosch_says": "Multiple battery errors.",
-      "bosch_fix": [
+      "maker_says": "Multiple battery errors.",
+      "maker_fix": [
         "Switch off the eBike system.",
         "Remove the battery and reinsert it.",
         "Restart the system.",
@@ -602,8 +624,8 @@
       "system": "bosch-classic",
       "code": "656",
       "title": "Software version error",
-      "bosch_says": "Software version error.",
-      "bosch_fix": [
+      "maker_says": "Software version error.",
+      "maker_fix": [
         "Contact your Bosch eBike dealer so they can update the software."
       ],
       "plain": "The battery's software needs updating by a dealer.",
@@ -616,8 +638,8 @@
       "system": "bosch-classic",
       "code": "7xx",
       "title": "Fault in a non-Bosch part",
-      "bosch_says": "Error in a third-party (non-Bosch) component.",
-      "bosch_fix": [
+      "maker_says": "Error in a third-party (non-Bosch) component.",
+      "maker_fix": [
         "Follow the operating instructions from that component's manufacturer."
       ],
       "plain": "Any code in the 700s points to a part made by another company, such as a gear hub or shifting system, not to the Bosch system itself.",
@@ -625,7 +647,570 @@
       "source_url": "https://www.bosch-ebike.com/fileadmin/EBC/Service/Downloads/Bedienungsanleitungen/MY2024/BES2/Intuvia_BUI255/Bosch-eBike-Manual-BUI255_Intuvia_MY24_US_oReg_v1.pdf",
       "source_type": "manual",
       "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "04",
+      "title": "Throttle fault",
+      "maker_says": "The throttle has a fault. (Some Bafang user manuals list 04 as \"the throttle is not back in its correct position\" instead; either way, it's the throttle.)",
+      "maker_fix": [
+        "Switch off. Let go of the throttle and check it springs back fully.",
+        "Look at the throttle cable and plug for damage. Look; don't pull on it.",
+        "If it keeps coming back, Bafang's service steps are for a shop: check the throttle's connection, then replace the throttle if needed."
+      ],
+      "plain": "The system has detected a problem with the throttle. Many bikes won't run the motor while this code shows.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E180-E181-EN.pdf",
+      "source_label": "Bafang DP E180/E181 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "05",
+      "title": "Throttle not back in position",
+      "maker_says": "The throttle is not back in its correct position. (Some Bafang user manuals swap 04 and 05, so 05 can also mean a general throttle fault.)",
+      "maker_fix": [
+        "Let go of the throttle completely and check it springs back on its own.",
+        "Switch the system off and on.",
+        "If it keeps coming back, Bafang's service steps are for a shop: check the throttle's connection, then replace the throttle if needed."
+      ],
+      "plain": "The throttle is reading as pushed when it shouldn't be, so the motor holds back for safety.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20C10-EN.pdf",
+      "source_label": "Bafang DP C10 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "07",
+      "title": "Overvoltage protection",
+      "maker_says": "Overvoltage protection.",
+      "maker_fix": [
+        "Switch off, remove the battery and put it back in, then switch on again.",
+        "If it keeps coming back, Bafang's service steps are for a shop: update the controller with Bafang's BESST tool, or replace the battery."
+      ],
+      "plain": "The system has seen a higher voltage than it should and has protected itself. Often this points to the battery, or a battery that doesn't match the system.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20C10-EN.pdf",
+      "source_label": "Bafang DP C10 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "08",
+      "title": "Motor hall sensor error",
+      "maker_says": "Error with the hall sensor inside the motor.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will check the motor's connections, and replace the motor if the sensor has failed."
+      ],
+      "plain": "One of the position sensors inside the motor isn't giving a proper signal, so the controller can't drive the motor properly.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/errcode/202209091004265437.pdf",
+      "source_label": "Bafang error code sheet",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "09",
+      "title": "Motor phase winding fault",
+      "maker_says": "Fault with the motor phase winding.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will check the motor cable, then replace the motor or controller if needed."
+      ],
+      "plain": "There's a fault in the motor's power wiring or windings.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/errcode/202209091005315192.pdf",
+      "source_label": "Bafang error code sheet",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "10",
+      "title": "Motor too hot",
+      "maker_says": "The temperature inside the motor has reached its maximum protection value.",
+      "maker_fix": [
+        "Turn off the system and let the bike cool down.",
+        "If it keeps happening after cooling, contact your retailer; Bafang's fix is a replacement motor."
+      ],
+      "plain": "The motor has got too hot and has cut out to protect itself. Long hills, heavy loads and Florida heat make this more likely.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E171-EN.pdf",
+      "source_label": "Bafang DP E171 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "11",
+      "title": "Motor temperature sensor error",
+      "maker_says": "The temperature sensor inside the motor has an error.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems."
+      ],
+      "plain": "The sensor that watches the motor's temperature has failed, so the system can't protect the motor from overheating.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20C244-C245-EN%20(BLE5.1).pdf",
+      "source_label": "Bafang DP C244/C245 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "12",
+      "title": "Controller current sensor error",
+      "maker_says": "An error in the controller's current sensor. (Bafang's FAQ and code sheet title this \"Over current of motor\".)",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will clear the code and retest, then replace the controller if needed."
+      ],
+      "plain": "The controller can't measure the motor current properly, which it needs for overcurrent protection.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20C244-C245-EN%20(BLE5.1).pdf",
+      "source_label": "Bafang DP C244/C245 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "13",
+      "title": "Battery temperature sensor error",
+      "maker_says": "The battery's temperature sensor has a fault.",
+      "maker_fix": [
+        "Switch off and check the battery is seated properly.",
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems. Bafang's fix is a replacement battery."
+      ],
+      "plain": "The sensor that watches the battery's temperature isn't working, so the system can't protect the battery from overheating.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E180-E181-EN.pdf",
+      "source_label": "Bafang DP E180/E181 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "14",
+      "title": "Controller too hot",
+      "maker_says": "The controller's internal temperature has reached its maximum protection value; the motor will not run.",
+      "maker_fix": [
+        "Turn the system off and let it cool down, then restart.",
+        "If it keeps happening, contact your retailer. (Bafang's manuals point to the controller; its code sheet points to the motor. A shop can test which.)"
+      ],
+      "plain": "The motor controller has got too hot and has stopped the motor to protect itself.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/errcode/202209091015098845.pdf",
+      "source_label": "Bafang error code sheet",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "15",
+      "title": "Controller temperature sensor error",
+      "maker_says": "Controller temperature sensor fault.",
+      "maker_fix": [
+        "Switch the system off and on.",
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems."
+      ],
+      "plain": "The sensor that watches the controller's temperature has failed.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/errcode/202209091015478020.pdf",
+      "source_label": "Bafang error code sheet",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "21",
+      "title": "Speed sensor error",
+      "maker_says": "Speed sensor fault.",
+      "maker_fix": [
+        "Switch the system off and on.",
+        "Check the magnet on the rear wheel spoke is still there and passes 10–20 mm from the sensor. Don't bend anything.",
+        "Check the speed sensor's plug is connected (look; don't pull hard).",
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems."
+      ],
+      "plain": "The system isn't getting a proper wheel-speed signal, so it may limit or stop assistance.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/errcode/202209091016375212.pdf",
+      "source_label": "Bafang error code sheet",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "25",
+      "title": "Torque signal error",
+      "maker_says": "Torque signal fault.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will check the connections, read the sensor with Bafang's BESST tool, update the controller, or replace the torque sensor."
+      ],
+      "plain": "The sensor that measures how hard you're pedaling isn't giving a proper signal, so pedal assist may not work.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/errcode/202209091017119069.pdf",
+      "source_label": "Bafang error code sheet",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "26",
+      "title": "Torque sensor speed signal error",
+      "maker_says": "The speed signal of the torque sensor has an error.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will check the connections, run a BESST diagnosis, and replace the torque sensor if needed."
+      ],
+      "plain": "The torque sensor's own speed signal isn't working properly, so pedal assist may not work.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-UM-C-DP%20C262-EN.pdf",
+      "source_label": "Bafang DP C262 user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "27",
+      "title": "Controller overcurrent",
+      "maker_says": "Overcurrent from the controller.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will update the controller with BESST, then replace it if the problem continues."
+      ],
+      "plain": "The controller has drawn more current than it should and has protected itself.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20C10-EN.pdf",
+      "source_label": "Bafang DP C10 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "28",
+      "title": "Warning: torque sensor start-up",
+      "maker_says": "Warning (not an error): the torque sensor's initialization is abnormal.",
+      "maker_fix": [
+        "Restart the system, and don't press hard on the pedals while it starts up."
+      ],
+      "plain": "This is a warning, not a fault. The pedal sensor didn't start up cleanly, usually because there was pressure on the pedals as the bike switched on.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20C244-C245-EN%20(BLE5.1).pdf",
+      "source_label": "Bafang DP C244/C245 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "30",
+      "title": "Communication problem",
+      "maker_says": "Communication problem; the motor cannot work.",
+      "maker_fix": [
+        "Check all the visible plugs between the display, motor and battery are pushed fully together.",
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop can run a BESST diagnosis, swap the display or cable, and update the controller software."
+      ],
+      "plain": "The display and the motor controller aren't talking to each other, so the motor won't run.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/Uploaded/Labels/BF-UM-C-DP%20C18-EN.pdf",
+      "source_label": "Bafang DP C18 user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "33",
+      "title": "Brake signal error",
+      "maker_says": "The brake signal has an error (only on bikes with brake sensors).",
+      "maker_fix": [
+        "Squeeze and release both brake levers firmly and check they spring back fully.",
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems."
+      ],
+      "plain": "The switch that cuts the motor when you brake is sending a faulty signal. Check the brakes themselves work normally before riding.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E180-E181-EN.pdf",
+      "source_label": "Bafang DP E180/E181 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "35",
+      "title": "15V detection circuit fault",
+      "maker_says": "Fault in the 15V detection circuit.",
+      "maker_fix": [
+        "Please contact your retailer."
+      ],
+      "plain": "An internal power-supply check in the system has failed.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-UM-C-DP%20E170-EN.pdf",
+      "source_label": "Bafang DP E170 user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "36",
+      "title": "Keypad detection circuit fault",
+      "maker_says": "The detection circuit on the keypad has an error.",
+      "maker_fix": [
+        "Please contact your retailer."
+      ],
+      "plain": "The handlebar button pad has an electrical fault.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-UM-C-DP%20E170-EN.pdf",
+      "source_label": "Bafang DP E170 user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "37",
+      "title": "Controller watchdog fault",
+      "maker_says": "The controller's WDT (watchdog) circuit is faulty and can't work normally.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will update the controller with BESST, or replace it."
+      ],
+      "plain": "A built-in safety check inside the controller has failed.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/errcode/202209091022198484.pdf",
+      "source_label": "Bafang error code sheet",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "38",
+      "title": "Sensor watchdog fault",
+      "maker_says": "The sensor's WDT (watchdog) circuit is faulty.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will update the sensor with BESST, or replace it."
+      ],
+      "plain": "A built-in safety check inside one of the sensors has failed.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E171-EN.pdf",
+      "source_label": "Bafang DP E171 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "41",
+      "title": "Battery voltage too high",
+      "maker_says": "The battery's total voltage is too high.",
+      "maker_fix": [
+        "Stop using the battery and contact your retailer. Bafang's fix is a replacement battery."
+      ],
+      "plain": "The battery's overall voltage is above what the system allows.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E180-E181-EN.pdf",
+      "source_label": "Bafang DP E180/E181 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "42",
+      "title": "Battery voltage too low",
+      "maker_says": "The battery's total voltage is too low.",
+      "maker_fix": [
+        "Charge the battery.",
+        "If it still shows, contact your retailer; Bafang's fix is a replacement battery."
+      ],
+      "plain": "The battery is too empty for the system to run. This code only appears on systems with Bafang's smart battery management.",
+      "severity": "check",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E180-E181-EN.pdf",
+      "source_label": "Bafang DP E180/E181 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "44",
+      "title": "Battery cell voltage too high",
+      "maker_says": "The voltage of a single battery cell is too high.",
+      "maker_fix": [
+        "Stop using the battery and contact your retailer. Bafang's fix is a replacement battery."
+      ],
+      "plain": "One of the cells inside the battery is at a higher voltage than it should be.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E180-E181-EN.pdf",
+      "source_label": "Bafang DP E180/E181 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "45",
+      "title": "Battery too hot",
+      "maker_says": "The battery temperature is too high.",
+      "maker_fix": [
+        "Switch off and let the bike and battery cool down, out of direct sun."
+      ],
+      "plain": "The battery is too hot to use safely. In Florida, a bike left in the sun or a hot car can get there quickly.",
+      "severity": "check",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/en/oem-area/service/faqs/",
+      "source_label": "Bafang service FAQ",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "46",
+      "title": "Battery too cold",
+      "maker_says": "The battery temperature is too low.",
+      "maker_fix": [
+        "Bring the battery to room temperature before riding or charging."
+      ],
+      "plain": "The battery is too cold to use safely.",
+      "severity": "check",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/en/oem-area/service/faqs/",
+      "source_label": "Bafang service FAQ",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "47",
+      "title": "Battery charge too high",
+      "maker_says": "The battery's state of charge is too high.",
+      "maker_fix": [
+        "Stop using the battery and contact your retailer. Bafang's fix is a replacement battery."
+      ],
+      "plain": "The battery reports a charge level above what the system allows.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/en/oem-area/service/faqs/",
+      "source_label": "Bafang service FAQ",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "48",
+      "title": "Battery charge too low",
+      "maker_says": "The battery's state of charge is too low.",
+      "maker_fix": [
+        "Charge the battery.",
+        "If it still shows, contact your retailer. Bafang's fix is a replacement battery."
+      ],
+      "plain": "The battery reports that it's too empty.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/en/oem-area/service/faqs/",
+      "source_label": "Bafang service FAQ",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "49",
+      "title": "Battery cell voltage too low",
+      "maker_says": "A single cell's discharge voltage is too low.",
+      "maker_fix": [
+        "Stop using the battery and contact your retailer. Bafang's fix is a replacement battery."
+      ],
+      "plain": "One of the cells inside the battery has dropped too low. This code only appears on systems with Bafang's smart battery management.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E162&E163-EN.pdf",
+      "source_label": "Bafang DP E162/E163 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "4C",
+      "title": "Battery cells out of balance",
+      "maker_says": "The voltage difference between battery cells is too large.",
+      "maker_fix": [
+        "Stop using the battery and contact your retailer. Bafang's fix is a replacement battery."
+      ],
+      "plain": "The cells inside the battery are at very different voltages. This code only appears on systems with Bafang's smart battery management.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20E162&E163-EN.pdf",
+      "source_label": "Bafang DP E162/E163 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "61",
+      "title": "Gear shift detection fault",
+      "maker_says": "Gear shift detection defect.",
+      "maker_fix": [
+        "Check the gear shifter isn't jammed.",
+        "If it continues, contact your retailer; Bafang's fix is a replacement shifter."
+      ],
+      "plain": "The system can't detect the gear shifter properly.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-UM-C-DP%20C262-EN.pdf",
+      "source_label": "Bafang DP C262 user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "62",
+      "title": "Electronic derailleur stuck",
+      "maker_says": "The electronic derailleur cannot release.",
+      "maker_fix": [
+        "Contact your retailer. Bafang's fix is a replacement derailleur."
+      ],
+      "plain": "The electronic gear changer is stuck.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-UM-C-DP%20C262-EN.pdf",
+      "source_label": "Bafang DP C262 user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "71",
+      "title": "Electronic lock jammed",
+      "maker_says": "The electronic lock is jammed.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will update the display with BESST, or replace the lock."
+      ],
+      "plain": "The bike's electronic lock is stuck.",
+      "severity": "dealer",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-UM-C-DP%20C262-EN.pdf",
+      "source_label": "Bafang DP C262 user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "bafang",
+      "code": "81",
+      "title": "Bluetooth module error",
+      "maker_says": "The Bluetooth module has an error.",
+      "maker_fix": [
+        "If the problem continues, contact your retailer or a shop that works on Bafang systems.",
+        "A shop will re-load the display software with BESST, or replace the display."
+      ],
+      "plain": "The display's Bluetooth part has a fault. The bike may still ride normally.",
+      "severity": "check",
+      "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20C244-C245-EN%20(BLE5.1).pdf",
+      "source_label": "Bafang DP C244/C245 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
     }
-  ],
-  "manual_label": "Bosch Intuvia owner's manual (MY2024, US)"
+  ]
 }
