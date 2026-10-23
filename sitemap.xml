@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ebikebuy.com/ride-ready.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ebikebuy.com/diagnose.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
