@@ -81,4 +81,10 @@
     document.body.appendChild(btn);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
+
+  // Offline support (sw.js): keeps the safety pages usable with no signal.
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+    var base = document.querySelector('script[src$="js/easy.js"]').getAttribute("src").replace(/js\/easy\.js$/, "");
+    navigator.serviceWorker.register(base + "sw.js").catch(function () {});
+  }
 })();

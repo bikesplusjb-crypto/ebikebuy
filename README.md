@@ -41,6 +41,10 @@ node tools/build-codes.js
 
 That writes `error-codes/*.html` and the error-code section of `sitemap.xml`. The same goes for `node tools/build-recalls.js` and `node tools/build-learn.js`. Commit the generated files too, since Render serves them as they are.
 
+## Offline
+
+`sw.js` keeps the safety pages (Broke down, Battery safety, Diagnose, My garage, Get it repaired) working with no signal after one visit. It always fetches the live page first when online. If you rename or add a safety page, update the list in `sw.js` and change `VERSION`.
+
 ## Checks
 
 ```
