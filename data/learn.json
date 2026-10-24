@@ -1,0 +1,1240 @@
+{
+  "_readme": "Plain-English articles for the Learn section. Keep each one general and factual; don't put manufacturer-specific numbers here (those belong in error-codes with a source). keywords are the everyday words riders type; they power the search. Run `node tools/build-learn.js` after editing.",
+  "reviewed_on": "2026-10-23",
+  "articles": [
+    {
+      "slug": "hub-motor",
+      "title": "Hub motor",
+      "category": "Motors and drive",
+      "aka": [
+        "rear hub motor",
+        "front hub motor",
+        "geared hub",
+        "direct drive"
+      ],
+      "what": "A motor built into the center of the front or rear wheel.",
+      "does": "It turns the wheel directly. It's the most common motor on lower-priced and many direct-to-consumer e-bikes, and it works independently of the bike's gears.",
+      "symptoms": [
+        "Clicking or grinding from the wheel hub",
+        "A wheel that's hard to turn with the power off",
+        "Assist that cuts in and out over bumps (often a loose motor cable)"
+      ],
+      "checks": [
+        "Look at the motor cable where it leaves the axle: it should be undamaged and plugged in fully.",
+        "Check the axle nuts are tight and the wheel sits straight in the frame."
+      ],
+      "care": [
+        "Keep the axle nuts and torque washers tight.",
+        "Don't hose the hub directly when cleaning.",
+        "Removing a rear hub-motor wheel is harder than a normal wheel; ask a shop if you haven't done one."
+      ],
+      "related": [
+        "mid-drive-motor",
+        "motor-controller",
+        "pedal-assist",
+        "throttle"
+      ],
+      "keywords": [
+        "hub",
+        "wheel motor",
+        "motor in the wheel",
+        "clicking hub",
+        "grinding wheel"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "mid-drive-motor",
+      "title": "Mid-drive motor",
+      "category": "Motors and drive",
+      "aka": [
+        "center motor",
+        "crank motor",
+        "drive unit"
+      ],
+      "what": "A motor mounted at the pedals, in the middle of the frame.",
+      "does": "It drives the chain, so it uses the bike's gears like your legs do. That makes it efficient on hills. Bosch, Shimano, Yamaha, Brose and Bafang's M-series are mid-drives.",
+      "symptoms": [
+        "Faster chain and cassette wear than a regular bike",
+        "Grinding or knocking from the motor area",
+        "Assist that feels uneven when you pedal (often the torque sensor)"
+      ],
+      "checks": [
+        "Check the cranks are tight and don't wobble.",
+        "Listen for noise with the power off while turning the pedals backward."
+      ],
+      "care": [
+        "Shift to an easier gear before stopping and before steep climbs; easing off the pedals as you shift is kinder to the chain.",
+        "Replace the chain before it wears the gears out."
+      ],
+      "related": [
+        "hub-motor",
+        "torque-sensor",
+        "chain",
+        "motor-controller"
+      ],
+      "keywords": [
+        "mid drive",
+        "center drive",
+        "bosch motor",
+        "shimano motor",
+        "motor at the pedals",
+        "crank motor"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "torque-sensor",
+      "title": "Torque sensor",
+      "category": "Displays and sensors",
+      "aka": [
+        "pedal force sensor"
+      ],
+      "what": "A sensor that measures how hard you push on the pedals.",
+      "does": "The harder you pedal, the more the motor helps, which feels natural and smooth. Most mid-drives and better hub-motor bikes have one.",
+      "symptoms": [
+        "Assist that's weak, delayed or uneven",
+        "An error or warning right after switching on"
+      ],
+      "checks": [
+        "Switch on with your feet off the pedals; many systems calibrate the sensor at start-up.",
+        "If assist stays weak, note any error code and have it tested."
+      ],
+      "care": [
+        "Avoid switching on with weight on the pedals.",
+        "Torque sensors aren't a home repair; a shop can test and calibrate them."
+      ],
+      "related": [
+        "cadence-sensor",
+        "pedal-assist",
+        "mid-drive-motor"
+      ],
+      "keywords": [
+        "weak assist",
+        "assist uneven",
+        "jerky assist",
+        "pedal sensor",
+        "torque",
+        "assist feels weak"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "cadence-sensor",
+      "title": "Cadence sensor",
+      "category": "Displays and sensors",
+      "aka": [
+        "PAS sensor",
+        "pedal sensor",
+        "magnet disc"
+      ],
+      "what": "A sensor that detects whether, and how fast, the pedals are turning.",
+      "does": "Once it sees the pedals turning, the motor gives the amount of help set by the assist level, however hard you push. It's simple and common on hub-motor bikes, and often uses a ring of magnets behind the crank.",
+      "symptoms": [
+        "Assist that starts late or not at all",
+        "Assist that keeps going briefly after you stop pedaling"
+      ],
+      "checks": [
+        "Look at the magnet ring behind the crank: it should be in place, not cracked, and close to the sensor.",
+        "Check the sensor's cable is plugged in."
+      ],
+      "care": [
+        "Keep the magnet ring clean; a damaged ring is a cheap part a shop can swap."
+      ],
+      "related": [
+        "torque-sensor",
+        "pedal-assist",
+        "speed-sensor"
+      ],
+      "keywords": [
+        "pas",
+        "pedal assist sensor",
+        "assist starts late",
+        "magnet ring"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "motor-controller",
+      "title": "Motor controller",
+      "category": "Motors and drive",
+      "aka": [
+        "controller",
+        "ECU"
+      ],
+      "what": "The electronics that decide how much power goes from the battery to the motor.",
+      "does": "It reads the sensors, the throttle, the brake switches and your assist level, and sets the motor's power. On mid-drives it's built into the drive unit; on many hub-motor bikes it's a separate box on the frame.",
+      "symptoms": [
+        "Motor stops but the display stays on",
+        "Error codes about communication or overcurrent",
+        "A burning smell or heat from the controller box"
+      ],
+      "checks": [
+        "Check the controller's plugs are fully connected and dry. Look; don't pull hard.",
+        "Any burning smell: stop, switch off and don't ride."
+      ],
+      "care": [
+        "Keep water away from controller connectors.",
+        "Controllers aren't a home repair; changing one usually needs the right model and settings."
+      ],
+      "related": [
+        "hub-motor",
+        "error-codes",
+        "battery-connectors",
+        "display"
+      ],
+      "keywords": [
+        "controller",
+        "ecu",
+        "motor won't run",
+        "motor stops",
+        "motor cuts out",
+        "no power to motor"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "pedal-assist",
+      "title": "Pedal assist",
+      "category": "Motors and drive",
+      "aka": [
+        "PAS",
+        "assist levels",
+        "eco / tour / sport / turbo"
+      ],
+      "what": "The motor helping you while you pedal.",
+      "does": "You choose an assist level (often Eco, Tour, Sport, Turbo, or 1 to 5). Higher levels help more and use the battery faster. Class 1 and Class 3 e-bikes are pedal-assist only.",
+      "symptoms": [
+        "No help even though the display is on",
+        "Help that stops at a certain speed (that's the legal limit for your bike's class)"
+      ],
+      "checks": [
+        "Make sure an assist level is selected, not OFF or 0.",
+        "Squeeze and release both brake levers; brake sensors cut the assist.",
+        "Look for an error code on the display."
+      ],
+      "care": [
+        "Use lower assist levels on flat ground to save battery."
+      ],
+      "related": [
+        "torque-sensor",
+        "cadence-sensor",
+        "throttle",
+        "motor-cutoff",
+        "ebike-classes"
+      ],
+      "keywords": [
+        "pas",
+        "assist not working",
+        "no assist",
+        "pedal assist stopped",
+        "motor won't help",
+        "assist disappears",
+        "motor stops helping"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "throttle",
+      "title": "Throttle",
+      "category": "Motors and drive",
+      "aka": [
+        "thumb throttle",
+        "twist throttle"
+      ],
+      "what": "A lever or twist grip that runs the motor without pedaling.",
+      "does": "Class 2 e-bikes have a throttle. Some bikes only let the throttle work after you start pedaling, or have a separate setting for it.",
+      "symptoms": [
+        "Throttle does nothing",
+        "Motor runs on its own or won't stop (stop riding and switch off)"
+      ],
+      "checks": [
+        "Let go and check the throttle springs back fully.",
+        "Look at the throttle cable for damage. Look; don't pull on it.",
+        "Check your manual: some throttles only work once you're moving."
+      ],
+      "care": [
+        "Keep the throttle clean so it doesn't stick.",
+        "A sticking throttle is a safety problem; have it replaced."
+      ],
+      "related": [
+        "pedal-assist",
+        "motor-cutoff",
+        "ebike-classes"
+      ],
+      "keywords": [
+        "throttle not working",
+        "throttle stopped",
+        "twist grip",
+        "thumb throttle"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "motor-cutoff",
+      "title": "Brake motor cutoff",
+      "category": "Motors and drive",
+      "aka": [
+        "brake sensors",
+        "e-brake switches",
+        "cut-off switches"
+      ],
+      "what": "Switches in the brake levers that turn the motor off while you brake.",
+      "does": "They stop the motor fighting the brakes. Many e-bikes have them, especially hub-motor bikes with throttles.",
+      "symptoms": [
+        "Motor won't help at all, but the display is fine",
+        "Assist cuts in and out"
+      ],
+      "checks": [
+        "Squeeze and release each brake lever firmly; a lever that doesn't fully spring back keeps the motor off.",
+        "Check nothing is pressing on a lever, like a bag strap."
+      ],
+      "care": [
+        "If a lever is bent or sticky, have it fixed; brakes come first."
+      ],
+      "related": [
+        "pedal-assist",
+        "hydraulic-disc-brakes",
+        "throttle"
+      ],
+      "keywords": [
+        "brake sensor",
+        "brake cutoff",
+        "motor cuts out",
+        "assist cuts in and out",
+        "e-brake"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "power-rating",
+      "title": "Watts and power rating",
+      "category": "Motors and drive",
+      "aka": [
+        "W",
+        "nominal power",
+        "peak power",
+        "750W"
+      ],
+      "what": "How much power the motor puts out, in watts.",
+      "does": "Bikes list a nominal (continuous) rating and sometimes a much higher peak. U.S. federal rules and Florida law define an e-bike's motor as under 750 watts; well beyond that, a bike may not count as an e-bike at all.",
+      "symptoms": [],
+      "checks": [],
+      "care": [
+        "Compare nominal watts, not peak, when shopping.",
+        "More watts isn't always better; torque and the sensor matter more for how a bike feels."
+      ],
+      "related": [
+        "torque-output",
+        "ebike-classes"
+      ],
+      "keywords": [
+        "watts",
+        "750w",
+        "motor power",
+        "peak watts",
+        "nominal"
+      ],
+      "diagnose": null,
+      "links": [
+        {
+          "label": "Florida e-bike laws",
+          "href": "../florida-ebike-laws.html"
+        }
+      ]
+    },
+    {
+      "slug": "torque-output",
+      "title": "Torque (Nm)",
+      "category": "Motors and drive",
+      "aka": [
+        "newton-meters",
+        "Nm"
+      ],
+      "what": "How strongly the motor can twist the crank or wheel, in newton-meters.",
+      "does": "Torque is what gets you up hills and moving from a stop with a load. Mid-drives often list 50 to 90 Nm; a higher number helps most on hills and cargo bikes.",
+      "symptoms": [],
+      "checks": [],
+      "care": [
+        "For hills or heavy loads, compare torque more than watts."
+      ],
+      "related": [
+        "power-rating",
+        "mid-drive-motor"
+      ],
+      "keywords": [
+        "nm",
+        "newton meters",
+        "hill climbing",
+        "torque"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "lithium-ion-battery",
+      "title": "Lithium-ion battery",
+      "category": "Batteries and charging",
+      "aka": [
+        "e-bike battery",
+        "battery pack",
+        "li-ion"
+      ],
+      "what": "The rechargeable battery that powers the motor, made of many small cells joined together.",
+      "does": "It stores a lot of energy in a small, light pack. That's also why damaged, cheap or badly charged packs can catch fire.",
+      "symptoms": [
+        "Range dropping",
+        "Bike switching off under load or on hills",
+        "Heat, swelling, leaking or a strange smell (a danger sign)"
+      ],
+      "checks": [
+        "Look for cracks, dents or swelling. Any of those, or heat or smell: stop and read battery safety.",
+        "Check it's clicked fully into its mount."
+      ],
+      "care": [
+        "Use only the charger made for your battery.",
+        "Store and charge it out of the heat and away from exits.",
+        "Never open a battery pack."
+      ],
+      "related": [
+        "bms",
+        "watt-hours",
+        "battery-aging",
+        "charger",
+        "battery-storage"
+      ],
+      "keywords": [
+        "battery",
+        "battery pack",
+        "li-ion",
+        "lithium",
+        "battery dies",
+        "battery won't charge"
+      ],
+      "diagnose": "no-charge",
+      "links": [
+        {
+          "label": "Battery safety",
+          "href": "../battery-safety.html"
+        },
+        {
+          "label": "E-bike recalls",
+          "href": "../recalls.html"
+        }
+      ]
+    },
+    {
+      "slug": "bms",
+      "title": "Battery management system (BMS)",
+      "category": "Batteries and charging",
+      "aka": [
+        "BMS",
+        "battery protection"
+      ],
+      "what": "The electronics inside a battery pack that protect it.",
+      "does": "It stops the battery charging too far, draining too low, getting too hot or giving too much current, and balances the cells. When it acts, the battery can switch itself off suddenly.",
+      "symptoms": [
+        "Bike shuts off suddenly, often on a hill or at low charge",
+        "Battery shows full on the charger but the bike reads empty",
+        "Battery won't charge after sitting empty a long time"
+      ],
+      "checks": [
+        "Charge it fully with its own charger.",
+        "Let a very hot or cold battery reach room temperature before charging."
+      ],
+      "care": [
+        "Don't leave a battery fully empty for long; that's when protection can lock it out.",
+        "Never bypass or open a BMS; it's what keeps the pack from overheating."
+      ],
+      "related": [
+        "lithium-ion-battery",
+        "battery-aging",
+        "charger"
+      ],
+      "keywords": [
+        "bms",
+        "battery management",
+        "battery protection",
+        "shuts off",
+        "bike shuts off",
+        "cuts out on hills",
+        "cuts off"
+      ],
+      "diagnose": "no-power",
+      "links": [
+        {
+          "label": "Battery safety",
+          "href": "../battery-safety.html"
+        }
+      ]
+    },
+    {
+      "slug": "voltage",
+      "title": "Voltage (V)",
+      "category": "Batteries and charging",
+      "aka": [
+        "36V",
+        "48V",
+        "52V",
+        "volts"
+      ],
+      "what": "The battery's electrical pressure, in volts.",
+      "does": "The battery, controller, motor and charger are all built for one voltage, such as 36V or 48V. Mixing parts made for different voltages can damage them or cause a fire.",
+      "symptoms": [],
+      "checks": [],
+      "care": [
+        "Only use a battery and charger made for your bike's voltage and connector, and approved by the maker."
+      ],
+      "related": [
+        "amp-hours",
+        "watt-hours",
+        "charger"
+      ],
+      "keywords": [
+        "volts",
+        "36v",
+        "48v",
+        "52v",
+        "voltage"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "amp-hours",
+      "title": "Amp-hours (Ah)",
+      "category": "Batteries and charging",
+      "aka": [
+        "Ah",
+        "capacity"
+      ],
+      "what": "How much charge the battery holds, in amp-hours.",
+      "does": "On its own, Ah doesn't tell you the battery's energy; multiply by voltage to get watt-hours, which you can compare between bikes.",
+      "symptoms": [],
+      "checks": [],
+      "care": [],
+      "related": [
+        "watt-hours",
+        "voltage"
+      ],
+      "keywords": [
+        "ah",
+        "amp hours",
+        "capacity",
+        "mah"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "watt-hours",
+      "title": "Watt-hours (Wh) and range",
+      "category": "Batteries and charging",
+      "aka": [
+        "Wh",
+        "battery capacity",
+        "range"
+      ],
+      "what": "The total energy the battery holds: volts times amp-hours.",
+      "does": "A 48V, 14Ah battery holds about 672 Wh. Range depends on that plus your weight, hills, wind, tire pressure and assist level, so the same bike can go twice as far on Eco as on Turbo.",
+      "symptoms": [
+        "Range much shorter than it used to be"
+      ],
+      "checks": [
+        "Check your tires are pumped up; soft tires cost range.",
+        "Try a lower assist level and see how far you get."
+      ],
+      "care": [
+        "Expect range to shrink slowly as the battery ages."
+      ],
+      "related": [
+        "amp-hours",
+        "voltage",
+        "battery-aging",
+        "tire-pressure"
+      ],
+      "keywords": [
+        "range",
+        "how far",
+        "miles per charge",
+        "range dropped",
+        "battery range",
+        "wh",
+        "watt hours"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "charger",
+      "title": "Battery charger",
+      "category": "Batteries and charging",
+      "aka": [
+        "e-bike charger"
+      ],
+      "what": "The charger made for your battery's voltage, chemistry and connector.",
+      "does": "It charges the battery safely and stops when it's full. A charger that merely plugs in isn't necessarily safe for your battery; CPSC has warned against \"universal\" e-bike chargers.",
+      "symptoms": [
+        "No light on the charger",
+        "Light blinks or shows full straight away",
+        "Charger gets very hot"
+      ],
+      "checks": [
+        "Try another wall outlet, not a power strip.",
+        "Check both ends of the cord are fully plugged in.",
+        "Blinking usually means a fault; check the charger's label or manual."
+      ],
+      "care": [
+        "Use only the charger that came with the battery or a maker-approved replacement.",
+        "Charge where you can see it, not overnight while everyone's asleep."
+      ],
+      "related": [
+        "lithium-ion-battery",
+        "battery-connectors",
+        "voltage"
+      ],
+      "keywords": [
+        "charger",
+        "won't charge",
+        "charging light",
+        "charger blinking",
+        "universal charger"
+      ],
+      "diagnose": "no-charge",
+      "links": [
+        {
+          "label": "E-bike recalls and charger warning",
+          "href": "../recalls.html"
+        }
+      ]
+    },
+    {
+      "slug": "battery-connectors",
+      "title": "Battery connectors and contacts",
+      "category": "Batteries and charging",
+      "aka": [
+        "terminals",
+        "charging port",
+        "plug"
+      ],
+      "what": "The metal contacts where the battery meets the bike, and the port where the charger plugs in.",
+      "does": "Dirt, water, corrosion or a loose fit here causes power cuts, charging problems and heat.",
+      "symptoms": [
+        "Power cuts over bumps",
+        "Charger won't start charging",
+        "Burn marks or melting (a danger sign)"
+      ],
+      "checks": [
+        "Switch off, remove the battery, and look at the contacts: clean, dry and straight. Look; don't poke.",
+        "Any burn marks or melting: stop using it and treat it as dangerous."
+      ],
+      "care": [
+        "Keep connectors dry; let them dry fully before charging after rain."
+      ],
+      "related": [
+        "lithium-ion-battery",
+        "charger",
+        "water-exposure"
+      ],
+      "keywords": [
+        "battery contacts",
+        "terminals",
+        "charging port",
+        "loose battery",
+        "power cuts over bumps"
+      ],
+      "diagnose": "no-power",
+      "links": []
+    },
+    {
+      "slug": "battery-aging",
+      "title": "Battery aging",
+      "category": "Batteries and charging",
+      "aka": [
+        "battery degradation",
+        "capacity loss"
+      ],
+      "what": "Lithium-ion batteries slowly hold less charge as they age and get used.",
+      "does": "Heat, sitting fully charged or fully empty for long periods, and very hard use speed it up. Many batteries are rated for several hundred full charge cycles before noticeably losing capacity.",
+      "symptoms": [
+        "Range shorter than when new",
+        "Bike cuts out at what the display says is 20% or 30%"
+      ],
+      "checks": [
+        "A shop can test a battery's real capacity."
+      ],
+      "care": [
+        "Store it partly charged in a cool place if you won't ride for weeks.",
+        "Avoid leaving it in a hot car or in the sun."
+      ],
+      "related": [
+        "watt-hours",
+        "bms",
+        "battery-storage"
+      ],
+      "keywords": [
+        "old battery",
+        "battery worn out",
+        "degradation",
+        "range dropped",
+        "battery getting worse"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "water-exposure",
+      "title": "Rain and water",
+      "category": "Owning an e-bike",
+      "aka": [
+        "water ingress",
+        "washing an e-bike"
+      ],
+      "what": "E-bikes handle rain, but water in the wrong places causes faults.",
+      "does": "Most are built to cope with riding in the rain. Submerging the motor or battery, or spraying with a pressure washer, can push water into connectors and electronics.",
+      "symptoms": [
+        "Faults or errors after rain or washing",
+        "Display fogging"
+      ],
+      "checks": [
+        "Switch off and let the bike dry fully before charging.",
+        "If the motor or battery was submerged, don't charge or ride it; have it checked."
+      ],
+      "care": [
+        "Wash with a bucket and sponge, not a pressure washer.",
+        "Take the battery out before washing if your bike allows it."
+      ],
+      "related": [
+        "battery-connectors",
+        "lithium-ion-battery"
+      ],
+      "keywords": [
+        "rain",
+        "wet",
+        "water",
+        "washed",
+        "flooded",
+        "submerged",
+        "pressure washer"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "display",
+      "title": "Display",
+      "category": "Displays and sensors",
+      "aka": [
+        "LCD display",
+        "LED display",
+        "cycle computer",
+        "head unit"
+      ],
+      "what": "The screen or light panel on the handlebar.",
+      "does": "It shows speed, battery level, assist level and error codes. On some bikes it also turns the system on and holds settings like wheel size and speed limit.",
+      "symptoms": [
+        "Blank display",
+        "Wrong speed reading",
+        "An error code"
+      ],
+      "checks": [
+        "Check the battery is charged and seated.",
+        "Look at the display's cable and plug for damage.",
+        "Write down any error code and look it up."
+      ],
+      "care": [
+        "Keep it out of strong sun when parked if you can."
+      ],
+      "related": [
+        "error-codes",
+        "firmware",
+        "speed-sensor"
+      ],
+      "keywords": [
+        "display",
+        "screen",
+        "lcd",
+        "blank display",
+        "display won't turn on",
+        "head unit"
+      ],
+      "diagnose": "no-power",
+      "links": []
+    },
+    {
+      "slug": "error-codes",
+      "title": "Error codes",
+      "category": "Displays and sensors",
+      "aka": [
+        "fault codes",
+        "warning codes"
+      ],
+      "what": "Numbers or letters the display shows when the system detects a problem.",
+      "does": "Each maker has its own list, so the same number can mean different things on different bikes. Always look up a code for your exact motor system.",
+      "symptoms": [],
+      "checks": [
+        "Write down the exact code before switching off.",
+        "Switch off and on once. If it comes back, look it up and stop riding if it's a safety fault."
+      ],
+      "care": [],
+      "related": [
+        "display",
+        "firmware",
+        "motor-controller"
+      ],
+      "keywords": [
+        "error",
+        "code",
+        "fault code",
+        "error 30",
+        "error code",
+        "warning on display"
+      ],
+      "diagnose": "error-code",
+      "links": [
+        {
+          "label": "Look up an error code",
+          "href": "../error-codes/index.html"
+        }
+      ]
+    },
+    {
+      "slug": "firmware",
+      "title": "Firmware",
+      "category": "Displays and sensors",
+      "aka": [
+        "software",
+        "software update"
+      ],
+      "what": "The software inside the motor, display and battery.",
+      "does": "Makers release updates that fix bugs and sometimes change how the bike rides. Parts with mismatched software can show errors.",
+      "symptoms": [
+        "Software or version error codes"
+      ],
+      "checks": [
+        "Ask a shop or use the maker's app to check for updates."
+      ],
+      "care": [
+        "Only install updates from the maker's own app or a shop."
+      ],
+      "related": [
+        "error-codes",
+        "display"
+      ],
+      "keywords": [
+        "software",
+        "update",
+        "firmware update",
+        "version error"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "speed-sensor",
+      "title": "Speed sensor",
+      "category": "Displays and sensors",
+      "aka": [
+        "wheel sensor",
+        "spoke magnet"
+      ],
+      "what": "A sensor that reads how fast the wheel turns, usually from a magnet on a spoke or the brake rotor.",
+      "does": "The motor needs it to know your speed and stop assisting at the legal limit. If the signal is missing or odd, assist is reduced or cut.",
+      "symptoms": [
+        "Speed shows 0 while riding",
+        "Assist limited or missing",
+        "A speed sensor error code"
+      ],
+      "checks": [
+        "Check the magnet is still on the spoke or rotor and lines up with the sensor. Don't bend anything.",
+        "Check the sensor's cable is plugged in."
+      ],
+      "care": [
+        "Knocked magnets are the most common cause; check after transporting the bike."
+      ],
+      "related": [
+        "pedal-assist",
+        "display",
+        "error-codes"
+      ],
+      "keywords": [
+        "speed sensor",
+        "spoke magnet",
+        "speed shows zero",
+        "magnet",
+        "wheel sensor"
+      ],
+      "diagnose": "no-assist",
+      "links": []
+    },
+    {
+      "slug": "walk-mode",
+      "title": "Walk mode",
+      "category": "Displays and sensors",
+      "aka": [
+        "walk assist",
+        "push assist"
+      ],
+      "what": "A setting that makes the motor push the bike slowly while you walk beside it.",
+      "does": "Handy on ramps and when walking a heavy bike home. How you turn it on differs by system; check your manual.",
+      "symptoms": [],
+      "checks": [],
+      "care": [
+        "Only use it while walking with both hands on the bike."
+      ],
+      "related": [
+        "pedal-assist",
+        "display"
+      ],
+      "keywords": [
+        "walk assist",
+        "push assist",
+        "walk mode"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "hydraulic-disc-brakes",
+      "title": "Hydraulic disc brakes",
+      "category": "Brakes, wheels and drivetrain",
+      "aka": [
+        "hydraulic brakes",
+        "disc brakes"
+      ],
+      "what": "Brakes that use fluid in a sealed hose to push pads onto a metal rotor.",
+      "does": "They're strong and need little hand force, which suits heavier, faster e-bikes.",
+      "symptoms": [
+        "Lever feels soft or spongy, or reaches the handlebar",
+        "Squealing or grinding",
+        "Brakes rubbing"
+      ],
+      "checks": [
+        "Squeeze each lever: it should feel firm and stop well short of the bar.",
+        "Soft or spongy: don't ride; the brake may need bleeding."
+      ],
+      "care": [
+        "Keep oil and lube off the rotors and pads.",
+        "Brake bleeding needs the right fluid for your brand; a shop job for most riders."
+      ],
+      "related": [
+        "brake-pads",
+        "rotors",
+        "motor-cutoff"
+      ],
+      "keywords": [
+        "brakes",
+        "spongy brakes",
+        "soft brake lever",
+        "brake squeal",
+        "brakes not working"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "brake-pads",
+      "title": "Brake pads",
+      "category": "Brakes, wheels and drivetrain",
+      "aka": [
+        "disc pads"
+      ],
+      "what": "The replaceable pads that grip the rotor.",
+      "does": "E-bikes wear pads faster than regular bikes because they're heavier and faster.",
+      "symptoms": [
+        "Grinding or scraping",
+        "Brakes weaker than before",
+        "Squealing"
+      ],
+      "checks": [
+        "Look into the caliper: if there's very little pad material left, have them replaced.",
+        "Grinding metal-on-metal: stop riding; that damages the rotor."
+      ],
+      "care": [
+        "Pads contaminated with oil usually need replacing, not cleaning."
+      ],
+      "related": [
+        "hydraulic-disc-brakes",
+        "rotors"
+      ],
+      "keywords": [
+        "pads",
+        "grinding brakes",
+        "worn brakes",
+        "brake squeal"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "rotors",
+      "title": "Brake rotors",
+      "category": "Brakes, wheels and drivetrain",
+      "aka": [
+        "disc rotors",
+        "discs"
+      ],
+      "what": "The metal discs on the wheel hubs that the brake pads grip.",
+      "does": "Larger rotors brake better and cope with heat, which is why many e-bikes use them. Many rotors have their minimum thickness stamped on them.",
+      "symptoms": [
+        "Pulsing when braking",
+        "Rubbing sound every wheel turn"
+      ],
+      "checks": [
+        "Look for bends or deep grooves.",
+        "Don't touch a rotor right after a long descent; it gets very hot."
+      ],
+      "care": [
+        "Keep oil and lube off rotors."
+      ],
+      "related": [
+        "brake-pads",
+        "hydraulic-disc-brakes"
+      ],
+      "keywords": [
+        "rotor",
+        "disc",
+        "brake rub",
+        "pulsing brakes"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "chain",
+      "title": "Chain",
+      "category": "Brakes, wheels and drivetrain",
+      "aka": [
+        "drivetrain"
+      ],
+      "what": "The chain that carries your pedaling (and a mid-drive's power) to the rear wheel.",
+      "does": "E-bike chains, especially on mid-drives, wear faster than on regular bikes. A worn chain wears out the gears, which cost more to replace.",
+      "symptoms": [
+        "Skipping or slipping under load",
+        "Clicking or noisy pedaling",
+        "Chain falling off"
+      ],
+      "checks": [
+        "A shop or a cheap chain checker tool can measure wear in seconds.",
+        "Turn the pedals backward and look for stiff links."
+      ],
+      "care": [
+        "Clean and lube it regularly, more often after rain.",
+        "Replace it before it's worn enough to damage the gears."
+      ],
+      "related": [
+        "derailleur",
+        "mid-drive-motor"
+      ],
+      "keywords": [
+        "chain",
+        "chain skipping",
+        "clicking noise",
+        "chain fell off",
+        "noisy pedaling",
+        "slipping gears"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "derailleur",
+      "title": "Derailleur and gears",
+      "category": "Brakes, wheels and drivetrain",
+      "aka": [
+        "gears",
+        "shifter",
+        "cassette"
+      ],
+      "what": "The mechanism that moves the chain between gears.",
+      "does": "Using the right gear saves battery and your knees. A bent derailleur or stretched cable causes poor shifting.",
+      "symptoms": [
+        "Gears skip or won't shift",
+        "Chain rubs or makes noise"
+      ],
+      "checks": [
+        "Look at the derailleur from behind: it should hang straight down, not bent toward the wheel."
+      ],
+      "care": [
+        "A bent derailleur hanger is common after a fall; a shop can straighten or replace it."
+      ],
+      "related": [
+        "chain",
+        "mid-drive-motor"
+      ],
+      "keywords": [
+        "gears",
+        "shifting",
+        "skipping gears",
+        "derailleur",
+        "cassette"
+      ],
+      "diagnose": null,
+      "links": []
+    },
+    {
+      "slug": "tire-pressure",
+      "title": "Tire pressure",
+      "category": "Brakes, wheels and drivetrain",
+      "aka": [
+        "PSI",
+        "flat tires"
+      ],
+      "what": "How hard the tires are pumped up.",
+      "does": "The right pressure is printed on the tire's side as a range. Too low causes flats, wobbly handling and shorter range; fat tires run much lower pressures than road tires.",
+      "symptoms": [
+        "Frequent flats",
+        "Sluggish ride and less range",
+        "Tire squirming in corners"
+      ],
+      "checks": [
+        "Check pressure with a gauge at least every week or two."
+      ],
+      "care": [
+        "Use a pump that fits your valve type (Schrader or Presta)."
+      ],
+      "related": [
+        "watt-hours",
+        "ebike-maintenance"
+      ],
+      "keywords": [
+        "tire pressure",
+        "psi",
+        "flat tire",
+        "low tire",
+        "pump"
+      ],
+      "diagnose": null,
+      "links": [
+        {
+          "label": "Broke down? Flat tire help",
+          "href": "../broke-down.html"
+        }
+      ]
+    },
+    {
+      "slug": "battery-storage",
+      "title": "Storing your battery",
+      "category": "Owning an e-bike",
+      "aka": [
+        "winter storage",
+        "long-term storage"
+      ],
+      "what": "How to keep a battery when you're not riding for a while.",
+      "does": "Heat and being stored completely full or completely empty are what age a battery fastest. Many makers suggest storing it partly charged in a cool, dry place; check your manual for its range.",
+      "symptoms": [],
+      "checks": [
+        "Check it every month or so and top it up if it's dropped low."
+      ],
+      "care": [
+        "Not in a hot car, garage attic or direct sun.",
+        "Away from exits and things that burn.",
+        "Use the charger made for it when topping up."
+      ],
+      "related": [
+        "battery-aging",
+        "lithium-ion-battery",
+        "bms"
+      ],
+      "keywords": [
+        "store battery",
+        "storage",
+        "not riding",
+        "winter",
+        "garage"
+      ],
+      "diagnose": null,
+      "links": [
+        {
+          "label": "Battery safety",
+          "href": "../battery-safety.html"
+        }
+      ]
+    },
+    {
+      "slug": "ebike-classes",
+      "title": "E-bike classes",
+      "category": "Owning an e-bike",
+      "aka": [
+        "Class 1",
+        "Class 2",
+        "Class 3"
+      ],
+      "what": "The three legal types of e-bike in Florida and most U.S. states.",
+      "does": "Class 1: pedal assist up to 20 mph. Class 2: throttle allowed, up to 20 mph. Class 3: pedal assist up to 28 mph. The class decides where you can ride, and local rules vary.",
+      "symptoms": [],
+      "checks": [],
+      "care": [
+        "Check the class label on your bike."
+      ],
+      "related": [
+        "power-rating",
+        "pedal-assist",
+        "throttle"
+      ],
+      "keywords": [
+        "class 1",
+        "class 2",
+        "class 3",
+        "classes",
+        "legal",
+        "laws",
+        "speed limit"
+      ],
+      "diagnose": null,
+      "links": [
+        {
+          "label": "Florida e-bike laws",
+          "href": "../florida-ebike-laws.html"
+        }
+      ]
+    },
+    {
+      "slug": "ebike-maintenance",
+      "title": "Maintenance schedule",
+      "category": "Owning an e-bike",
+      "aka": [
+        "service",
+        "tune-up"
+      ],
+      "what": "What to check and how often.",
+      "does": "Heavier, faster e-bikes wear tires, brakes and chains faster than regular bikes. Follow your bike maker's service intervals where they exist; the habits below are general guidance.",
+      "symptoms": [],
+      "checks": [
+        "Every ride: tires, brakes, battery charge (see the pre-ride check).",
+        "Every week or two: tire pressure, chain clean and lube.",
+        "Every few months, or sooner with heavy use: brake pads, bolts, wheel spokes, and a shop check-over."
+      ],
+      "care": [
+        "Keep receipts and service records; warranty claims often ask for them."
+      ],
+      "related": [
+        "chain",
+        "brake-pads",
+        "tire-pressure"
+      ],
+      "keywords": [
+        "maintenance",
+        "service",
+        "tune up",
+        "how often",
+        "checklist"
+      ],
+      "diagnose": null,
+      "links": [
+        {
+          "label": "Pre-ride check",
+          "href": "../ride-ready.html"
+        }
+      ]
+    }
+  ]
+}

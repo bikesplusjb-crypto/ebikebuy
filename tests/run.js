@@ -79,9 +79,9 @@ const BANNED = [
   /any charger (will|works)/i
 ];
 const pages = fs.readdirSync(ROOT).filter(f => f.endsWith(".html"))
-  .concat(fs.readdirSync(path.join(ROOT, "error-codes")).filter(f => f.endsWith(".html")).map(f => "error-codes/" + f));
+  .concat(...["error-codes", "learn"].map(d => fs.readdirSync(path.join(ROOT, d)).filter(f => f.endsWith(".html")).map(f => d + "/" + f)));
 const texts = pages.map(f => [f, fs.readFileSync(path.join(ROOT, f), "utf8")])
-  .concat(["js/diagnose-data.js", "data/error-codes.json"].map(f => [f, fs.readFileSync(path.join(ROOT, f), "utf8")]));
+  .concat(["js/diagnose-data.js", "data/error-codes.json", "data/learn.json"].map(f => [f, fs.readFileSync(path.join(ROOT, f), "utf8")]));
 let unsafe = 0;
 texts.forEach(([f, t]) => BANNED.forEach(re => {
   const m = t.match(re);
@@ -149,7 +149,25 @@ if (!rcBad) ok(`${RC.items.length} recalls and warnings, each linked to cpsc.gov
 try { execFileSync("node", [path.join(ROOT, "tools/build-recalls.js"), "--check"], { stdio: "pipe" }); ok("recalls page matches the data"); }
 catch (e) { fail("recalls.html is out of date: run node tools/build-recalls.js"); }
 
-/* ---------- 6. reminders (don't fail) ---------- */
+/* ---------- 6. learn ---------- */
+console.log("Learn");
+const LN = JSON.parse(fs.readFileSync(path.join(ROOT, "data/learn.json"), "utf8"));
+const slugs = new Set(LN.articles.map(a => a.slug));
+let lnBad = 0;
+LN.articles.forEach(a => {
+  const bad = m => { lnBad++; fail(`learn/${a.slug}: ${m}`); };
+  if (!/^[a-z0-9-]+$/.test(a.slug)) bad("slug must be lowercase letters, numbers and dashes");
+  if (!a.title || !a.what || !a.does || !a.category) bad("needs title, what, does and category");
+  (a.related || []).forEach(s => { if (!slugs.has(s)) bad(`related article "${s}" doesn't exist`); });
+  if (a.diagnose && !D.flows[a.diagnose]) bad(`diagnose flow "${a.diagnose}" doesn't exist`);
+  if (!(a.keywords || []).length) bad("needs search keywords");
+});
+if (slugs.size !== LN.articles.length) fail("learn: duplicate slugs");
+if (!lnBad) ok(`${LN.articles.length} articles, related links and diagnose links all valid`);
+try { execFileSync("node", [path.join(ROOT, "tools/build-learn.js"), "--check"], { stdio: "pipe" }); ok("learn pages and sitemap match the data"); }
+catch (e) { fail("learn pages are out of date: run node tools/build-learn.js (" + String(e.stdout).trim() + ")"); }
+
+/* ---------- 7. reminders (don't fail) ---------- */
 if (!D.reviewed || /pending/i.test(D.reviewed)) warn("diagnose flows not yet signed off by a mechanic (DIAGNOSE.reviewed)");
 
 console.log(failed ? `\n${failed} check(s) failed` : "\nAll checks passed");

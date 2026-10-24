@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://ebikebuy.com/learn/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learn about e-bikes">
+<meta property="og:description" content="Plain-English explanations of e-bike motors, batteries, sensors, brakes and upkeep, with what goes wrong and what's safe to check.">
+<title>Learn about e-bikes — EbikeBuy</title>
+<meta name="description" content="Plain-English explanations of e-bike motors, batteries, sensors, brakes and upkeep, with what goes wrong and what's safe to check.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--lime:#8DC63F;--lime-dk:#77AC2F;--black:#0D0D0D;--ink:#1A1A1A;--grey:#6B7280;
+  --line:#E3E3E1;--wash:#F6F6F4;--alert:#B3300F;
+  --f-head:'Montserrat',system-ui,sans-serif;--f-body:'Inter',system-ui,sans-serif;
+  --gut:clamp(16px,4vw,40px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:#fff;font-size:16px;
+  line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 var(--gut)}
+
+.hdr{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.hdr .bar{max-width:1240px;margin:0 auto;padding:14px var(--gut);display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.logo-badge{width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
+.logo-badge svg{width:18px;height:18px;fill:var(--black)}
+.logo-txt{font-family:var(--f-head);font-weight:800;font-size:18px;letter-spacing:-.02em;line-height:1}
+.logo-txt small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.22em;color:var(--grey);margin-top:2px}
+.nav{display:none;gap:22px;font-size:13px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;margin-right:18px}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--lime-dk)}
+@media(min-width:1040px){.nav{display:flex}}
+.hdr-phone{border:1.5px solid var(--lime);border-radius:5px;padding:9px 15px;font-size:12px;
+  font-weight:700;letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.hdr-phone:hover{background:var(--lime)}
+
+.masthead{background:var(--black);color:#fff;padding:clamp(34px,5vw,62px) 0}
+.masthead .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--lime);margin:0 0 12px}
+.masthead h1{font-family:var(--f-head);font-weight:900;font-size:clamp(27px,4.6vw,44px);
+  text-transform:uppercase;letter-spacing:-.02em;margin:0;line-height:1.05}
+.masthead p{color:#C9C9C5;margin:14px 0 0;font-size:16px;max-width:62ch}
+.masthead .upd{font-size:12.5px;color:#8E8E8A;margin-top:14px}
+
+main{padding:clamp(30px,5vw,52px) 0 60px}
+main.wrap{padding-top:clamp(30px,5vw,52px);padding-bottom:60px}
+section{scroll-margin-top:78px;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--f-head);font-weight:800;font-size:clamp(20px,3vw,27px);text-transform:uppercase;
+  letter-spacing:-.01em;margin:0 0 4px}
+.rule{width:52px;height:3px;background:var(--lime);border-radius:2px;margin-bottom:20px}
+h3{font-size:15.5px;font-weight:700;margin:24px 0 6px}
+p{margin:0 0 14px}
+ul.pl{margin:0 0 14px;padding-left:20px}
+ul.pl li{margin-bottom:8px}
+.callout{background:var(--wash);border-left:4px solid var(--lime);border-radius:0 5px 5px 0;
+  padding:16px 18px;margin:0 0 18px;font-size:14.5px}
+.callout--warn{border-left-color:var(--alert);background:#FDF4F2}
+.callout b{font-weight:700}
+
+.classes{display:grid;gap:14px;margin-bottom:20px}
+@media(min-width:720px){.classes{grid-template-columns:repeat(3,1fr)}}
+.cls{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.cls-hd{background:var(--black);color:#fff;padding:12px 16px}
+.cls-hd strong{font-family:var(--f-head);font-size:15px;font-weight:800;letter-spacing:.02em;
+  text-transform:uppercase;display:block}
+.cls-hd span{font-size:11.5px;color:var(--lime);letter-spacing:.08em;text-transform:uppercase}
+.cls-body{padding:14px 16px}
+.cls-body p{margin:0 0 8px;font-size:13.5px;line-height:1.5}
+.cls-body p:last-child{margin:0}
+.cls-body b{font-weight:600}
+
+.srcs{font-size:13px;color:var(--grey)}
+.srcs a{color:var(--lime-dk)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:5px;
+  font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;
+  background:var(--lime);color:var(--black);border:2px solid var(--lime)}
+.btn:hover{background:var(--lime-dk);border-color:var(--lime-dk)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghost:hover{border-color:var(--ink)}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+.ftr{background:var(--black);color:#8E8E8A;font-size:12.5px;padding:32px 0 38px;line-height:1.85}
+.ftr a{color:#C9C9C5}
+.ftr a:hover{color:var(--lime)}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.helpbar{background:#0D0D0D;border-bottom:1px solid #262626}
+.helpbar .in{max-width:1240px;margin:0 auto;padding:0 clamp(8px,4vw,40px);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.helpbar .in::-webkit-scrollbar{display:none}
+.helpbar a{flex:none;color:#E8E8E4;text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:12px 8px;border-bottom:3px solid transparent;white-space:nowrap}
+.helpbar a:hover,.helpbar a[aria-current]{color:#8DC63F;border-bottom-color:#8DC63F}
+.helpbar a.hb-alert{color:#F2A08A}
+
+.codes{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
+.codes a{display:flex;gap:14px;align-items:baseline;border:1px solid var(--line);border-left:4px solid var(--lime);
+  border-radius:6px;padding:12px 16px;text-decoration:none;font-size:16px}
+.codes a:hover{border-color:var(--lime-dk)}
+.codes b{font-family:var(--f-head);font-size:18px;min-width:3.2em}
+.find{width:100%;font:inherit;font-size:18px;padding:14px 16px;border:2px solid var(--line);border-radius:8px;margin:0 0 16px}
+.find:focus{border-color:var(--lime);outline:none}
+.quote{border-left:4px solid var(--black);background:var(--wash);padding:14px 18px;border-radius:0 6px 6px 0;margin:0 0 14px;font-size:17px}
+ol.pl{margin:0 0 14px;padding-left:22px}
+ol.pl li{margin-bottom:8px;font-size:16.5px}
+.sys{display:grid;gap:10px;margin-bottom:20px}
+.helpbar{background:#0D0D0D;border-bottom:1px solid #262626}
+.helpbar .in{max-width:1240px;margin:0 auto;padding:0 clamp(8px,4vw,40px);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.helpbar .in::-webkit-scrollbar{display:none}
+.helpbar a{flex:none;color:#E8E8E4;text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:12px 8px;border-bottom:3px solid transparent;white-space:nowrap}
+.helpbar a:hover,.helpbar a[aria-current]{color:#8DC63F;border-bottom-color:#8DC63F}
+.helpbar a.hb-alert{color:#F2A08A}
+.sys>a,.sys>div{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none}
+.sys>a{border-left:4px solid var(--lime)}
+.sys span a{color:var(--lime-dk)}
+.sys strong{display:block;font-family:var(--f-head);font-size:18px}
+.sys span{color:var(--grey);font-size:14.5px}
+.art dl{display:grid;gap:4px;margin:0 0 14px}
+.aka{color:var(--grey);font-size:15px;margin:0 0 14px}
+.lede-big{font-size:18px}
+.rel{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 14px}
+.rel a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:7px 14px;text-decoration:none;font-size:15px}
+.rel a:hover{border-color:var(--lime-dk)}
+.cat{margin:0 0 26px}
+.cat h2{margin-bottom:4px}
+.alist{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+@media(min-width:720px){.alist{grid-template-columns:1fr 1fr}}
+.alist a{display:block;border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:6px;padding:12px 16px;text-decoration:none}
+.alist a:hover{border-color:var(--lime-dk)}
+.alist b{display:block;font-size:16.5px}
+.alist span{color:var(--grey);font-size:14.5px}
+.hits{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
+.hits a{display:block;border:2px solid var(--lime);border-radius:8px;padding:12px 16px;text-decoration:none}
+.hits small{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime-dk)}
+.hits b{font-size:16.5px}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="bar">
+    <a class="logo" href="../index.html">
+      <span class="logo-badge"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></span>
+      <span class="logo-txt">EBIKEBUY<small>.COM</small></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#bikes">E-Bikes</a>
+      <a href="../diagnose.html">Diagnose</a>
+      <a href="index.html">Error codes</a>
+      <a href="../index.html#bench">Assembly</a>
+      <a href="../about.html">About</a>
+      <a href="../about.html#contact">Contact</a>
+    </nav>
+    <a class="hdr-phone" href="tel:7726925505">772-692-5505</a>
+  </div>
+</header>
+<nav class="helpbar" aria-label="Rider help"><div class="in"><a href="../diagnose.html">Diagnose</a><a href="../broke-down.html" class="hb-alert">Broke down</a><a href="../error-codes/index.html">Codes</a><a href="../battery-safety.html">Battery</a></div></nav>
+
+<div class="masthead">
+  <div class="wrap">
+    <p class="tag">Learn</p>
+    <h1>Learn about<br>your e-bike</h1>
+    <p>Plain-English explanations of the parts that make an e-bike work, what goes wrong with them, and what's safe to check yourself.</p>
+    
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <label for="find" class="srcs">Search, or describe the problem in your own words</label>
+    <input id="find" class="find" autocomplete="off" placeholder="e.g. motor cuts out, range dropped, BMS">
+    <ul class="hits" id="hits" aria-live="polite"></ul>
+  </section>
+  <section class="cat">
+    <h2>Motors and drive</h2><div class="rule"></div>
+    <ul class="alist">
+      <li><a href="hub-motor.html"><b>Hub motor</b><span>A motor built into the center of the front or rear wheel.</span></a></li>
+      <li><a href="mid-drive-motor.html"><b>Mid-drive motor</b><span>A motor mounted at the pedals, in the middle of the frame.</span></a></li>
+      <li><a href="motor-controller.html"><b>Motor controller</b><span>The electronics that decide how much power goes from the battery to the motor.</span></a></li>
+      <li><a href="pedal-assist.html"><b>Pedal assist</b><span>The motor helping you while you pedal.</span></a></li>
+      <li><a href="throttle.html"><b>Throttle</b><span>A lever or twist grip that runs the motor without pedaling.</span></a></li>
+      <li><a href="motor-cutoff.html"><b>Brake motor cutoff</b><span>Switches in the brake levers that turn the motor off while you brake.</span></a></li>
+      <li><a href="power-rating.html"><b>Watts and power rating</b><span>How much power the motor puts out, in watts.</span></a></li>
+      <li><a href="torque-output.html"><b>Torque (Nm)</b><span>How strongly the motor can twist the crank or wheel, in newton-meters.</span></a></li>
+    </ul>
+  </section>
+  <section class="cat">
+    <h2>Displays and sensors</h2><div class="rule"></div>
+    <ul class="alist">
+      <li><a href="torque-sensor.html"><b>Torque sensor</b><span>A sensor that measures how hard you push on the pedals.</span></a></li>
+      <li><a href="cadence-sensor.html"><b>Cadence sensor</b><span>A sensor that detects whether, and how fast, the pedals are turning.</span></a></li>
+      <li><a href="display.html"><b>Display</b><span>The screen or light panel on the handlebar.</span></a></li>
+      <li><a href="error-codes.html"><b>Error codes</b><span>Numbers or letters the display shows when the system detects a problem.</span></a></li>
+      <li><a href="firmware.html"><b>Firmware</b><span>The software inside the motor, display and battery.</span></a></li>
+      <li><a href="speed-sensor.html"><b>Speed sensor</b><span>A sensor that reads how fast the wheel turns, usually from a magnet on a spoke or the brake rotor.</span></a></li>
+      <li><a href="walk-mode.html"><b>Walk mode</b><span>A setting that makes the motor push the bike slowly while you walk beside it.</span></a></li>
+    </ul>
+  </section>
+  <section class="cat">
+    <h2>Batteries and charging</h2><div class="rule"></div>
+    <ul class="alist">
+      <li><a href="lithium-ion-battery.html"><b>Lithium-ion battery</b><span>The rechargeable battery that powers the motor, made of many small cells joined together.</span></a></li>
+      <li><a href="bms.html"><b>Battery management system (BMS)</b><span>The electronics inside a battery pack that protect it.</span></a></li>
+      <li><a href="voltage.html"><b>Voltage (V)</b><span>The battery's electrical pressure, in volts.</span></a></li>
+      <li><a href="amp-hours.html"><b>Amp-hours (Ah)</b><span>How much charge the battery holds, in amp-hours.</span></a></li>
+      <li><a href="watt-hours.html"><b>Watt-hours (Wh) and range</b><span>The total energy the battery holds: volts times amp-hours.</span></a></li>
+      <li><a href="charger.html"><b>Battery charger</b><span>The charger made for your battery's voltage, chemistry and connector.</span></a></li>
+      <li><a href="battery-connectors.html"><b>Battery connectors and contacts</b><span>The metal contacts where the battery meets the bike, and the port where the charger plugs in.</span></a></li>
+      <li><a href="battery-aging.html"><b>Battery aging</b><span>Lithium-ion batteries slowly hold less charge as they age and get used.</span></a></li>
+    </ul>
+  </section>
+  <section class="cat">
+    <h2>Owning an e-bike</h2><div class="rule"></div>
+    <ul class="alist">
+      <li><a href="water-exposure.html"><b>Rain and water</b><span>E-bikes handle rain, but water in the wrong places causes faults.</span></a></li>
+      <li><a href="battery-storage.html"><b>Storing your battery</b><span>How to keep a battery when you're not riding for a while.</span></a></li>
+      <li><a href="ebike-classes.html"><b>E-bike classes</b><span>The three legal types of e-bike in Florida and most U.S. states.</span></a></li>
+      <li><a href="ebike-maintenance.html"><b>Maintenance schedule</b><span>What to check and how often.</span></a></li>
+    </ul>
+  </section>
+  <section class="cat">
+    <h2>Brakes, wheels and drivetrain</h2><div class="rule"></div>
+    <ul class="alist">
+      <li><a href="hydraulic-disc-brakes.html"><b>Hydraulic disc brakes</b><span>Brakes that use fluid in a sealed hose to push pads onto a metal rotor.</span></a></li>
+      <li><a href="brake-pads.html"><b>Brake pads</b><span>The replaceable pads that grip the rotor.</span></a></li>
+      <li><a href="rotors.html"><b>Brake rotors</b><span>The metal discs on the wheel hubs that the brake pads grip.</span></a></li>
+      <li><a href="chain.html"><b>Chain</b><span>The chain that carries your pedaling (and a mid-drive's power) to the rear wheel.</span></a></li>
+      <li><a href="derailleur.html"><b>Derailleur and gears</b><span>The mechanism that moves the chain between gears.</span></a></li>
+      <li><a href="tire-pressure.html"><b>Tire pressure</b><span>How hard the tires are pumped up.</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="../index.html">Back to shop</a> · <a href="index.html">Learn</a> · <a href="../diagnose.html">Diagnose my e-bike</a> · <a href="../error-codes/index.html">Error codes</a> · <a href="../battery-safety.html">Battery safety</a> · <a href="../policies.html#privacy">Privacy</a><br><br>
+    EbikeBuy is an independent buying guide and service resource. This is general information, not a substitute for your bike's manual or a qualified mechanic.
+  </div>
+</footer>
+<script>
+(function () {
+  var IDX = [{"s":"hub-motor","t":"Hub motor","w":"hub motor | rear hub motor | front hub motor | geared hub | direct drive | hub | wheel motor | motor in the wheel | clicking hub | grinding wheel","d":"no-assist"},{"s":"mid-drive-motor","t":"Mid-drive motor","w":"mid-drive motor | center motor | crank motor | drive unit | mid drive | center drive | bosch motor | shimano motor | motor at the pedals | crank motor","d":"no-assist"},{"s":"torque-sensor","t":"Torque sensor","w":"torque sensor | pedal force sensor | weak assist | assist uneven | jerky assist | pedal sensor | torque | assist feels weak","d":"no-assist"},{"s":"cadence-sensor","t":"Cadence sensor","w":"cadence sensor | pas sensor | pedal sensor | magnet disc | pas | pedal assist sensor | assist starts late | magnet ring","d":"no-assist"},{"s":"motor-controller","t":"Motor controller","w":"motor controller | controller | ecu | controller | ecu | motor won't run | motor stops | motor cuts out | no power to motor","d":"no-assist"},{"s":"pedal-assist","t":"Pedal assist","w":"pedal assist | pas | assist levels | eco / tour / sport / turbo | pas | assist not working | no assist | pedal assist stopped | motor won't help | assist disappears | motor stops helping","d":"no-assist"},{"s":"throttle","t":"Throttle","w":"throttle | thumb throttle | twist throttle | throttle not working | throttle stopped | twist grip | thumb throttle","d":"no-assist"},{"s":"motor-cutoff","t":"Brake motor cutoff","w":"brake motor cutoff | brake sensors | e-brake switches | cut-off switches | brake sensor | brake cutoff | motor cuts out | assist cuts in and out | e-brake","d":"no-assist"},{"s":"power-rating","t":"Watts and power rating","w":"watts and power rating | w | nominal power | peak power | 750w | watts | 750w | motor power | peak watts | nominal","d":""},{"s":"torque-output","t":"Torque (Nm)","w":"torque (nm) | newton-meters | nm | nm | newton meters | hill climbing | torque","d":""},{"s":"lithium-ion-battery","t":"Lithium-ion battery","w":"lithium-ion battery | e-bike battery | battery pack | li-ion | battery | battery pack | li-ion | lithium | battery dies | battery won't charge","d":"no-charge"},{"s":"bms","t":"Battery management system (BMS)","w":"battery management system (bms) | bms | battery protection | bms | battery management | battery protection | shuts off | bike shuts off | cuts out on hills | cuts off","d":"no-power"},{"s":"voltage","t":"Voltage (V)","w":"voltage (v) | 36v | 48v | 52v | volts | volts | 36v | 48v | 52v | voltage","d":""},{"s":"amp-hours","t":"Amp-hours (Ah)","w":"amp-hours (ah) | ah | capacity | ah | amp hours | capacity | mah","d":""},{"s":"watt-hours","t":"Watt-hours (Wh) and range","w":"watt-hours (wh) and range | wh | battery capacity | range | range | how far | miles per charge | range dropped | battery range | wh | watt hours","d":""},{"s":"charger","t":"Battery charger","w":"battery charger | e-bike charger | charger | won't charge | charging light | charger blinking | universal charger","d":"no-charge"},{"s":"battery-connectors","t":"Battery connectors and contacts","w":"battery connectors and contacts | terminals | charging port | plug | battery contacts | terminals | charging port | loose battery | power cuts over bumps","d":"no-power"},{"s":"battery-aging","t":"Battery aging","w":"battery aging | battery degradation | capacity loss | old battery | battery worn out | degradation | range dropped | battery getting worse","d":""},{"s":"water-exposure","t":"Rain and water","w":"rain and water | water ingress | washing an e-bike | rain | wet | water | washed | flooded | submerged | pressure washer","d":""},{"s":"display","t":"Display","w":"display | lcd display | led display | cycle computer | head unit | display | screen | lcd | blank display | display won't turn on | head unit","d":"no-power"},{"s":"error-codes","t":"Error codes","w":"error codes | fault codes | warning codes | error | code | fault code | error 30 | error code | warning on display","d":"error-code"},{"s":"firmware","t":"Firmware","w":"firmware | software | software update | software | update | firmware update | version error","d":""},{"s":"speed-sensor","t":"Speed sensor","w":"speed sensor | wheel sensor | spoke magnet | speed sensor | spoke magnet | speed shows zero | magnet | wheel sensor","d":"no-assist"},{"s":"walk-mode","t":"Walk mode","w":"walk mode | walk assist | push assist | walk assist | push assist | walk mode","d":""},{"s":"hydraulic-disc-brakes","t":"Hydraulic disc brakes","w":"hydraulic disc brakes | hydraulic brakes | disc brakes | brakes | spongy brakes | soft brake lever | brake squeal | brakes not working","d":""},{"s":"brake-pads","t":"Brake pads","w":"brake pads | disc pads | pads | grinding brakes | worn brakes | brake squeal","d":""},{"s":"rotors","t":"Brake rotors","w":"brake rotors | disc rotors | discs | rotor | disc | brake rub | pulsing brakes","d":""},{"s":"chain","t":"Chain","w":"chain | drivetrain | chain | chain skipping | clicking noise | chain fell off | noisy pedaling | slipping gears","d":""},{"s":"derailleur","t":"Derailleur and gears","w":"derailleur and gears | gears | shifter | cassette | gears | shifting | skipping gears | derailleur | cassette","d":""},{"s":"tire-pressure","t":"Tire pressure","w":"tire pressure | psi | flat tires | tire pressure | psi | flat tire | low tire | pump","d":""},{"s":"battery-storage","t":"Storing your battery","w":"storing your battery | winter storage | long-term storage | store battery | storage | not riding | winter | garage","d":""},{"s":"ebike-classes","t":"E-bike classes","w":"e-bike classes | class 1 | class 2 | class 3 | class 1 | class 2 | class 3 | classes | legal | laws | speed limit","d":""},{"s":"ebike-maintenance","t":"Maintenance schedule","w":"maintenance schedule | service | tune-up | maintenance | service | tune up | how often | checklist","d":""}];
+  var FLOWS = {"no-power":"Won't turn on","no-assist":"Turns on, but no assist","no-charge":"Battery won't charge","error-code":"Error code on the display"};
+  var f = document.getElementById("find"), hits = document.getElementById("hits");
+  function el(t, c, x) { var n = document.createElement(t); if (c) n.className = c; if (x) n.textContent = x; return n; }
+  f.addEventListener("input", function () {
+    var words = f.value.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(function (w) { return w.length > 1; });
+    hits.textContent = "";
+    if (!words.length) return;
+    var scored = IDX.map(function (a) {
+      var s = 0; words.forEach(function (w) { if (a.w.indexOf(w) !== -1) s += a.t.toLowerCase().indexOf(w) !== -1 ? 3 : 1; });
+      if (a.w.indexOf(words.join(" ")) !== -1) s += 4;
+      return [s, a];
+    }).filter(function (x) { return x[0] > 0; }).sort(function (x, y) { return y[0] - x[0]; }).slice(0, 5);
+    var flow = scored.length && scored[0][1].d;
+    if (flow) {
+      var li = el("li"), a = el("a"); a.href = "../diagnose.html#" + flow + "/battery-check";
+      a.appendChild(el("small", "", "Step-by-step checks")); a.appendChild(el("b", "", FLOWS[flow]));
+      li.appendChild(a); hits.appendChild(li);
+    }
+    scored.forEach(function (x) {
+      var li = el("li"), a = el("a"); a.href = x[1].s + ".html";
+      a.appendChild(el("small", "", "Article")); a.appendChild(el("b", "", x[1].t));
+      li.appendChild(a); hits.appendChild(li);
+    });
+    if (!scored.length) { var li = el("li"); li.appendChild(el("p", "srcs", "Nothing matched. Try other words, or start the step-by-step checks.")); hits.appendChild(li); }
+  });
+})();
+</script>
+</body>
+</html>
