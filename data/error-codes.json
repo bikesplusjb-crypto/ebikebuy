@@ -29,6 +29,22 @@
       "source_noun": "documentation",
       "display_warning": "These are the codes Bafang's own displays use. Many bikes with Bafang or Bafang-style motors have a display made by another company, and its numbers can mean something different. If your display isn't a Bafang one, use that display's manual, or send us a photo.",
       "shop_note": "Bikes Plus works on Bafang and Bafang-style systems all the time."
+    },
+    "shimano": {
+      "slug": "shimano",
+      "name": "Shimano",
+      "label": "Shimano STEPS error codes",
+      "applies": "Shimano STEPS and EP e-bike systems. Codes starting with W are warnings, which clear when conditions improve; codes starting with E are errors, which point to a possible fault. Shimano's E-TUBE PROJECT Cyclist app can read the code from the bike.",
+      "official": "https://si.shimano.com/error",
+      "official_label": "Shimano's official error code lookup",
+      "manual_label": "Shimano manual",
+      "source_domains": [
+        "shimano.com"
+      ],
+      "source_noun": "documentation",
+      "notice_title": "A short list, on purpose.",
+      "display_warning": "These are the Shimano codes we could confirm in Shimano's own manuals. Most come from Shimano's Japanese manual for the E8080 system and are translated, so follow each source link for Shimano's exact wording. For any code not listed, use Shimano's official lookup at si.shimano.com/error.",
+      "shop_note": "Bikes Plus has diagnostic tools for Shimano and most other major motor systems."
     }
   },
   "codes": [
@@ -1209,6 +1225,259 @@
       "severity": "check",
       "source_url": "https://www.bafang-e.com/uploaded/manual/BF-DM-C-DP%20C244-C245-EN%20(BLE5.1).pdf",
       "source_label": "Bafang DP C244/C245 dealer manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "W010",
+      "title": "Drive unit is hot",
+      "maker_says": "The drive unit temperature is high. Assist is lower than usual.",
+      "maker_fix": [
+        "Stop using the assist and let the drive unit cool down."
+      ],
+      "plain": "The motor has got hot, so it's giving less help to protect itself. Long climbs, heavy loads and Florida heat make this more likely.",
+      "severity": "check",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "W011",
+      "title": "Speed can't be detected",
+      "maker_says": "Travel speed can't be detected. The speed sensor may be out of position, or the magnet on the brake disc rotor may have come off. The top assisted speed is reduced.",
+      "maker_fix": [
+        "Check that the speed sensor and its magnet on the brake disc rotor are in place."
+      ],
+      "plain": "The bike can't read how fast it's going, so it limits the assist.",
+      "severity": "check",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "W013",
+      "title": "Pedal sensor didn't start up properly",
+      "maker_says": "Torque sensor initialization didn't finish normally. Assist may be weaker than usual. (On DU-E5000/E5080 with newer firmware this warning is numbered W106.)",
+      "maker_fix": [
+        "Switch off, take your feet off the pedals, and switch on again.",
+        "If it keeps happening, contact your dealer."
+      ],
+      "plain": "The sensor that measures how hard you pedal didn't start up cleanly, usually because there was weight on the pedals at switch-on.",
+      "severity": "check",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "W020",
+      "title": "Battery temperature out of range",
+      "maker_says": "The battery is outside its guaranteed operating temperature. Battery output is shut off.",
+      "maker_fix": [
+        "Too hot: leave the battery somewhere cool, out of direct sun, until it cools.",
+        "Too cold: bring it indoors until it warms up."
+      ],
+      "plain": "The battery is too hot or too cold to use, so it has switched its power off. A bike left in the Florida sun can get there quickly.",
+      "severity": "check",
+      "battery": true,
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "W032",
+      "title": "Wrong type of derailleur connected",
+      "maker_says": "A different derailleur from the configured one is connected (for example, electronic where mechanical is set). Shifting isn't possible.",
+      "maker_fix": [
+        "Contact the shop where you bought the bike, or a Shimano dealer."
+      ],
+      "plain": "The system is set up for one kind of gear changer but sees another, so it won't shift.",
+      "severity": "dealer",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E010",
+      "title": "System error",
+      "maker_says": "A system error was detected. Assist isn't available.",
+      "maker_fix": [
+        "Press the battery's power button to turn the system on again.",
+        "Keep your feet off the pedals when you switch on."
+      ],
+      "plain": "The system has detected an error and stopped the assist.",
+      "severity": "check",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E013",
+      "title": "Drive unit firmware fault",
+      "maker_says": "An abnormality was detected in the drive unit's firmware. Assist isn't available.",
+      "maker_fix": [
+        "Contact the shop where you bought the bike, or a Shimano dealer."
+      ],
+      "plain": "The motor's software has a problem. A shop can reload or update it.",
+      "severity": "dealer",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E014",
+      "title": "Speed sensor may be out of position",
+      "maker_says": "The speed sensor may be installed in the wrong position. Assist isn't available.",
+      "maker_fix": [
+        "Contact the shop where you bought the bike, or a Shimano dealer."
+      ],
+      "plain": "The speed sensor isn't where the system expects it, so the assist is switched off.",
+      "severity": "dealer",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E020",
+      "title": "Battery and drive unit not communicating",
+      "maker_says": "Communication error between the battery and the drive unit. Assist isn't available.",
+      "maker_fix": [
+        "Check the cable between the battery and the drive unit is connected properly.",
+        "Contact the shop where you bought the bike, or a Shimano dealer."
+      ],
+      "plain": "The battery and the motor aren't talking to each other.",
+      "severity": "check",
+      "battery": true,
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E021",
+      "title": "Battery not supported by this system",
+      "maker_says": "The battery meets the system's standards but isn't supported by this drive unit. Assist isn't available.",
+      "maker_fix": [
+        "Press the battery's power button to restart it.",
+        "Contact the shop where you bought the bike, or a Shimano dealer."
+      ],
+      "plain": "The battery fitted isn't one this motor supports. Use the battery made for your system.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E022",
+      "title": "Battery doesn't meet system standards",
+      "maker_says": "The battery doesn't meet the system's standards. No system functions start.",
+      "maker_fix": [
+        "Restart the battery.",
+        "Contact the shop where you bought the bike, or a Shimano dealer."
+      ],
+      "plain": "The bike doesn't recognize the battery as a compatible one. Use only the battery made for your system.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E025",
+      "title": "Battery doesn't recognize the drive unit",
+      "maker_says": "The battery doesn't recognize the drive unit. (Shown as one flash of the battery's light.)",
+      "maker_fix": [
+        "Use a genuine Shimano battery.",
+        "Check the power cable.",
+        "Contact your distributor or dealer."
+      ],
+      "plain": "The battery can't identify the motor it's connected to.",
+      "severity": "dealer",
+      "battery": true,
+      "source_url": "https://si.shimano.com/en/pdfs/um/7GP0B/UM-7GP0B-001-ENG.pdf",
+      "source_label": "Shimano STEPS battery user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E033",
+      "title": "Firmware not supported",
+      "maker_says": "The current firmware isn't supported by this system. The system won't start and assist isn't available.",
+      "maker_fix": [
+        "Update all parts to the latest firmware with Shimano's E-TUBE PROJECT app, or have a dealer do it."
+      ],
+      "plain": "The software on the bike's parts doesn't match. An update fixes it.",
+      "severity": "dealer",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E043",
+      "title": "Display firmware may be corrupted",
+      "maker_says": "Part of the cycle computer's firmware may be corrupted. Assist isn't available.",
+      "maker_fix": [
+        "Contact the shop where you bought the bike, or a Shimano dealer."
+      ],
+      "plain": "The display's software has a problem. A shop can reload it.",
+      "severity": "dealer",
+      "source_url": "https://si.shimano.com/ja/pdfs/um/78K0A/UM-78K0A-005-JP.pdf",
+      "source_label": "Shimano STEPS E8080 user manual (Japanese, translated)",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E295",
+      "title": "Tampering detected",
+      "maker_says": "Tampering detected: the product doesn't comply with national or regional standards. Switching the power off and on clears it for now; if it happens too many times, the system goes to E299.",
+      "maker_fix": [
+        "Return the bike to its original setup, then switch the power off and on."
+      ],
+      "plain": "The system thinks the bike has been modified to go faster than the rules allow. On EP8, EP6 and EP5 systems.",
+      "severity": "dealer",
+      "source_url": "https://si.shimano.com/en/pdfs/um/7K70A/UM-7K70A-004-ENG.pdf",
+      "source_label": "Shimano EP8/EP6/EP5 user manual",
+      "source_type": "manual",
+      "verified_on": "2026-10-23"
+    },
+    {
+      "system": "shimano",
+      "code": "E299",
+      "title": "Safe Mode",
+      "maker_says": "Safe Mode: drive unit assist stops. Only a Shimano office or authorized distributor can release it with special equipment, and Shimano says it may not be possible to release.",
+      "maker_fix": [
+        "Contact a Shimano dealer or distributor."
+      ],
+      "plain": "The assist has been shut off for good after repeated tampering alerts. On EP8, EP6 and EP5 systems.",
+      "severity": "dealer",
+      "source_url": "https://si.shimano.com/en/pdfs/um/7K70A/UM-7K70A-004-ENG.pdf",
+      "source_label": "Shimano EP8/EP6/EP5 user manual",
       "source_type": "manual",
       "verified_on": "2026-10-23"
     }

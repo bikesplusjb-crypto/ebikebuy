@@ -129,7 +129,7 @@ for (const c of DATA.codes) {
     lede: c.plain,
     updated: `Checked against ${sys.name}'s own ${c.source_type === "manual" ? "manual" : sys.source_noun}: ${fmtDate(c.verified_on)}.`,
     body: `
-  ${sys.display_warning ? `<div class="callout"><b>Check your display first.</b> ${esc(sys.display_warning)}</div>` : ""}
+  ${sys.display_warning ? `<div class="callout"><b>${esc(sys.notice_title || "Check your display first.")}</b> ${esc(sys.display_warning)}</div>` : ""}
   ${c.battery ? `<div class="callout callout--warn"><b>Battery hot, swollen, leaking or smells strange?</b> Stop and read <a href="../battery-safety.html">battery safety</a> first. If there's smoke, get away and call 911.</div>` : ""}
   <section id="maker">
     <h2>What ${esc(sys.name)} says</h2><div class="rule"></div>
@@ -175,7 +175,7 @@ for (const [sid, codes] of Object.entries(bySystem)) {
     h1: `${esc(sys.label)}`,
     lede: cap(sys.applies),
     body: `
-  ${sys.display_warning ? `<div class="callout"><b>Check your display first.</b> ${esc(sys.display_warning)}</div>` : ""}
+  ${sys.display_warning ? `<div class="callout"><b>${esc(sys.notice_title || "Check your display first.")}</b> ${esc(sys.display_warning)}</div>` : ""}
   <section>
     <label for="find" class="srcs">Type the code from your display</label>
     <input id="find" class="find" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="e.g. ${esc(codes[0].code)}">
@@ -189,9 +189,9 @@ ${codes.map(c => `      <li data-code="${esc(c.code)}"><a href="${esc(c._file)}"
 (function(){
   var f=document.getElementById("find"),items=[].slice.call(document.querySelectorAll("#codes li")),none=document.getElementById("none");
   f.addEventListener("input",function(){
-    var n=function(x){return x.toLowerCase().replace(/^0+(?=.)/,"");};
+    var n=function(x){return x.toLowerCase().replace(/^[a-z]+/,"").replace(/^0+(?=.)/,"");};
     var q=f.value.trim().toLowerCase(),shown=0;
-    items.forEach(function(li){var c=li.getAttribute("data-code").toLowerCase();var on=!q||c.indexOf(q)===0||n(c).indexOf(n(q))===0;li.hidden=!on;if(on)shown++;});
+    items.forEach(function(li){var c=li.getAttribute("data-code").toLowerCase();var L=function(x){return (x.match(/^[a-z]*/)||[""])[0];};var on=!q||c.indexOf(q)===0||(L(c)===L(q)&&n(c).indexOf(n(q))===0)||(!L(q)&&n(c).indexOf(n(q))===0);li.hidden=!on;if(on)shown++;});
     none.hidden=shown>0;
   });
 })();
@@ -212,7 +212,6 @@ files["index.html"] = page({
   <section>
     <div class="sys">
 ${Object.entries(DATA.systems).map(([sid, s]) => `      <a href="${s.slug}.html"><strong>${esc(s.label)}</strong><span>${(bySystem[sid] || []).length} codes so far · ${esc(cap(s.applies.split(". ")[0]).replace(/\.$/, ""))}.</span></a>`).join("\n")}
-      <div><strong>Shimano STEPS / EP</strong><span>Coming next. For now, see <a href="https://si.shimano.com/">Shimano's manuals</a>. W codes are warnings; E codes are errors.</span></div>
       <div><strong>Everything else</strong><span>Not yet, and we won't guess. Check your display's manual, or <a href="../about.html#contact">send us a photo</a>.</span></div>
     </div>
     <p>Not sure what's wrong? <a href="../diagnose.html">Try the step-by-step checks</a>.</p>
