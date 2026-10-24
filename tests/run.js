@@ -104,6 +104,13 @@ for (const m of fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8").matchAll
   if (!fs.existsSync(path.join(ROOT, m[1]))) { broken++; fail(`sitemap: ${m[1]} doesn't exist`); }
 }
 if (!broken) ok("all .html links and sitemap entries resolve");
+let wrongCur = 0;
+texts.forEach(([f, t]) => {
+  const bar = (t.match(/<nav class="helpbar"[\s\S]*?<\/nav>/) || [""])[0];
+  const cur = (bar.match(/href="([^"]+)" aria-current="page"/) || [])[1];
+  if (cur && !f.startsWith("error-codes/") && path.basename(cur) !== path.basename(f)) { wrongCur++; fail(`${f}: help bar marks ${cur} as the current page`); }
+});
+if (!wrongCur) ok("help bar marks the right page as current");
 
 /* ---------- 4. error-code data ---------- */
 console.log("Error codes");
