@@ -164,6 +164,7 @@ details.fix li{margin-bottom:8px}
 </div>
 
 <main class="wrap">
+  <div class="callout" id="offlineNote" hidden><b>You're offline.</b> This page was saved on your phone so it works without signal. Calling and texting still use your phone's normal apps.</div>
 
   <section class="sos" id="emergency">
     <p><b>Hurt, in danger, or the battery is smoking?</b> Call 911 now. Get away from the bike if the battery is hot, smoking or making noise.</p>
@@ -294,6 +295,9 @@ details.fix li{margin-bottom:8px}
 <script>
 (function () {
   document.getElementById("hdrPhone").href = "tel:7726925505";
+  var off = document.getElementById("offlineNote");
+  function net() { off.hidden = navigator.onLine; }
+  window.addEventListener("online", net); window.addEventListener("offline", net); net();
   var coords = "";
   var what = document.getElementById("what"), where = document.getElementById("where"), msg = document.getElementById("msg");
   var edited = false;
