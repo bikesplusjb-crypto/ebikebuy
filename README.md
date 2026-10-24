@@ -10,6 +10,11 @@ The ebikebuy.com website: plain HTML pages, no build step. Render publishes this
 | `diagnose.html` | "What's wrong with my e-bike?" step-by-step checks |
 | `battery-safety.html` | Battery warning signs, charging, storage, recalls |
 | `error-codes/` | Error-code library (generated from `data/error-codes.json`) |
+| `broke-down.html` | Stuck on the road: share location, what to do, getting home |
+| `ride-ready.html` | Pre-ride check and repair-bag builder |
+| `recalls.html` | E-bike recalls and CPSC warnings (generated from `data/recalls.json`) |
+| `learn/` | Plain-English articles (generated from `data/learn.json`) |
+| `garage.html` | My garage: bikes, service log, reminders, saved checks, stored on the rider's phone (`js/garage-store.js`) |
 | `florida-ebike-laws.html` | Florida e-bike laws |
 | `about.html`, `policies.html` | About/contact, and shipping/warranty/privacy/terms |
 
@@ -34,7 +39,7 @@ After editing, rebuild the pages and sitemap:
 node tools/build-codes.js
 ```
 
-That writes `error-codes/*.html` and the error-code section of `sitemap.xml`. Commit those files too, since Render serves them as they are.
+That writes `error-codes/*.html` and the error-code section of `sitemap.xml`. The same goes for `node tools/build-recalls.js` and `node tools/build-learn.js`. Commit the generated files too, since Render serves them as they are.
 
 ## Checks
 

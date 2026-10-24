@@ -109,7 +109,7 @@ document.getElementById("hdrPhone").href = "tel:7726925505";
 (function () {
   var f = document.getElementById("find"), items = [].slice.call(document.querySelectorAll("#list li")),
       none = document.getElementById("none"), count = document.getElementById("count");
-  f.addEventListener("input", function () {
+  function run() {
     var words = f.value.toLowerCase().split(/\\s+/).filter(Boolean), shown = 0;
     items.forEach(function (li) {
       var q = li.getAttribute("data-q"), on = words.every(function (w) { return q.indexOf(w) !== -1; });
@@ -117,7 +117,11 @@ document.getElementById("hdrPhone").href = "tel:7726925505";
     });
     none.hidden = shown > 0;
     count.textContent = words.length ? shown + " of " + items.length + " notices match" : items.length + " notices";
-  });
+  }
+  f.addEventListener("input", run);
+  // recalls.html?q=Rad opens with the search filled in (used by My garage)
+  var q = (location.search.match(/[?&]q=([^&]*)/) || [])[1];
+  if (q) { try { f.value = decodeURIComponent(q.replace(/\\+/g, " ")).slice(0, 60); } catch (e) {} run(); }
 })();
 </script>
 </body>
