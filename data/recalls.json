@@ -1,0 +1,334 @@
+{
+  "_readme": "U.S. CPSC recalls and warnings for e-bikes, e-trikes and e-bike batteries. Every entry must link to cpsc.gov and carry the date we checked it. Warnings mean CPSC told people to stop using a product and no fix was offered. Run `node tools/build-recalls.js` after editing.",
+  "checked_on": "2026-10-23",
+  "notices": [
+    {
+      "date": "2024-09",
+      "title": "CPSC: don't buy or use \"universal\" chargers for e-bikes and other micromobility products",
+      "detail": "CPSC named the SafPow and AMPOWSURE brands as a fire hazard. Use only the charger made for your battery.",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/2024/CPSC-Urges-Consumers-to-Not-Buy-or-Use-Universal-Chargers-with-Micromobility-Products-Due-to-Fire-Hazard"
+    }
+  ],
+  "items": [
+    {
+      "date": "2026-10-01",
+      "type": "recall",
+      "brand": "Gazelle USA (Urban Arrow)",
+      "product": "Urban Arrow Family, Shorty, Cargo L/XL and Tender 1000/1500 cargo e-bikes",
+      "hazard": "Seat-post bolt can break, causing a fall",
+      "remedy": "Free repair: new seat post and saddle",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2027/Gazelle-USA-Recalls-Urban-Arrow-Cargo-Electric-Bikes-Due-to-Fall-Hazard"
+    },
+    {
+      "date": "2026-06-25",
+      "type": "warning",
+      "brand": "Ridstar",
+      "product": "Q20 and Q20 Lite e-bikes",
+      "hazard": "Front wheel can come off, causing a crash",
+      "remedy": "No fix offered. Stop using it.",
+      "units": "",
+      "url": "https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-Ridstar-E-Bikes-Immediately-Due-to-Crash-Hazard-Risk-of-Serious-Injury-or-Death"
+    },
+    {
+      "date": "2026-06-11",
+      "type": "warning",
+      "brand": "CARBO (Veco Electric Bicycle)",
+      "product": "CARBO folding e-bikes, Models X and S",
+      "hazard": "Missing required reflectors; Model X has no chain guard. Crash and cut hazards",
+      "remedy": "No fix offered. Stop using it.",
+      "units": "480",
+      "url": "https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-CARBO-Electric-Bicycles-Immediately-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-and-Laceration-Hazards-Violates-Mandatory-Requirements-for-Bicycles"
+    },
+    {
+      "date": "2026-03-19",
+      "type": "warning",
+      "brand": "Ridstar",
+      "product": "Q20 and Q20 Pro e-bikes",
+      "hazard": "Battery and wiring can catch fire",
+      "remedy": "No fix offered. Stop using it; remove the battery and dispose of it as hazardous waste.",
+      "units": "",
+      "url": "https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Immediately-Stop-Using-Ridstar-E-Bikes-Due-to-Fire-Hazard-Risk-of-Serious-Injury-or-Death"
+    },
+    {
+      "date": "2026-03-19",
+      "type": "recall",
+      "brand": "Specialized",
+      "product": "Turbo Como SL 4.0 and 5.0",
+      "hazard": "Fork can crack, causing a fall",
+      "remedy": "Free replacement fork",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2026/Specialized-Bicycle-Components-Recalls-Specialized-Turbo-Como-SL-Electric-Bicycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Fall-Hazard"
+    },
+    {
+      "date": "2026-01-29",
+      "type": "recall",
+      "brand": "Trek and Electra",
+      "product": "2026 Trek FX+ 1 and FX+ 1S (Midstep and Stepover); Electra Townie Go! and Go! S Step Thru",
+      "hazard": "Rear-wheel motor bolts can snap and the wheel can come off",
+      "remedy": "Free repair",
+      "units": "19,890",
+      "url": "https://www.cpsc.gov/Recalls/2026/Rear-Bolts-on-Trek-and-Electra-Electric-Bicycles-Recalled-Due-to-Fall-Hazard-Manufactured-by-Hyena"
+    },
+    {
+      "date": "2026-01-29",
+      "type": "recall",
+      "brand": "Gazelle USA (Urban Arrow)",
+      "product": "Urban Arrow FamilyNext Pro cargo e-bike",
+      "hazard": "Child-seat buckle may not latch",
+      "remedy": "Free repair",
+      "units": "320",
+      "url": "https://www.cpsc.gov/Recalls/2026/Gazelle-USA-Recalls-Urban-Arrow-FamilyNext-Pro-Cargo-E-Bikes-Due-to-Injury-Hazard"
+    },
+    {
+      "date": "2026-01-15",
+      "type": "warning",
+      "brand": "Liberty Trike (Electric Bike Technologies)",
+      "product": "16-inch and 20-inch electric tricycles",
+      "hazard": "Can tip over in turns",
+      "remedy": "No fix offered. Stop using it.",
+      "units": "7,490",
+      "url": "https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Immediately-Stop-Using-Liberty-Trike-16-Inch-and-20-Inch-Electric-Tricycles-Due-to-Risk-of-Serious-Injury-from-Fall-Hazard"
+    },
+    {
+      "date": "2025-12-18",
+      "type": "recall",
+      "brand": "Pedego",
+      "product": "Fat Tire Trike",
+      "hazard": "Frame can crack near a weld",
+      "remedy": "Free repair",
+      "units": "400",
+      "url": "https://www.cpsc.gov/Recalls/2026/Pedego-Electric-Bikes-Recalls-Fat-Tire-Trikes-Due-to-Fall-and-Laceration-Hazards"
+    },
+    {
+      "date": "2025-12-11",
+      "type": "recall",
+      "brand": "Trek",
+      "product": "2026 Domane+ ALR 5, ALR 6 AXS; Checkpoint+ SL 6 and SL 7",
+      "hazard": "Chainring bolts can loosen",
+      "remedy": "Free repair",
+      "units": "700",
+      "url": "https://www.cpsc.gov/Recalls/2026/TREK-Recalls-Electric-Bicycles-Due-to-Fall-or-Crash-Hazard"
+    },
+    {
+      "date": "2025-11-24",
+      "type": "warning",
+      "brand": "Rad Power Bikes",
+      "product": "Batteries RP-1304, RAD-S1304Y and HL-RP-S1304 (used on RadWagon 4, RadCity HS 4, RadRover HS 5 and others, and sold as spares)",
+      "hazard": "Battery can catch fire (31 fires reported)",
+      "remedy": "No fix offered. Stop using the battery; dispose of it as hazardous waste.",
+      "units": "",
+      "url": "https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Immediately-Stop-Using-Batteries-for-E-Bikes-from-Rad-Power-Bikes-Due-to-Fire-Hazard-Risk-of-Serious-Injury-or-Death"
+    },
+    {
+      "date": "2025-07-24",
+      "type": "recall",
+      "brand": "FENGQS (sold on Amazon)",
+      "product": "F7 Pro e-bikes",
+      "hazard": "Battery can overheat and catch fire",
+      "remedy": "Refund",
+      "units": "100",
+      "url": "https://www.cpsc.gov/Recalls/2025/FENGQS-Electric-Bikes-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-or-Death-Sold-on-Amazon"
+    },
+    {
+      "date": "2025-07-17",
+      "type": "recall",
+      "brand": "VIVI",
+      "product": "36V batteries sold with VIVI C26, MT20, Z3, M026SH, H6, H7, MT26H, 26LGB, M026TGB, MT26G, FM20, F20, S3, Z1 and Z2 e-bikes",
+      "hazard": "Battery can overheat and catch fire",
+      "remedy": "Free replacement battery and charger",
+      "units": "24,000",
+      "url": "https://www.cpsc.gov/Recalls/2025/VIVI-E-Bikes-Lithium-ion-Batteries-Sold-with-VIVI-E-Bikes-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-or-Death-Sold-by-VIVI"
+    },
+    {
+      "date": "2025-07-10",
+      "type": "recall",
+      "brand": "Giant",
+      "product": "Momentum Vida E+ (3rd character of the serial number H, J or K)",
+      "hazard": "Fork can crack, causing a crash",
+      "remedy": "Free replacement fork",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2025/Giant-Bicycle-Recalls-Momentum-Vida-E-E-Bikes-Due-to-Crash-Hazard"
+    },
+    {
+      "date": "2025-06-18",
+      "type": "warning",
+      "brand": "FENGQS (sold on Amazon)",
+      "product": "F7 Pro e-bikes",
+      "hazard": "Battery can overheat and catch fire",
+      "remedy": "Later recalled for a refund (July 24, 2025)",
+      "units": "180",
+      "url": "https://www.cpsc.gov/Warnings/2025/CPSC-Warns-Consumers-to-Immediately-Stop-Using-FENGQS-E-Bikes-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-or-Death-Sold-on-Amazon-com"
+    },
+    {
+      "date": "2025-06-05",
+      "type": "recall",
+      "brand": "Specialized (Globe)",
+      "product": "Globe Haul ST and Haul LT with the 13-inch telescopic seat post",
+      "hazard": "Seat post can break",
+      "remedy": "Free repair: new seat post",
+      "units": "11,100",
+      "url": "https://www.cpsc.gov/Recalls/2025/Specialized-Bicycle-Components-Recalls-Globe-Branded-Haul-ST-and-LT-E-Bikes-Due-to-Fall-Hazard"
+    },
+    {
+      "date": "2025-05-01",
+      "type": "recall",
+      "brand": "Santa Cruz",
+      "product": "Heckler 9 with the 720W battery (certain serial numbers)",
+      "hazard": "Battery can overheat and catch fire",
+      "remedy": "Free replacement battery",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2025/Santa-Cruz-Bicycles-Recalls-Electric-Bicycles-Due-to-Fire-Hazard"
+    },
+    {
+      "date": "2025-03-27",
+      "type": "recall",
+      "brand": "Specialized",
+      "product": "Vado and Como IGH, including some Como SL 4.0 and 5.0",
+      "hazard": "Uncovered belt drive can catch clothing",
+      "remedy": "Free repair: new guard",
+      "units": "32,400",
+      "url": "https://www.cpsc.gov/Recalls/2025/Specialized-Bicycle-Components-Recalls-Vado-and-Como-IGH-E-Bikes-with-Chain-Guards-Due-to-Fall-Hazard"
+    },
+    {
+      "date": "2025-02-20",
+      "type": "recall",
+      "brand": "Super73",
+      "product": "2024 Z Miami SE and Z Adventure Core",
+      "hazard": "Brake caliper pin can loosen; brakes can fail",
+      "remedy": "Free repair kit, plus up to $50 for installation",
+      "units": "1,400",
+      "url": "https://www.cpsc.gov/Recalls/2025/Super73-Recalls-Z-Miami-SE-and-Z-Adventure-Core-Electric-Bicycles-Due-to-Crash-and-Injury-Hazards"
+    },
+    {
+      "date": "2025-02-20",
+      "type": "recall",
+      "brand": "Trek (Electra)",
+      "product": "Electra Navigator Go! (2021, 2022) and Ace of Spades Go! (2018, 2021, 2022)",
+      "hazard": "Rear fender can loosen and stop the wheel",
+      "remedy": "Free repair",
+      "units": "927",
+      "url": "https://www.cpsc.gov/Recalls/2025/Trek-Recalls-Electra-E-Bikes-Due-to-Crash-Hazard"
+    },
+    {
+      "date": "2024-06-20",
+      "type": "recall",
+      "brand": "Babboe",
+      "product": "All Babboe 2- and 3-wheel cargo bikes, electric and non-electric",
+      "hazard": "Frame can crack or break",
+      "remedy": "Refund",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2024/Cargo-Bicycles-Recalled-Due-to-Fall-Hazard-Manufactured-by-Babboe-B-V"
+    },
+    {
+      "date": "2024-04-15",
+      "type": "warning",
+      "brand": "Unit Pack Power (UPP)",
+      "product": "U004 and U004-1 e-bike conversion batteries (sold on Amazon, AliExpress, eBay and others)",
+      "hazard": "Battery can overheat and catch fire",
+      "remedy": "No fix offered. Stop using it.",
+      "units": "",
+      "url": "https://www.cpsc.gov/Warnings/2024/CPSC-Warns-Consumers-to-Stop-Using-Unit-Pack-Power-UPP-E-bike-Batteries-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-and-Death"
+    },
+    {
+      "date": "2024-01-25",
+      "type": "recall",
+      "brand": "Pacific Cycle",
+      "product": "Ascend Cabrillo (R7583BPS, R7585BPS) and Minaret (R7586BPS)",
+      "hazard": "Charging harness can overheat and catch fire",
+      "remedy": "Refund",
+      "units": "1,700",
+      "url": "https://www.cpsc.gov/Recalls/2024/Pacific-Cycle-Recalls-E-Bikes-Due-to-Fire-Hazard"
+    },
+    {
+      "date": "2024-01-04",
+      "type": "recall",
+      "brand": "Aventon",
+      "product": "Sinch.2 folding e-bike",
+      "hazard": "Can speed up unexpectedly",
+      "remedy": "Free repair: controller software update",
+      "units": "2,300",
+      "url": "https://www.cpsc.gov/Recalls/2024/Ride-Aventon-Recalls-Sinch2-Folding-E-Bicycles-Due-to-Crash-and-Injury-Hazards"
+    },
+    {
+      "date": "2023-11-02",
+      "type": "recall",
+      "brand": "Murf",
+      "product": "Murf e-bikes sold before April 20, 2022",
+      "hazard": "Don't meet the U.S. bicycle safety standard",
+      "remedy": "Free repair",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2024/Murf-Electric-Bikes-Recalls-Electric-Bicycles-Due-to-Fall-and-Injury-Hazards-Recall-Alert"
+    },
+    {
+      "date": "2023-09-07",
+      "type": "recall",
+      "brand": "Lectric eBikes",
+      "product": "Disc brake calipers on XP 3.0 and XP Step-Thru 3.0 models",
+      "hazard": "Brake caliper can fail",
+      "remedy": "Free repair kit, plus up to $100 for installation",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2023/Lectric-Ebikes-Recalls-Disc-Brake-Calipers-Sold-on-Lectric-E-Bicycles-Due-to-Crash-and-Injury-Hazards-Recall-Alert"
+    },
+    {
+      "date": "2023-03-30",
+      "type": "recall",
+      "brand": "Cannondale",
+      "product": "Tesoro Neo X Speed",
+      "hazard": "Brake levers set up in the reversed (European) layout",
+      "remedy": "Free repair",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2023/Cannondale-Recalls-Tesoro-Neo-X-Speed-Electric-Bicycles-Due-to-Fall-and-Injury-Hazards"
+    },
+    {
+      "date": "2023-02-16",
+      "type": "recall",
+      "brand": "Linus Bike",
+      "product": "Cesta 500 and Ero 500",
+      "hazard": "Front fork can crack",
+      "remedy": "Free replacement fork",
+      "units": "430",
+      "url": "https://www.cpsc.gov/Recalls/2023/Linus-Bike-Recalls-Electric-Bicycles-Due-to-Crash-Hazard-Recall-Alert"
+    },
+    {
+      "date": "2022-12-15",
+      "type": "recall",
+      "brand": "Gyroor",
+      "product": "C3 e-bike battery packs",
+      "hazard": "Battery can catch fire",
+      "remedy": "Free replacement battery pack",
+      "units": "3,300",
+      "url": "https://www.cpsc.gov/Recalls/2023/E-Bikes-Recalled-Due-to-Fire-and-Burn-Hazards-Distributed-by-Gyroor-Recall-Alert"
+    },
+    {
+      "date": "2022-11",
+      "type": "recall",
+      "brand": "Rad Power Bikes",
+      "product": "RadWagon 4 (and spare 22 x 3 tires)",
+      "hazard": "Tire or rim strip can fail",
+      "remedy": "Free repair: new tires and rim strips",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2023/Rad-Power-Bikes-Recalls-RadWagon-4-Electric-Cargo-Bikes-Due-to-Fall-and-Crash-Hazards-Recall-Alert"
+    },
+    {
+      "date": "2022-10-13",
+      "type": "recall",
+      "brand": "Ancheer",
+      "product": "E-bike model AM001907",
+      "hazard": "Battery can catch fire or explode",
+      "remedy": "Free replacement battery and mount",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2023/E-Bikes-Recalled-Due-to-Fire-Explosion-and-Burn-Hazards-Distributed-by-Ancheer"
+    },
+    {
+      "date": "2022",
+      "type": "recall",
+      "brand": "Santa Cruz",
+      "product": "2022 Heckler 9 (Gloss Avocado Green and Maritime Gray)",
+      "hazard": "Battery latch can fail and the battery can fall off",
+      "remedy": "Free repair: latch spring and wear plate",
+      "units": "",
+      "url": "https://www.cpsc.gov/Recalls/2022/Santa-Cruz-Bicycles-Recalls-Heckler-9-Electric-Bicycles-Due-to-Fall-and-Fire-Hazards"
+    }
+  ]
+}
